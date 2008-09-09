@@ -5,6 +5,7 @@ setup(name='ccnmtldjango',
       author="anders pearson",
       description="Django template for CCNMTL",
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
+      install_requires = ["PasteScript"],
       zip_safe=False,
       entry_points="""
       [paste.paster_create_template]
