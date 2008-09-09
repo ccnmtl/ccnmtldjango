@@ -1,0 +1,13 @@
+README.txt
+setup.py
+ccnmtldjango/__init__.py
+ccnmtldjango.egg-info/PKG-INFO
+ccnmtldjango.egg-info/SOURCES.txt
+ccnmtldjango.egg-info/dependency_links.txt
+ccnmtldjango.egg-info/entry_points.txt
+ccnmtldjango.egg-info/not-zip-safe
+ccnmtldjango.egg-info/top_level.txt
+ccnmtldjango/template/__init__.py
+ccnmtldjango/template/create-ve.py
+ccnmtldjango/template/manage.py
+ccnmtldjango/template/settings.py

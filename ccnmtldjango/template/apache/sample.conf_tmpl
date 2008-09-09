@@ -1,0 +1,50 @@
+<VirtualHost *>
+  ServerName ${package}.ccnmtl.columbia.edu
+  ServerAdmin ccnmtl-sysadmin@columbia.edu
+  CustomLog /var/log/apache2/${package}/access.log combined
+  ErrorLog /var/log/apache2/${package}/error.log
+
+  SetEnv DJANGO_SETTINGS_MODULE ${package}.settings_production
+
+  WSGIDaemonProcess site-${package} user=ccnmtl group=ccnmtl threads=5 python-path=/var/www/${package}/${package}/ve/lib/python2.5/site-packages
+  WSGIProcessGroup site-${package}
+
+  WSGIScriptAlias / /var/www/${package}/${package}/apache/django.wsgi
+  <Directory /var/www/${package}/${package}/apache>
+    Order deny,allow
+    Allow from all
+  </Directory>
+
+  Alias /site_media/ /var/www/${package}/${package}/media/
+  Alias /favicon.ico /var/www/${package}/${package}/media/favicon.ico
+  Alias /robots.txt /var/www/${package}/${package}/media/robots.txt
+  <Directory /var/www/${package}/${package}/media/>
+    Order deny,allow
+    Allow from all
+    FileETag None
+    ExpiresActive on
+    ExpiresDefault "access plus 10 years"
+    AddOutputFilterByType DEFLATE text/css application/x-javascript
+  </Directory>
+
+  Alias /media/ /var/www/${package}/${package}/ve/lib/python2.5/site-packages/django/contrib/admin/media/
+  <Directory /var/www/${package}/${package}/ve/lib/python2.5/site-packages/django/contrib/admin/media/>
+    Order deny,allow
+    Allow from all
+    FileETag None
+    ExpiresActive on
+    ExpiresDefault "access plus 10 years"
+    AddOutputFilterByType DEFLATE text/css application/x-javascript
+  </Directory>
+
+  Alias /uploads/ /var/www/${package}/uploads/
+  <Directory /var/www/${package}/uploads/>
+    Order deny,allow
+    Allow from all
+    FileETag None
+    ExpiresActive on
+    ExpiresDefault "access plus 10 years"
+    AddOutputFilterByType DEFLATE text/css application/x-javascript
+  </Directory>
+
+</VirtualHost>

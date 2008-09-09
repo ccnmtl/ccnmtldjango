@@ -1,0 +1,10 @@
+from settings_shared import *
+
+TEMPLATE_DIRS = (
+    "/var/www/${package}/${package}/templates",
+)
+
+MEDIA_ROOT = '/var/www/${package}/uploads/'
+
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG

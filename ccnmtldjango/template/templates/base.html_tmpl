@@ -1,0 +1,22 @@
+<html>
+<head><title>${package}: {% block title %}{% endblock %}</title>
+
+<style media="screen" type="text/css">
+@import "/site_media/css/site.css" ;
+</style>
+
+{% block css %}{% endblock %}
+{% block js %}{% endblock %}
+{% block feeds %}{% endblock %}
+</head>
+<body class="{% block bodyclass %}{% endblock %}">
+
+<div id="wrapper">
+<div id="breadcrumbs">{% block breadcrumbs %}{% endblock %}</div>
+<h1 id="masthead"><span>${package}: {% block masthead %}{% endblock %}</span></h1>
+<div id="nav">{% block nav %}{% endblock %}</div>
+
+{% block content %}{% endblock %}
+</div>
+{% block footer %}{% endblock %}
+</body></html>
