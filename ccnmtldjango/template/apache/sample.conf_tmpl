@@ -6,8 +6,9 @@
 
   SetEnv DJANGO_SETTINGS_MODULE ${package}.settings_production
 
-  WSGIDaemonProcess site-${package} user=ccnmtl group=ccnmtl threads=5 python-path=/var/www/${package}/${package}/ve/lib/python2.5/site-packages
+  WSGIDaemonProcess site-${package} user=pusher group=pusher threads=5 python-path=/var/www/${package}/${package}/ve/lib/python2.5/site-packages
   WSGIProcessGroup site-${package}
+  WSGIReloadMechanism Process
 
   WSGIScriptAlias / /var/www/${package}/${package}/apache/django.wsgi
   <Directory /var/www/${package}/${package}/apache>
@@ -27,8 +28,8 @@
     AddOutputFilterByType DEFLATE text/css application/x-javascript
   </Directory>
 
-  Alias /media/ /var/www/${package}/${package}/ve/lib/python2.5/site-packages/django/contrib/admin/media/
-  <Directory /var/www/${package}/${package}/ve/lib/python2.5/site-packages/django/contrib/admin/media/>
+  Alias /media/ /var/www/${package}/${package}/ve/lib/python2.5/site-packages/Django-1.0_final-py2.5.egg/django/contrib/admin/media/
+  <Directory /var/www/${package}/${package}/ve/lib/python2.5/site-packages/Django-1.0_final-py2.5.egg/django/contrib/admin/media/>
     Order deny,allow
     Allow from all
     FileETag None
