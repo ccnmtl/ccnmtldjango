@@ -7,6 +7,7 @@ setup(name='ccnmtldjango',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       install_requires = ["PasteScript"],
       zip_safe=False,
+      package_data = {'' : ['*.*']},
       entry_points="""
       [paste.paster_create_template]
       ccnmtldjango = ccnmtldjango:CcnmtlDjangoTemplate
