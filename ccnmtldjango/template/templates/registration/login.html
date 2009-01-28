@@ -5,8 +5,7 @@
 {% endif %}
 <form method="get" action="{{ wind_base }}login">
 <input type="hidden" name="service" value="{{ wind_service }}" />
-<input type="hidden" name="destination"
-value="http://{{ site.domain }}/accounts/windlogin/?next={{ next }}" />
+<input type="hidden" name="destination" value="http://{{ request.get_host }}/accounts/windlogin/?next={{ next }}" />
 <p>If you have a Columbia UNI, you already have an account and can
 login through WIND with it</p>
 <input type="submit" value="Here" />
