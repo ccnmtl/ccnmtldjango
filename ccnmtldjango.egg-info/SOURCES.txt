@@ -19,11 +19,11 @@ ccnmtldjango/template/urls.py_tmpl
 ccnmtldjango/template/apache/django.wsgi_tmpl
 ccnmtldjango/template/apache/sample.conf_tmpl
 ccnmtldjango/template/eggs/Django-1.0_final-py2.5.egg
-ccnmtldjango/template/eggs/django_smartif-0.1-py2.5.egg
 ccnmtldjango/template/eggs/Paste-1.7.1-py2.5.egg
 ccnmtldjango/template/eggs/PasteDeploy-1.3.2-py2.5.egg
 ccnmtldjango/template/eggs/PasteScript-1.6.2-py2.5.egg
 ccnmtldjango/template/eggs/cdap-1.0-py2.5.egg
+ccnmtldjango/template/eggs/django_smartif-0.1-py2.5.egg
 ccnmtldjango/template/eggs/djangowind-0.9.5-py2.5.egg
 ccnmtldjango/template/eggs/httplib2-0.3.0-py2.5.egg
 ccnmtldjango/template/eggs/imageuploader-0.1-py2.5.egg
@@ -33,7 +33,7 @@ ccnmtldjango/template/eggs/restclient-0.9.9-py2.5.egg
 ccnmtldjango/template/eggs/selector-0.8.11-py2.5.egg
 ccnmtldjango/template/eggs/simplejson-1.7.1-py2.5.egg
 ccnmtldjango/template/eggs/sorl-0.1-py2.5.egg
-ccnmtldjango/template/eggs/tagging-0.2.1-py2.5.egg
+ccnmtldjango/template/eggs/tagging-0.3_pre-py2.5.egg
 ccnmtldjango/template/media/favicon.ico
 ccnmtldjango/template/media/robots.txt
 ccnmtldjango/template/media/css/site.css
