@@ -64,6 +64,8 @@ INSTALLED_APPS = (
     'django.contrib.markup',
     'sorl.thumbnail',
     'django.contrib.admin',
+    'tagging',
+    'smartif',
 )
 
 THUMBNAIL_SUBDIR = "thumbs"
