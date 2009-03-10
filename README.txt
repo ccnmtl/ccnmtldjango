@@ -29,6 +29,10 @@ What it provides for us that startproject doesn't:
       server's /etc/apache/sites-enabled/ directory and it's good to
       go)
     * media dirs for dev and prod configured
+    * smartif included
+    * template_utils included
+      (http://code.google.com/p/django-template-utils/) as well as
+      feedparser, which it depends on for feed stuff
     * mochikit is included (currently our js library of choice. might change)
     * hs.js
     * tabber.js
