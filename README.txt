@@ -33,6 +33,8 @@ What it provides for us that startproject doesn't:
     * template_utils included
       (http://code.google.com/p/django-template-utils/) as well as
       feedparser, which it depends on for feed stuff
+    * django-typogrify included (http://code.google.com/p/typogrify/)
+      along with smartypants.py (which it uses)
     * mochikit is included (currently our js library of choice. might change)
     * hs.js
     * tabber.js
