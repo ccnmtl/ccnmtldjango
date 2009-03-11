@@ -35,6 +35,7 @@ What it provides for us that startproject doesn't:
       feedparser, which it depends on for feed stuff
     * django-typogrify included (http://code.google.com/p/typogrify/)
       along with smartypants.py (which it uses)
+    * uuid.py
     * mochikit is included (currently our js library of choice. might change)
     * hs.js
     * tabber.js

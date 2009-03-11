@@ -38,6 +38,7 @@ ccnmtldjango/template/eggs/sorl-0.1-py2.5.egg
 ccnmtldjango/template/eggs/tagging-0.3_pre-py2.5.egg
 ccnmtldjango/template/eggs/template_utils-0.4p2-py2.5.egg
 ccnmtldjango/template/eggs/typogrify-1.0-py2.5.egg
+ccnmtldjango/template/eggs/uuid-1.30-py2.5.egg
 ccnmtldjango/template/media/favicon.ico
 ccnmtldjango/template/media/robots.txt
 ccnmtldjango/template/media/css/site.css
