@@ -68,6 +68,7 @@ INSTALLED_APPS = (
     'smartif',
     'template_utils',
     'typogrify',
+    'survey',
 )
 
 THUMBNAIL_SUBDIR = "thumbs"

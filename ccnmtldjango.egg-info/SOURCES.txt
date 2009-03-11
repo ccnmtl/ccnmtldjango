@@ -35,6 +35,7 @@ ccnmtldjango/template/eggs/selector-0.8.11-py2.5.egg
 ccnmtldjango/template/eggs/simplejson-1.7.1-py2.5.egg
 ccnmtldjango/template/eggs/smartypants-1.6-py2.5.egg
 ccnmtldjango/template/eggs/sorl-0.1-py2.5.egg
+ccnmtldjango/template/eggs/survey-r81-py2.5.egg
 ccnmtldjango/template/eggs/tagging-0.3_pre-py2.5.egg
 ccnmtldjango/template/eggs/template_utils-0.4p2-py2.5.egg
 ccnmtldjango/template/eggs/typogrify-1.0-py2.5.egg

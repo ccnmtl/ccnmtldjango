@@ -36,6 +36,7 @@ What it provides for us that startproject doesn't:
     * django-typogrify included (http://code.google.com/p/typogrify/)
       along with smartypants.py (which it uses)
     * uuid.py
+    * django-survey (http://code.google.com/p/django-survey/)
     * mochikit is included (currently our js library of choice. might change)
     * hs.js
     * tabber.js
