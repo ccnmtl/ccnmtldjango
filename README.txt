@@ -35,8 +35,11 @@ What it provides for us that startproject doesn't:
       feedparser, which it depends on for feed stuff
     * django-typogrify included (http://code.google.com/p/typogrify/)
       along with smartypants.py (which it uses)
-    * uuid.py
+    * uuid.py (used by django-survey)
     * django-survey (http://code.google.com/p/django-survey/)
+    * django-tinymce (http://code.google.com/p/django-tinymce/) (I
+      haven't managed to get the spellchecker plugin working despite
+      following all the instructions though. ideas, anyone?)
     * mochikit is included (currently our js library of choice. might change)
     * hs.js
     * tabber.js
