@@ -10,5 +10,6 @@ vedir = os.path.join(pwd,"ve")
 if os.path.exists(vedir):
     shutil.rmtree(vedir)
 
-subprocess.call(["python",os.path.join(pwd,"create-ve.py")])
-subprocess.call(["python",os.path.join(pwd,"ve-bootstrap.py"),vedir])
+subprocess.call(["pip","install","-E",os.path.join(pwd,"ve"),
+                 "--requirement",os.path.join(pwd,"requirements/apps.txt")])
+

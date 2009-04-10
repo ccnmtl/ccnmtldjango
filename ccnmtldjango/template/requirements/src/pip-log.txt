@@ -1,0 +1,11 @@
+Exception:
+Traceback (most recent call last):
+  File "/usr/lib/python2.5/site-packages/pip-0.3.1-py2.5.egg/pip.py", line 252, in main
+    self.run(options, args)
+  File "/usr/lib/python2.5/site-packages/pip-0.3.1-py2.5.egg/pip.py", line 406, in run
+    for req in parse_requirements(filename, finder=finder):
+  File "/usr/lib/python2.5/site-packages/pip-0.3.1-py2.5.egg/pip.py", line 3268, in parse_requirements
+    filename, content = get_file_content(filename, comes_from=comes_from)
+  File "/usr/lib/python2.5/site-packages/pip-0.3.1-py2.5.egg/pip.py", line 3259, in get_file_content
+    f = open(url)
+IOError: [Errno 2] No such file or directory: 'requirements/apps.txt'

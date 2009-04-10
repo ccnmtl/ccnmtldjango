@@ -15,9 +15,10 @@ What it provides for us that startproject doesn't:
       automatically set up as superusers, and the group affil that
       CCNMTL staff all have gets automatically mapped to staff. These
       are generally useful defaults for us. 
-    * virtualenv setup with eggs bundled and bootstrappable,
-      manage.py's shebang set to use it. This basically fits it into
-      our one-step automated deployment and containment approach. 
+    * virtualenv and pip setup with source tarballs bundled and
+      bootstrappable, manage.py's shebang set to use it. This
+      basically fits it into our one-step automated deployment and
+      containment approach.  
     * sorl.thumbnail (a handy dandy image thumbnailing library) is
       included by default
     * flatpages enabled
@@ -64,7 +65,7 @@ What it provides for us that startproject doesn't:
     * I18n turned off (we are unfortunately monolingual. no sense in
       denying it)
 
-To use ccnmtldjango, you need python 2.5, virtualenv, a recent 
+To use ccnmtldjango, you need python 2.5, virtualenv, pip, a recent 
 setuptools, PIL, postgres, and psycopg2 installed on your 
 machine (some binary packages like PIL and psycopg2 are easier to 
 install system-wide via apt than they are to deploy as eggs and 
@@ -76,7 +77,7 @@ containment).
 
 First, if you don't already have ccnmtldjango installed, do
 
-   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-0.8-py2.5.egg
+   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-0.9-py2.5.egg
 
 
 It should automatically pull in the needed dependencies (just 
@@ -117,11 +118,13 @@ the old ccnmtltg's "init.sh", "bootstrap.py" sets that up:
    $ ./bootstrap.py
 
 That will create a 've' directory which contains a virtualenv and has
-had all the eggs in the 'eggs' directory installed into it (this
-includes django itself). The 've' directory should never be checked
-into svn since it's generated. If you need other libraries for your
-application, bundle them up as eggs and drop them in the eggs
-directory, then re-run init.sh.
+had all the libraries in the 'requirements/src' directory installed
+into it (this includes django itself). The 've' directory should never
+be checked into svn since it's generated. If you need other libraries
+for your application, bundle them up as tarballs and drop them in the
+requirements/src/ directory, add them to requirements/libs.txt or
+requirements/apps.txt (depending on whether they are regular python
+libraries or django apps) then re-run ./bootstrap.py.
 
 Keep in mind that with virtualenv, there's no need to 'activate' an
 environment. Instead, a ve has a 'bin' directory which contains a
