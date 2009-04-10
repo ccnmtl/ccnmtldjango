@@ -29,7 +29,7 @@ What it provides for us that startproject doesn't:
       server's /etc/apache/sites-enabled/ directory and it's good to
       go)
     * media dirs for dev and prod configured
-    * smartif included
+    * smartif included (http://github.com/thraxil/django-smartif/tree/master)
     * template_utils included
       (http://code.google.com/p/django-template-utils/) as well as
       feedparser, which it depends on for feed stuff
