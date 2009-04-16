@@ -10,7 +10,6 @@ ccnmtldjango.egg-info/requires.txt
 ccnmtldjango.egg-info/top_level.txt
 ccnmtldjango/template/__init__.py
 ccnmtldjango/template/bootstrap.py
-ccnmtldjango/template/create-ve.py
 ccnmtldjango/template/manage.py
 ccnmtldjango/template/pip.py
 ccnmtldjango/template/settings.py
