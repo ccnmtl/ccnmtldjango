@@ -1,4 +1,4 @@
-#!ve/bin/python
+#!ve/bin/python2.5
 from django.core.management import execute_manager
 try:
     import settings # Assumed to be in the same directory.
