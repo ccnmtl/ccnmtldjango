@@ -64,6 +64,8 @@ What it provides for us that startproject doesn't:
       is teh suck)
     * I18n turned off (we are unfortunately monolingual. no sense in
       denying it)
+    * a nice default template design with alternate base templates
+      for multi-column layout.
 
 To use ccnmtldjango, you need python 2.5, virtualenv, pip, a recent 
 setuptools, PIL, postgres, and psycopg2 installed on your 
@@ -77,7 +79,7 @@ containment).
 
 First, if you don't already have ccnmtldjango installed, do
 
-   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-0.9-py2.5.egg
+   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-0.9.1-py2.5.egg
 
 
 It should automatically pull in the needed dependencies (just 
