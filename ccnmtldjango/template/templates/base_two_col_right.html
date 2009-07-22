@@ -2,18 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>${package}: {% block title %}{% endblock %}</title>
+	<title>Django CCNMTL: {% block title %}{% endblock %}</title>
 	<link rel="stylesheet" href="/site_media/css/main.css" media="screen" />
 	<link rel="stylesheet" href="/site_media/css/print.css" media="print" />
 	<!--[if IE 6]>
-	<link rel="stylesheet" href="/site_media/css/main_ie6_1col.css" media="screen" />
+	<link rel="stylesheet" href="/site_media/css/main_ie6_2colr.css" media="screen" />
 	<![endif]-->
 	<link rel="shortcut icon" href="/site_media/img/favicon.ico" type="image/x-icon" />
 	{% block css %}{% endblock %}
 	{% block js %}{% endblock %}
 	{% block feeds %}{% endblock %}
 </head>
-<body class="one_column {% block widthtype %}fixed{% endblock %}">
+<body class="two_columns_right {% block widthtype %}fixed{% endblock %}">
 {% comment %}
 ###### FOR WIDTH TYPE--
    fixed : fixed width, doesn't change with browser resize
@@ -91,6 +91,11 @@
 			</div><!-- id="squish" -->
 		</div><!-- id="content" -->
 
+
+		<!-- ###### Right Sidebar ###### -->
+		<div id="sidebar_right">
+			{% block sidebarright %}{% endblock %}
+		</div><!-- id="sidebar_right" -->
 
 		<!-- ###### Don't touch this ###### -->
 		<div class="visualclear"></div>
