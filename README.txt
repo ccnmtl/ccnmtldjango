@@ -8,7 +8,7 @@ and configuration.
 
 What it provides for us that startproject doesn't:
 
-    * Django Wind (a Django bridge to Columbia's central auth service)
+    * Django Wind (a Django bridge to Columbia's central auth service - http://www.jasig.org/cas/deployments/columbia-university)
       is included and configured by default so our apps can use WIND
       for auth automatically. Ie, anyone with a Columbia UNI by
       default will have an account. The CCNMTL developer UNIs are
