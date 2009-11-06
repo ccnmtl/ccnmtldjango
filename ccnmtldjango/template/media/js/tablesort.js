@@ -58,13 +58,13 @@ if (ie5 || dom)
 
 function initSortTable() {
 			imgup = this.document.createElement("img");
-			imgup.src = "/static/images/ascending.gif";
+			imgup.src = "/site_media/img/ascending.gif";
 	arrowUp = document.createElement("span");
 	arrowUp.appendChild(imgup);
 	arrowUp.className = "arrow";
 
 			imgdwn = this.document.createElement("img");
-			imgdwn.src = "/static/images/descending.gif";
+			imgdwn.src = "/site_media/img/descending.gif";
 	arrowDown = document.createElement("span");
 	arrowDown.appendChild(imgdwn);
 	arrowDown.className = "arrow";
@@ -188,19 +188,12 @@ function compareByColumn(nCol, bDescending, sType) {
 	var c = nCol;
 	var d = bDescending;
 	
-	var fTypeCast = String;
-	
-	if (sType == "Number")
-		fTypeCast = Numeric;
-	else if (sType == "Date")
-		fTypeCast = parseDate;
-	else if (sType == "CaseInsensitiveString")
-		fTypeCast = CaseInsensitiveString;
+	var castFunc =(sType in TableSortCasts) ?TableSortCasts[sType] :TableSortCasts["Default"];
 
 	return function (n1, n2) {
-		if (fTypeCast(getInnerText(n1.cells[c])) < fTypeCast(getInnerText(n2.cells[c])))
+	        if (castFunc(n1.cells[c]) < castFunc(n2.cells[c]))
 			return d ? -1 : +1;
-		if (fTypeCast(getInnerText(n1.cells[c])) > fTypeCast(getInnerText(n2.cells[c])))
+		if (castFunc(n1.cells[c]) > castFunc(n2.cells[c]))
 			return d ? +1 : -1;
 		return 0;
 	};
@@ -291,7 +284,7 @@ function sortColumn(e) {
                 var aV = navigator.vendor;
                 var IEbrowser = (uA.indexOf('MSIE') != - 1);
 
-                classes = ""
+                var classes = ""
                 if (IEbrowser) {
                     classes = el.className
                 } else {
@@ -299,17 +292,9 @@ function sortColumn(e) {
                 }
                 classes = classes ? classes : ""
                 classes = classes.split(" ")
-                type = null;
+                var type = "Default";
                 for (var idx = 0; idx < classes.length; idx++) {
-                   if (classes[idx] == "Number") {
-                        type = "Number"
-                   }
-                   if (classes[idx] == "Date") {
-                        type = "Date"
-                   } 
-                   if (classes[idx] == "CaseInsensitiveString") {
-                        type = "CaseInsensitiveString"
-                   }    
+		    if (classes[idx] in TableSortCasts)	type = classes[idx];
                 } 
 		sortTable(table,th_idx,el._descending, type);
 		hilite(table,th_idx);
@@ -373,4 +358,11 @@ function getParent(el, pTagName) {
 		return el;
 	else
 		return getParent(el.parentNode, pTagName);
+}
+
+var TableSortCasts = {
+    "Number":function(cell){return Numeric(getInnerText(cell));},
+    "Date":function(cell){return parseDate(getInnerText(cell));},
+    "CaseInsensitiveString":function(cell){return CaseInsensitiveString(getInnerText(cell));},
+    "Default":function(cell){return String(getInnerText(cell));}
 }
