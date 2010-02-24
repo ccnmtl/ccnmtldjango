@@ -41,10 +41,9 @@ What it provides for us that startproject doesn't:
     * django-tinymce (http://code.google.com/p/django-tinymce/) (I
       haven't managed to get the spellchecker plugin working despite
       following all the instructions though. ideas, anyone?)
-    * mochikit is included (currently our js library of choice. might change)
+    * jquery (1.4.2, minified) included
     * hs.js
     * tabber.js
-    * resizable_textareas.js
     * widget.js
     * tablesort.js	
     * required CSS for the above js libraries is included in the
