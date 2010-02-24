@@ -78,7 +78,7 @@ containment).
 
 First, if you don't already have ccnmtldjango installed, do
 
-   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-0.9.1-py2.5.egg
+   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-0.10.0-py2.5.egg
 
 
 It should automatically pull in the needed dependencies (just 
