@@ -287,7 +287,9 @@ ccnmtldjango/template/media/js/tiny_mce/utils/mctabs.js
 ccnmtldjango/template/media/js/tiny_mce/utils/validate.js
 ccnmtldjango/template/requirements/apps.txt
 ccnmtldjango/template/requirements/libs.txt
-ccnmtldjango/template/requirements/src/Django-1.0.2-final.tar.gz
+ccnmtldjango/template/requirements/eggs/egenix_mx_base-3.1.3-py2.6-linux-x86_64.egg
+ccnmtldjango/template/requirements/src/Django-1.2.1.tar.gz
+ccnmtldjango/template/requirements/src/Imaging-1.1.7.tar.gz
 ccnmtldjango/template/requirements/src/Markdown-2.0.tar.gz
 ccnmtldjango/template/requirements/src/Paste-1.7.2.tar.gz
 ccnmtldjango/template/requirements/src/PasteDeploy-1.3.3.tar.gz
@@ -298,10 +300,12 @@ ccnmtldjango/template/requirements/src/django-staticmedia-0.2.tar.gz
 ccnmtldjango/template/requirements/src/django-survey-0.0.2.tar.gz
 ccnmtldjango/template/requirements/src/django-tinymce-1.5.tar.gz
 ccnmtldjango/template/requirements/src/djangowind-0.9.5.tar.gz
+ccnmtldjango/template/requirements/src/egenix-mx-base-3.1.3.tar.gz
 ccnmtldjango/template/requirements/src/feedparser-4.1.tar.gz
 ccnmtldjango/template/requirements/src/httplib2-0.4.0.tar.gz
 ccnmtldjango/template/requirements/src/imageuploader-0.1.tar.gz
 ccnmtldjango/template/requirements/src/pip-log.txt
+ccnmtldjango/template/requirements/src/psycopg2-2.2.1.tar.gz
 ccnmtldjango/template/requirements/src/pyenchant-1.5.1.tar.gz
 ccnmtldjango/template/requirements/src/resolver-0.2.1.tar.gz
 ccnmtldjango/template/requirements/src/restclient-0.9.9.tar.gz

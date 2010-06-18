@@ -70,7 +70,6 @@ INSTALLED_APPS = (
     'template_utils',
     'typogrify',
     'survey',
-    'tinymce',
 )
 
 THUMBNAIL_SUBDIR = "thumbs"

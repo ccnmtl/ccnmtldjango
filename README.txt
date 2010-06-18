@@ -38,9 +38,6 @@ What it provides for us that startproject doesn't:
       along with smartypants.py (which it uses)
     * uuid.py (used by django-survey)
     * django-survey (http://code.google.com/p/django-survey/)
-    * django-tinymce (http://code.google.com/p/django-tinymce/) (I
-      haven't managed to get the spellchecker plugin working despite
-      following all the instructions though. ideas, anyone?)
     * jquery (1.4.2, minified) included
     * hs.js
     * tabber.js
@@ -63,22 +60,17 @@ What it provides for us that startproject doesn't:
       is teh suck)
     * I18n turned off (we are unfortunately monolingual. no sense in
       denying it)
+    * PIL
+    * psycopg2 (and mx, which it depends on)
     * a nice default template design with alternate base templates
       for multi-column layout.
 
-To use ccnmtldjango, you need python 2.5, virtualenv, pip, a recent 
-setuptools, PIL, postgres, and psycopg2 installed on your 
-machine (some binary packages like PIL and psycopg2 are easier to 
-install system-wide via apt than they are to deploy as eggs and 
-change infrequently enough that it's safe to have them outside 
-containment).
-
-    $sudo apt-get install postgresql
-    $sudo apt-get install python-psycopg2
+To use ccnmtldjango, you need python 2.6, virtualenv, pip, and a recent 
+setuptools installed on your machine. 
 
 First, if you don't already have ccnmtldjango installed, do
 
-   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-0.10.0-py2.5.egg
+   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-0.11.0-py2.6.egg
 
 
 It should automatically pull in the needed dependencies (just 
@@ -113,8 +105,7 @@ that will be unique to your project.
 
 This is probably a good point to check the project into version control.
 
-We use containment for django too, with virtualenv now. Similar to 
-the old ccnmtltg's "init.sh", "bootstrap.py" sets that up:
+We use containment for django too, with virtualenv now:
 
    $ ./bootstrap.py
 
@@ -175,8 +166,7 @@ Setting up a fresh checkout
 The first time you check out an existing ccnmtl-template project from
 svn/git:
 
- % python create-ve.py 
- % python bootstrap.py
+ %  ./bootstrap.py
  %  ./manage.py runserver <IP Address>:<PORT> 
 
 
