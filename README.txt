@@ -70,7 +70,7 @@ setuptools installed on your machine.
 
 First, if you don't already have ccnmtldjango installed, do
 
-   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-0.11.0-py2.6.egg
+   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-0.11.1-py2.6.egg
 
 
 It should automatically pull in the needed dependencies (just 
