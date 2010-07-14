@@ -1,0 +1,31 @@
+0.11.2 (2010-07-14)
+===================
+
+* Removed django-tinymce 
+
+0.11.1 (2010-06-22)
+===================
+
+* Updated djangowind to pick up fix for raw GET /accounts/windlogin/ throwing errors
+
+0.11.0 (2010-06-18)
+===================
+
+* Updated from Django 1.0.2 to 1.2.1
+* Added distributions of psycopg2, PIL and egenix-mx-base
+* No longer hardcode use of Py2.5
+* Fix bug which causes "ValueError: too many values to unpack" on django startup
+
+0.10.0 (2010-02-24)
+===================
+
+* Switched from MochiKit to jQuery
+* tablesort.js now uses images served from django-friendly directories (/site_media/ instead of /static/)
+* tablesort.js now has extendable field/column types
+* Updated admin media location in apache conf to expect a pip-installed Django instead of easy_installed Django
+* Include django-staticmedia
+
+0.9.x and below
+===============
+
+If anyone feels like going through the history and adding these changes, go for it, but it's probably not worthwhile.
