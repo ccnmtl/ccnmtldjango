@@ -67,7 +67,6 @@ INSTALLED_APPS = (
     'smartif',
     'template_utils',
     'typogrify',
-    'survey',
     'sentry.client',
     'munin',
 )
