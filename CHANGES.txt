@@ -1,3 +1,11 @@
+0.11.3 (2011-03-01)
+===================
+
+* removed django-survey
+* added django-sentry and configured for CCNMTL sentry (minus the
+  SENTRY_KEY, which needs to be kept secret)
+* added django-munin
+
 0.11.2 (2010-07-14)
 ===================
 

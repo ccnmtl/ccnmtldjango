@@ -30,14 +30,17 @@ What it provides for us that startproject doesn't:
       server's /etc/apache/sites-enabled/ directory and it's good to
       go)
     * media dirs for dev and prod configured
-    * smartif included (http://github.com/thraxil/django-smartif/tree/master)
+    * smartif included (https://github.com/thraxil/django-smartif/tree/master)
     * template_utils included
       (http://code.google.com/p/django-template-utils/) as well as
       feedparser, which it depends on for feed stuff
     * django-typogrify included (http://code.google.com/p/typogrify/)
       along with smartypants.py (which it uses)
-    * uuid.py (used by django-survey)
-    * django-survey (http://code.google.com/p/django-survey/)
+    * django-sentry included
+      (https://github.com/dcramer/django-sentry) and configured for
+      our setup
+    * django-munin included (https://github.com/ccnmtl/django-munin)
+    * uuid.py
     * jquery (1.4.2, minified) included
     * hs.js
     * tabber.js
@@ -70,7 +73,7 @@ setuptools installed on your machine.
 
 First, if you don't already have ccnmtldjango installed, do
 
-   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-0.11.2-py2.6.egg
+   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-0.11.3-py2.6.egg
 
 
 It should automatically pull in the needed dependencies (just 
