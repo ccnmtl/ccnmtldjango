@@ -13,3 +13,8 @@ STATICMEDIA_MOUNTS = (
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
