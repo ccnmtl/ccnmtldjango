@@ -30,9 +30,9 @@ def after_install(options,home_dir):
     exit(ret)
 """ % locals()))
 
-fd, bootscript = tempfile.mkstemp(".py")
-os.write(fd, output)
-os.close(fd)
+bootscript = os.path.join(pwd, "ve-bootstrap.py")
+fp = open(bootscript, 'w')
+fp.write(output)
+fp.close()
 
 subprocess.call(["python2.6", bootscript, "-vvv", "--setuptools-egg-path", os.path.join(pwd, "setuptools-0.6c11-py2.6.egg"), vedir])
-
