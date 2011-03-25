@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='ccnmtldjango',
-      version="0.11.3",
+      version="0.11.4",
       author="anders pearson",
       description="Django template for CCNMTL",
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),

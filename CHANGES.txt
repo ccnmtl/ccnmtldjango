@@ -1,3 +1,12 @@
+0.11.4 (2011-03-25)
+===================
+
+* Updated bootstrap.py to force pip to break loudly if it tries to
+  download any requirements from the internet, i.e. if any dependencies,
+  direct or nested, are not pinned to source distributions included
+  in the requirements directory
+* Added django-sentry's nested dependencies
+
 0.11.3 (2011-03-01)
 ===================
 
