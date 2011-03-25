@@ -1,1 +1,2 @@
-ccnmtldjango.egg-info
+ccnmtldjango.egg-info/*
+*.pyc
