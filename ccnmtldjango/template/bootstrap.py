@@ -35,4 +35,4 @@ fp = open(bootscript, 'w')
 fp.write(output)
 fp.close()
 
-subprocess.call(["python2.6", bootscript, "-vvv", "--setuptools-egg-path", os.path.join(pwd, "setuptools-0.6c11-py2.6.egg"), vedir])
+subprocess.call(["python2.6", bootscript, vedir])
