@@ -11,6 +11,8 @@ vedir = os.path.abspath(os.path.join(pwd,"ve"))
 if os.path.exists(vedir):
     shutil.rmtree(vedir)
 
+# FIXME: the exit code stuff seems not to be working.
+
 import virtualenv, textwrap
 output = virtualenv.create_bootstrap_script(textwrap.dedent("""
 import os, subprocess, glob
