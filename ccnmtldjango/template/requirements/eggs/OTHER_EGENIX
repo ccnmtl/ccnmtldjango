@@ -1,0 +1,9 @@
+If are not on a 64-bit linux platform, then do the following:
+
+1. Visit http://www.egenix.com/products/python/mxBase/ and download the appropriate 3.1.3 file.
+2. unzip the file, cd into the directory 
+3. run:
+   python setup.py bdist_egg
+4. copy the dist/egenix_mx_base-3.1.3* file to requirements/eggs
+5. (re-)run bootstrap.py
+
