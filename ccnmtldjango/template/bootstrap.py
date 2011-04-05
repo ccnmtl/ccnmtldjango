@@ -21,6 +21,8 @@ ret = subprocess.call([os.path.join(vedir, 'bin', 'pip'), "install",
                        "-r", os.path.join(pwd, "requirements/apps.txt")])
 if ret: exit(ret)
 
-ret = subprocess.call([os.path.join(vedir, 'bin', 'easy_install'),
-                       os.path.join(pwd, "requirements/eggs/egenix_mx_base-3.1.3-py2.6-linux-x86_64.egg")])
+ret = subprocess.call([os.path.join(vedir,"bin/easy_install"),
+                       '-f',os.path.join(pwd,"requirements/eggs/"),
+                       'egenix-mx-base',
+                       ])
 exit(ret)
