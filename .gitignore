@@ -1,4 +1,3 @@
 ccnmtldjango.egg-info/*
 *.pyc
-ccnmtldjango/template/ve-bootstrap.py
 ccnmtldjango/template/ve/
