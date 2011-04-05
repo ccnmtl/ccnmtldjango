@@ -11,26 +11,16 @@ vedir = os.path.abspath(os.path.join(pwd,"ve"))
 if os.path.exists(vedir):
     shutil.rmtree(vedir)
 
-import virtualenv, textwrap
-output = virtualenv.create_bootstrap_script(textwrap.dedent("""
-import os, subprocess, glob
-import os.path
+ret = subprocess.call(["python", "virtualenv.py", vedir])
+if ret: exit(ret)
 
-def after_install(options,home_dir):
-    ret = subprocess.call([os.path.join(home_dir, 'bin', 'pip'), "install",
-                          "-E", home_dir,
-                          "--enable-site-packages",
-                          "--index-url=''",
-                          "-r", os.path.join("%(pwd)s", "requirements/apps.txt")])
-    if ret: exit(ret)
-    ret = subprocess.call([os.path.join(home_dir, 'bin', 'easy_install'),
-                           os.path.join("%(pwd)s", "requirements/eggs/egenix_mx_base-3.1.3-py2.6-linux-x86_64.egg")])
-    exit(ret)
-""" % locals()))
+ret = subprocess.call([os.path.join(vedir, 'bin', 'pip'), "install",
+                       "-E", vedir,
+                       "--enable-site-packages",
+                       "--index-url=''",
+                       "-r", os.path.join(pwd, "requirements/apps.txt")])
+if ret: exit(ret)
 
-bootscript = os.path.join(pwd, "ve-bootstrap.py")
-fp = open(bootscript, 'w')
-fp.write(output)
-fp.close()
-
-subprocess.call(["python2.6", bootscript, vedir])
+ret = subprocess.call([os.path.join(vedir, 'bin', 'easy_install'),
+                       os.path.join(pwd, "requirements/eggs/egenix_mx_base-3.1.3-py2.6-linux-x86_64.egg")])
+exit(ret)
