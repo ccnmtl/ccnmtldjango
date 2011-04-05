@@ -4,8 +4,8 @@ import sys
 import subprocess
 import shutil
 
-pwd = os.path.dirname(__file__)
-vedir = os.path.join(pwd,"ve")
+pwd = os.path.abspath(os.path.dirname(__file__))
+vedir = os.path.abspath(os.path.join(pwd,"ve"))
 
 if os.path.exists(vedir):
     shutil.rmtree(vedir)
