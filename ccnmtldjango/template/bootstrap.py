@@ -17,7 +17,7 @@ ret = subprocess.call([os.path.join(vedir, 'bin', 'pip'), "install",
                        "-E", vedir,
                        "--enable-site-packages",
                        "--index-url=''",
-                       "-r", os.path.join(pwd, "requirements/apps.txt")])
+                       "--requirement",os.path.join(pwd, "requirements/apps.txt")])
 if ret: exit(ret)
 
 ret = subprocess.call([os.path.join(vedir,"bin/easy_install"),
