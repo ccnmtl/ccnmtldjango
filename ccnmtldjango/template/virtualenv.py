@@ -457,7 +457,8 @@ def _find_file(filename, dirs):
             return join(dir, filename)
     return filename
 
-def _install_req(py_executable, unzip=False, distribute=False):
+def _install_req(py_executable, unzip=False, distribute=False,
+                 search_dirs=None, never_download=False):
     if not distribute:
         setup_fn = 'setuptools-0.6c11-py%s.egg' % sys.version[:3]
         project_name = 'setuptools'
@@ -479,8 +480,6 @@ def _install_req(py_executable, unzip=False, distribute=False):
                               "the virtualenv.")
         except ImportError:
             pass
-
-    search_dirs = file_search_dirs()
 
     if setup_fn is not None:
         setup_fn = _find_file(setup_fn, search_dirs)
@@ -515,12 +514,23 @@ def _install_req(py_executable, unzip=False, distribute=False):
     else:
         # the source is found, let's chdir
         if source is not None and os.path.exists(source):
+            logger.info('Using existing %s egg: %s' % (project_name, source))
             os.chdir(os.path.dirname(source))
             # in this case, we want to be sure that PYTHONPATH is unset (not
             # just empty, really unset), else CPython tries to import the
             # site.py that it's in virtualenv_support
             remove_from_env.append('PYTHONPATH')
         else:
+            if never_download:
+                logger.fatal("Can't find any local distributions of %s to install "
+                             "and --never-download is set.  Either re-run virtualenv "
+                             "without the --never-download option, or place a %s "
+                             "distribution (%s) in one of these "
+                             "locations: %r" % (project_name, project_name, 
+                                                setup_fn or source,
+                                                search_dirs))
+                sys.exit(1)
+
             logger.info('No %s egg found; downloading' % project_name)
         cmd.extend(['--always-copy', '-U', project_name])
     logger.start_progress('Installing %s...' % project_name)
@@ -567,16 +577,20 @@ def file_search_dirs():
             dirs.append(os.path.join(os.path.dirname(virtualenv.__file__), 'virtualenv_support'))
     return [d for d in dirs if os.path.isdir(d)]
 
-def install_setuptools(py_executable, unzip=False):
-    _install_req(py_executable, unzip)
+def install_setuptools(py_executable, unzip=False,
+                       search_dirs=None, never_download=False):
+    _install_req(py_executable, unzip, 
+                 search_dirs=search_dirs, never_download=never_download)
 
-def install_distribute(py_executable, unzip=False):
-    _install_req(py_executable, unzip, distribute=True)
+def install_distribute(py_executable, unzip=False, 
+                       search_dirs=None, never_download=False):
+    _install_req(py_executable, unzip, distribute=True, 
+                 search_dirs=search_dirs, never_download=never_download)
 
 _pip_re = re.compile(r'^pip-.*(zip|tar.gz|tar.bz2|tgz|tbz)$', re.I)
-def install_pip(py_executable):
+def install_pip(py_executable, search_dirs=None, never_download=False):
     filenames = []
-    for dir in file_search_dirs():
+    for dir in search_dirs:
         filenames.extend([join(dir, fn) for fn in os.listdir(dir)
                           if _pip_re.search(fn)])
     filenames = [(os.path.basename(filename).lower(), i, filename) for i, filename in enumerate(filenames)]
@@ -591,9 +605,18 @@ def install_pip(py_executable):
         easy_install_script = 'easy_install-script.py'
     cmd = [py_executable, join(os.path.dirname(py_executable), easy_install_script), filename]
     if filename == 'pip':
+        if never_download:
+            logger.fatal("Can't find any local distributions of pip to install "
+                         "and --never-download is set.  Either re-run virtualenv "
+                         "without the --never-download option, or place a pip "
+                         "source distribution (zip/tar.gz/tar.bz2) in one of these "
+                         "locations: %r" % search_dirs)
+            sys.exit(1)
         logger.info('Installing pip from network...')
     else:
-        logger.info('Installing %s' % os.path.basename(filename))
+        logger.info('Installing existing %s distribution: %s' % (
+                os.path.basename(filename), filename))
+    logger.start_progress('Installing pip...')
     logger.indent += 2
     def _filter_setup(line):
         return filter_ez_setup(line, 'pip')
@@ -602,6 +625,7 @@ def install_pip(py_executable):
                         filter_stdout=_filter_setup)
     finally:
         logger.indent -= 2
+        logger.end_progress()
 
 def filter_ez_setup(line, project_name='setuptools'):
     if not line.strip():
@@ -682,6 +706,22 @@ def main():
         help='Use Distribute instead of Setuptools. Set environ variable '
         'VIRTUALENV_USE_DISTRIBUTE to make it the default ')
 
+    default_search_dirs = file_search_dirs()
+    parser.add_option(
+        '--extra-search-dir',
+        dest="search_dirs",
+        action="append",
+        default=default_search_dirs,
+        help="Directory to look for setuptools/distribute/pip distributions in. "
+        "You can add any number of additional --extra-search-dir paths.")
+
+    parser.add_option(
+        '--never-download',
+        dest="never_download",
+        action="store_true",
+        help="Never download anything from the network.  Instead, virtualenv will fail "
+        "if local distributions of setuptools/distribute/pip are not present.")
+
     parser.add_option(
         '--prompt=',
         dest='prompt',
@@ -742,7 +782,9 @@ def main():
     create_environment(home_dir, site_packages=not options.no_site_packages, clear=options.clear,
                        unzip_setuptools=options.unzip_setuptools,
                        use_distribute=options.use_distribute or majver > 2,
-                       prompt=options.prompt)
+                       prompt=options.prompt,
+                       search_dirs=options.search_dirs,
+                       never_download=options.never_download)
     if 'after_install' in globals():
         after_install(options, home_dir)
 
@@ -819,7 +861,7 @@ def call_subprocess(cmd, show_stdout=True,
 
 def create_environment(home_dir, site_packages=True, clear=False,
                        unzip_setuptools=False, use_distribute=False,
-                       prompt=None):
+                       prompt=None, search_dirs=None, never_download=False):
     """
     Creates a new environment in ``home_dir``.
 
@@ -838,11 +880,13 @@ def create_environment(home_dir, site_packages=True, clear=False,
     install_distutils(home_dir)
 
     if use_distribute or os.environ.get('VIRTUALENV_USE_DISTRIBUTE'):
-        install_distribute(py_executable, unzip=unzip_setuptools)
+        install_distribute(py_executable, unzip=unzip_setuptools, 
+                           search_dirs=search_dirs, never_download=never_download)
     else:
-        install_setuptools(py_executable, unzip=unzip_setuptools)
+        install_setuptools(py_executable, unzip=unzip_setuptools, 
+                           search_dirs=search_dirs, never_download=never_download)
 
-    install_pip(py_executable)
+    install_pip(py_executable, search_dirs=search_dirs, never_download=never_download)
 
     install_activate(home_dir, bin_dir, prompt)
 
