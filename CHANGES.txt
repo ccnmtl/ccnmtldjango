@@ -1,3 +1,10 @@
+0.12.0 (2011-04-14)
+===================
+
+* Fully pinned bootstrap process, including virtualenv, setuptools and pip
+* Upgraded to virtualenv post-1.6, pip 1.0
+* Removed old pip.py file; pip 1.0 is now installed into virtualenvs instead
+
 0.11.5 (2011-03-25)
 ===================
 
