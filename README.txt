@@ -64,7 +64,7 @@ What it provides for us that startproject doesn't:
     * I18n turned off (we are unfortunately monolingual. no sense in
       denying it)
     * PIL
-    * psycopg2 (and mx, which it depends on)
+    * psycopg2 (stripped of its mx.DateTime dependency)
     * a nice default template design with alternate base templates
       for multi-column layout.
 
@@ -73,7 +73,7 @@ setuptools installed on your machine.
 
 First, if you don't already have ccnmtldjango installed, do
 
-   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-0.11.3-py2.6.egg
+   $ easy_install http://kodos.ccnmtl.columbia.edu/eggs/ccnmtldjango-latest-py2.6.egg
 
 
 It should automatically pull in the needed dependencies (just 

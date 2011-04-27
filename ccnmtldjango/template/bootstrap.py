@@ -25,8 +25,13 @@ ret = subprocess.call([os.path.join(vedir, 'bin', 'pip'), "install",
                        "--requirement",os.path.join(pwd,"requirements/apps.txt")])
 if ret: exit(ret)
 
-ret = subprocess.call([os.path.join(vedir,"bin/easy_install"),
-                       '-f',os.path.join(pwd,"requirements/eggs/"),
-                       'egenix-mx-base',
-                       ])
-exit(ret)
+def has_eggs():
+    return ".egg" in [os.path.splitext(f)[1] 
+                      for f 
+                      in os.listdir(os.path.join(pwd,"requirements/eggs/"))]
+
+if has_eggs():
+    # only try to easy install eggs if there actually are some
+    ret = subprocess.call([os.path.join(vedir,"bin/easy_install"),
+                           '-f',os.path.join(pwd,"requirements/eggs/")])
+    exit(ret)

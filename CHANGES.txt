@@ -1,3 +1,13 @@
+0.13.0 (2011-04-27)
+===================
+
+* switched to psycopg 2.4, with a tarball that works around psycopg2's
+  mx.DateTime dependency bug
+  (http://psycopg.lighthouseapp.com/projects/62710-psycopg/tickets/53)
+* removed the egenix-mx-base egg
+* since mx was the only default egg, it now only runs the easy_install
+  bootstrap step when eggs are actually present
+
 0.12.0 (2011-04-14)
 ===================
 

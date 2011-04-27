@@ -15,5 +15,5 @@ requirements/src/pyenchant-1.5.1.tar.gz
 requirements/src/simplejson-2.0.9.tar.gz
 requirements/src/smartypants-1.6.0.2.tar.gz
 requirements/src/uuid-1.30.tar.gz
-requirements/src/psycopg2-2.2.1.tar.gz
+requirements/src/psycopg2-2.4-no-mx.tar.gz
 requirements/src/Imaging-1.1.7.tar.gz
