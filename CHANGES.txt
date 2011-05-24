@@ -1,3 +1,11 @@
+0.13.1 (2011-05-24)
+===================
+
+* made easy_install bootstrap step actually work if eggs are present,
+  instead of exploding
+* made easy_install bootstrap step pass silently if `requirements/eggs`
+  directory doesn't exist, instead of exploding
+
 0.13.0 (2011-04-27)
 ===================
 
