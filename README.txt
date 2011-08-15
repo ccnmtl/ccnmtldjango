@@ -51,8 +51,6 @@ What it provides for us that startproject doesn't:
     * admin email set to ccnmtl-sysadmin
     * base templates included
     * django admin enabled (and authenticated with WIND for tlc)
-    * cdap (this is an HTTP gateway to Columbia's LDAP server so we
-      can automatically figure out names from UNIs)
     * restclient
     * httplib2
     * imageuploader

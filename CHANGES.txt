@@ -1,3 +1,9 @@
+0.14.0 (2011-08-15)
+===================
+
+* updated to djangowind 0.10.0, which does LDAP queries directly and
+  drops dependency on cdap.ccnmtl.columbia.edu
+
 0.13.1 (2011-05-24)
 ===================
 
