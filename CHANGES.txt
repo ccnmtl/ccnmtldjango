@@ -1,3 +1,9 @@
+0.14.2 (2011-11-22)
+===================
+
+* fixed bug in urls_py.tmpl (introduced in this commit:https://github.com/ccnmtl/ccnmtldjango/commit/9d5a8d35e257cb0093c4031146ce94bc87653c4a)
+* no --enable-site-packages by default in bootstrap.py
+
 0.14.1 (2011-11-22)
 ===================
 
