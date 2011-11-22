@@ -1,3 +1,5 @@
 ccnmtldjango.egg-info/*
 *.pyc
 ccnmtldjango/template/ve/
+build/*
+dist/*
