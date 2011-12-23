@@ -65,20 +65,20 @@ setuptools installed on your machine.
 
 First, if you don't already have ccnmtldjango installed, do
 
-   $ easy_install ccnmtldjango
+    $ easy_install ccnmtldjango
 
 It should automatically pull in the needed dependencies (just 
 PasteScript, actually).
 
 Running
 
-   $ paster create --list-templates
+    $ paster create --list-templates
 
 should include ccnmtldjango
 
 Now, to quickstart a django project, do
 
-   $ paster create --template=ccnmtldjango myprojectname
+    $ paster create --template=ccnmtldjango myprojectname
 
 `myprojectname` should be a python module name (ie, lowercase, 
 no punctuation, etc). It will create a directory called 
@@ -87,8 +87,8 @@ no punctuation, etc). It will create a directory called
 paster still doesn't do anything with file permissions, so we still 
 need to manually set a couple:
 
-   $ cd myprojectname
-   $ chmod 755 manage.py bootstrap.py
+    $ cd myprojectname
+    $ chmod 755 manage.py bootstrap.py
 
 I couldn't figure out a way to insert random strings into the code via
 Paste Template, so one thing that ccnmtldjango is missing compared to
@@ -101,7 +101,7 @@ This is probably a good point to check the project into version control.
 
 We use containment for django too, with virtualenv:
 
-   $ ./bootstrap.py
+    $ ./bootstrap.py
 
 That will create a `ve` directory which contains a virtualenv and has
 had all the libraries in the `requirements/src` directory installed
@@ -121,11 +121,11 @@ ccnmtldjango assumes that your project will use a postgresql database
 with the same name as your project. So, for our example, you would
 then do:
 
-   $ createdb myprojectname
+    $ createdb myprojectname
 
 and it is all set to use it:
 
-   $ ./manage.py syncdb
+    $ ./manage.py syncdb
 
 will install the tables that django needs for it's common apps (sites,
 sessions, admin, flatpages, etc) and have you create an admin user.
@@ -137,7 +137,7 @@ matters for your application)
 
 Your application is ready to run now:
 
-   $ ./manage.py runserver
+    $ ./manage.py runserver
 
 will start a server on `http://localhost:8000/`. Going there will give
 you a 404 since there's nothing in the application yet, but the admin
@@ -159,8 +159,8 @@ Setting up a fresh checkout
 The first time you check out an existing ccnmtl-template project from
 svn/git:
 
-    $ ./bootstrap.py
-    $ ./manage.py runserver <IP Address>:<PORT> 
+     $ ./bootstrap.py
+     $ ./manage.py runserver <IP Address>:<PORT> 
 
 
 ------------------------------------------
