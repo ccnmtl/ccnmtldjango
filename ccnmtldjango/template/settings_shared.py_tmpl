@@ -70,6 +70,7 @@ INSTALLED_APPS = (
     'sentry.client',
     'munin',
     'south',
+    'django_nose',
 )
 
 import logging
@@ -85,6 +86,8 @@ SENTRY_REMOTE_URL = 'http://sentry.ccnmtl.columbia.edu/sentry/store/'
 # remember to set the SENTRY_KEY in a local_settings.py
 # as documented in the wiki
 SENTRY_SITE = '${package}'
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 THUMBNAIL_SUBDIR = "thumbs"
 EMAIL_SUBJECT_PREFIX = "[${package}] "
