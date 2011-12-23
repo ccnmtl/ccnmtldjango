@@ -12,3 +12,4 @@ requirements/src/django-paging-0.2.2.tar.gz
 requirements/src/django-sentry-1.5.4.tar.gz
 requirements/src/django-munin-0.1.1.tar.gz
 requirements/src/South-0.7.3.tar.gz
+requirements/src/django-annoying-0.7.6.tar.gz
