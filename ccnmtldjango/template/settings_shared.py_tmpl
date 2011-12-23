@@ -71,6 +71,7 @@ INSTALLED_APPS = (
     'munin',
     'south',
     'django_nose',
+    'compressor',
 )
 
 import logging
@@ -88,6 +89,9 @@ SENTRY_REMOTE_URL = 'http://sentry.ccnmtl.columbia.edu/sentry/store/'
 SENTRY_SITE = '${package}'
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+if 'test' in sys.argv:
+     DATABASE_ENGINE = 'sqlite3'
+SOUTH_TESTS_MIGRATE = False
 
 THUMBNAIL_SUBDIR = "thumbs"
 EMAIL_SUBJECT_PREFIX = "[${package}] "
