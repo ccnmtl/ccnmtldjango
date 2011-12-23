@@ -10,7 +10,7 @@ STATICMEDIA_MOUNTS = (
     ('/sitemedia', '/var/www/${package}/${package}/sitemedia'),	
 )
 
-
+COMPRESS_ROOT = "/var/www/${package}/${package}/media/"
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 

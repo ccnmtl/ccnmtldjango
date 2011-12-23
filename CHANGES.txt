@@ -2,6 +2,7 @@
 * south 0.7.3
 * django-annoying 0.7.6
 * django-nose 0.1.3 (and nose 1.1.2)
+* django_compressor added (and configured)
 
 0.15.1 (2011-12-23)
 

@@ -103,6 +103,9 @@ STATICMEDIA_MOUNTS = (
     ('/sitemedia', 'sitemedia'),
 )
 
+COMPRESS_URL = "/site_media/"
+COMPRESS_ROOT = "media/"
+
 # WIND settings
 
 AUTHENTICATION_BACKENDS = ('djangowind.auth.WindAuthBackend','django.contrib.auth.backends.ModelBackend',)

@@ -43,6 +43,7 @@ What it provides for us that startproject doesn't:
 * django-nose installed and set up as test runner (much nicer!)
 * sqlite in-memory database used for unit tests
 * south tests automatically skipped on ./manage.py test (they break)
+* django_compressor added and set up to compress css on production
 * uuid.py
 * jquery (1.4.2, minified) included
 * hs.js
