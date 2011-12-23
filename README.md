@@ -38,6 +38,7 @@ What it provides for us that startproject doesn't:
 * django-sentry included
   (https://github.com/dcramer/django-sentry) and configured for our setup
 * django-munin included (https://github.com/ccnmtl/django-munin)
+* South is included for database migrations
 * uuid.py
 * jquery (1.4.2, minified) included
 * hs.js

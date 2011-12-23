@@ -69,6 +69,7 @@ INSTALLED_APPS = (
     'typogrify',
     'sentry.client',
     'munin',
+    'south',
 )
 
 import logging
