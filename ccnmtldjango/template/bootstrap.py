@@ -37,3 +37,7 @@ if has_eggs():
            has_eggs())
     ret = subprocess.call(cmd)
     exit(ret)
+
+ret = subprocess.call(["python","virtualenv.py","--relocatable",vedir])
+# --relocatable always complains about activate.csh, which we don't really
+# care about. but it means we need to ignore its error messages
