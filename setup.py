@@ -1,8 +1,11 @@
 from setuptools import setup, find_packages
 
 setup(name='ccnmtldjango',
-      version="0.15.0",
+      version="0.15.1",
       author="anders pearson",
+      description='Paste template for django development at CCNMTL',
+      long_description=open('README.md').read(),
+      url='http://github.com/ccnmtl/ccnmtldjango/',
       description="Django template for CCNMTL",
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       install_requires = ["PasteScript"],
