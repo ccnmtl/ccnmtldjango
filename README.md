@@ -41,6 +41,8 @@ What it provides for us that startproject doesn't:
 * South is included for database migrations
 * django-annoying is included (I like @render_to)
 * django-nose installed and set up as test runner (much nicer!)
+* sqlite in-memory database used for unit tests
+* south tests automatically skipped on ./manage.py test (they break)
 * uuid.py
 * jquery (1.4.2, minified) included
 * hs.js
