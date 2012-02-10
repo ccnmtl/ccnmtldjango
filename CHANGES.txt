@@ -1,3 +1,9 @@
+0.16.1 (2012-02-10)
+===================
+
+* include README.md and UPGRADES.md in MANIFEST to fix bug with
+  easy_install on python2.6
+
 0.16.0 (2011-12-23)
 ===================
 
