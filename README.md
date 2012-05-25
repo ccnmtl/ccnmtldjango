@@ -44,6 +44,7 @@ What it provides for us that startproject doesn't:
 * sqlite in-memory database used for unit tests
 * south tests automatically skipped on ./manage.py test (they break)
 * django_compressor added and set up to compress css on production
+* django_statsd for graphite integration
 * uuid.py
 * jquery (1.4.2, minified) included
 * hs.js
