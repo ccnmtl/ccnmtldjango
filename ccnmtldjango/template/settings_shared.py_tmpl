@@ -75,7 +75,7 @@ INSTALLED_APPS = (
     'south',
     'django_nose',
     'compressor',
-		'django_statsd',
+    'django_statsd',
 )
 
 STATSD_CLIENT = 'statsd.client'
