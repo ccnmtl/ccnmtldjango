@@ -76,6 +76,7 @@ INSTALLED_APPS = (
     'django_nose',
     'compressor',
     'django_statsd',
+		'${package}.main',
 )
 
 STATSD_CLIENT = 'statsd.client'
