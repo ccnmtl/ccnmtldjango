@@ -19,3 +19,4 @@ requirements/src/psycopg2-2.4-no-mx.tar.gz
 requirements/src/Imaging-1.1.7.tar.gz
 requirements/src/nose-1.1.2.tar.gz
 requirements/src/versiontools-1.8.2.tar.gz
+requirements/src/statsd-0.51.tar.gz
