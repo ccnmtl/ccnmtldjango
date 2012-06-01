@@ -62,8 +62,8 @@
 </div>
 
 <script>
-$(function() {
-  $( "#tabs" ).tabs();
+$$(function() {
+  $$( "#tabs" ).tabs();
 });
 </script>
 
