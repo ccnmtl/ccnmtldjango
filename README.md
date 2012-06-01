@@ -35,8 +35,8 @@ What it provides for us that startproject doesn't:
   feedparser, which it depends on for feed stuff
 * django-typogrify included (http://code.google.com/p/typogrify/)
   along with smartypants.py (which it uses)
-* django-sentry included
-  (https://github.com/dcramer/django-sentry) and configured for our setup
+* raven included
+  (https://github.com/dcramer/raven/) and configured for our sentry setup
 * django-munin included (https://github.com/ccnmtl/django-munin)
 * South is included for database migrations
 * django-annoying is included (I like @render_to)
@@ -45,8 +45,10 @@ What it provides for us that startproject doesn't:
 * south tests automatically skipped on ./manage.py test (they break)
 * django_compressor added and set up to compress css on production
 * django_statsd for graphite integration
+* /stats/ page wired up to display basic traffic stats for the app
+* 'main' app with templated index view wired up and ready to go
 * uuid.py
-* jquery (1.4.2, minified) included
+* jquery (1.7.2, minified) included
 * hs.js
 * tabber.js
 * widget.js
@@ -66,6 +68,8 @@ What it provides for us that startproject doesn't:
 * PIL
 * psycopg2 (stripped of its mx.DateTime dependency)
 * a nice default template design with alternate base templates for multi-column layout.
+* flake8 (http://pypi.python.org/pypi/flake8) is installed by default
+  for code linting
 
 To use ccnmtldjango, you need python 2.6+, virtualenv, pip, and a recent 
 setuptools installed on your machine. 
