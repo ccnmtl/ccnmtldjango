@@ -80,8 +80,14 @@ INSTALLED_APPS = (
     'compressor',
     'django_statsd',
     'bootstrapform',
+    'lettuce.django',
     '${package}.main',
 )
+
+LETTUCE_APPS = (
+    '${package}.main',
+)
+
 
 STATSD_CLIENT = 'statsd.client'
 STATSD_PREFIX = '${package}'

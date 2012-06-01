@@ -21,3 +21,7 @@ requirements/src/nose-1.1.2.tar.gz
 requirements/src/versiontools-1.8.2.tar.gz
 requirements/src/statsd-0.5.1.tar.gz
 requirements/src/flake8-1.3.1.tar.gz
+requirements/src/lxml-2.2.8.tar.gz
+requirements/src/lettuce-0.1.34.tar.gz
+requirements/src/rdflib-3.1.0.tar.gz
+requirements/src/selenium-2.20.0.tar.gz
