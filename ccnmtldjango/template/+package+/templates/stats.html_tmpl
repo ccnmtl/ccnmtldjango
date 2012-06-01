@@ -1,24 +1,16 @@
 {% extends 'base.html' %}
 
-{% block js %}
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/themes/base/jquery-ui.css" type="text/css" media="all" /> 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" ></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/jquery-ui.min.js" type="text/javascript"></script>
-{% endblock %}
-
-
 {% block content %}
 
-<div id="tabs">
-
-<ul>
-  <li><a href="#day">Last 24 Hours</a></li> 
-  <li><a href="#week">Week</a></li>
-  <li><a href="#month">Month</a></li>
-  <li><a href="#year">Year</a></li>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#day" data-toggle="tab">Last 24 Hours</a></li>
+  <li><a href="#week" data-toggle="tab">Week</a></li>
+  <li><a href="#month" data-toggle="tab">Month</a></li>
+  <li><a href="#year" data-toggle="tab">Year</a></li>
 </ul>
 
-<div id="day">
+<div id="tabs" class="tab-content">
+<div id="day" class="tab-pane active">
 <h2>Traffic</h2>
 <img width="900" height="200" src="http://nanny.cul.columbia.edu/render/?width=900&height=200&_salt=1337976132.743&target=ccnmtl.app.counters.${package}.response.200&graphOnly=false&hideGrid=true&hideLegend=true">
 <h2>Response Times (max/mean/min)</h2>
@@ -28,7 +20,7 @@
 </div>
 
 
-<div id="week">
+<div id="week" class="tab-pane">
 <h2>Traffic</h2>
 
 <img width="900" height="200" src="http://nanny.cul.columbia.edu/render/?width=900&height=200&_salt=1337976132.743&target=ccnmtl.app.counters.${package}.response.200&graphOnly=false&hideGrid=true&hideLegend=true&from=-7days">
@@ -40,7 +32,7 @@
 <img width="900" height="200" src="http://nanny.cul.columbia.edu/render/?width=900&height=200&_salt=1337976132.743&target=ccnmtl.app.counters.${package}.response.404&target=ccnmtl.app.counters.${package}.response.500&graphOnly=false&hideGrid=true&from=-7days">
 </div>
 
-<div id="month">
+<div id="month" class="tab-pane">
 
 <h2>Traffic</h2>
 <img width="900" height="200" src="http://nanny.cul.columbia.edu/render/?width=900&height=200&_salt=1337976132.743&target=ccnmtl.app.counters.${package}.response.200&graphOnly=false&hideGrid=true&hideLegend=true&from=-1months">
@@ -51,7 +43,7 @@
 </div>
 
 
-<div id="year">
+<div id="year" class="tab-pane">
 <h2>Traffic</h2>
 <img width="900" height="200" src="http://nanny.cul.columbia.edu/render/?width=900&height=200&_salt=1337976132.743&target=ccnmtl.app.counters.${package}.response.200&graphOnly=false&hideGrid=true&hideLegend=true&from=-1years">
 <h2>Response Times (max/mean/min)</h2>
@@ -60,11 +52,5 @@
 <img width="900" height="200" src="http://nanny.cul.columbia.edu/render/?width=900&height=200&_salt=1337976132.743&target=ccnmtl.app.counters.${package}.response.404&target=ccnmtl.app.counters.${package}.response.500&graphOnly=false&hideGrid=true&from=-1years">
 </div>
 </div>
-
-<script>
-$$(function() {
-  $$( "#tabs" ).tabs();
-});
-</script>
 
 {% endblock %}
