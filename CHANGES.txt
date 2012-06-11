@@ -1,3 +1,25 @@
+0.17.0 (2012-06-01)
+===================
+
+* remove some rarely used python libs:
+  * django-smartif
+  * template_utils
+* upgrade to django 1.4
+  * directory layout changed significantly
+  * settings file changes
+  * manage.py changes
+  * signed cookie based sessions
+* twitter bootstrap
+  * django-bootstrap-form
+  * major change to base.html template
+* remove hs.js, tabber.js, etc
+* backbone/underscore.js
+* lettuce/selenium addition
+  * required packages included
+  * terrain.py with some helpful functionality included
+  * main/features/index.feature included to test, so you should
+    be able to run "./manage.py harvest" after you bootstrap
+
 0.16.4 (2012-06-01)
 ===================
 

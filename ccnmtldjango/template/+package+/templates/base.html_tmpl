@@ -35,7 +35,7 @@
           {% block topnavbarleftitems %}{% endblock %}
         </ul>
 
-        <p class="navbar-text pull-right">  
+        <p class="navbar-text pull-right">
           {% block topnavbarrightitems %}{% endblock %}
 {% block usernav %}
           {% if request.user.is_anonymous %}
@@ -57,11 +57,11 @@
     <header class="subhead hidden-phone" id="masthead">
       <h1><a href="./" title="${package}">${package}</a></h1>
       <h4 id="logo-ccnmtl">
-        <a href="http://ccnmtl.columbia.edu" target="_blank" 
-  			title="Columbia Center for New Media Teaching and Learning">
-  			  <span>Produced by the Columbia Center for New Media Teaching
-  				and Learning</span>
-  			</a>
+        <a href="http://ccnmtl.columbia.edu" target="_blank"
+          title="Columbia Center for New Media Teaching and Learning">
+          <span>Produced by the Columbia Center for New Media Teaching
+          and Learning</span>
+        </a>
       </h4>
     </header>
 
@@ -94,7 +94,7 @@
         <div class="span2" id="sidebar">
 {% block sidebar %}{% endblock %}
         </div>
-        <div class="span10" id="right-content">	
+        <div class="span10" id="right-content">
 {% block pagetitle %}{% endblock %}
 {% block content %}{% endblock %}
         </div>

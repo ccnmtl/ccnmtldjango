@@ -17,8 +17,8 @@ except:
 
 @before.harvest
 def setup_browser(variables):
-    ff_profile = FirefoxProfile() 
-    ff_profile.set_preference("webdriver_enable_native_events", False) 
+    ff_profile = FirefoxProfile()
+    ff_profile.set_preference("webdriver_enable_native_events", False)
     world.firefox = webdriver.Firefox(ff_profile)
     world.client = client.Client()
     world.using_selenium = False
