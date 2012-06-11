@@ -91,7 +91,7 @@ LETTUCE_APPS = (
 
 STATSD_CLIENT = 'statsd.client'
 STATSD_PREFIX = '${package}'
-STATSD_HOST = 'localhost'
+STATSD_HOST = '127.0.0.1'
 STATSD_PORT = 8125
 STATSD_PATCHES = ['django_statsd.patches.db', ]
 
@@ -109,6 +109,7 @@ THUMBNAIL_SUBDIR = "thumbs"
 EMAIL_SUBJECT_PREFIX = "[${package}] "
 EMAIL_HOST = 'localhost'
 SERVER_EMAIL = "${package}@ccnmtl.columbia.edu"
+DEFAULT_FROM_EMAIL = SERVER_EMAIL
 
 # put any static media here to override app served static media
 STATICMEDIA_MOUNTS = (
