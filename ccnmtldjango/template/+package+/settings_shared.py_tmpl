@@ -109,6 +109,7 @@ THUMBNAIL_SUBDIR = "thumbs"
 EMAIL_SUBJECT_PREFIX = "[${package}] "
 EMAIL_HOST = 'localhost'
 SERVER_EMAIL = "${package}@ccnmtl.columbia.edu"
+DEFAULT_FROM_EMAIL = SERVER_EMAIL
 
 # put any static media here to override app served static media
 STATICMEDIA_MOUNTS = (
