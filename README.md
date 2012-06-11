@@ -29,10 +29,6 @@ What it provides for us that startproject doesn't:
   symlink the generated apache config file into our production
   server's `/etc/apache/sites-enabled/` directory and it's good to go)
 * media dirs for dev and prod configured
-* smartif included (https://github.com/thraxil/django-smartif/tree/master)
-* template_utils included
-  (http://code.google.com/p/django-template-utils/) as well as
-  feedparser, which it depends on for feed stuff
 * django-typogrify included (http://code.google.com/p/typogrify/)
   along with smartypants.py (which it uses)
 * raven included
@@ -49,12 +45,6 @@ What it provides for us that startproject doesn't:
 * 'main' app with templated index view wired up and ready to go
 * uuid.py
 * jquery (1.7.2, minified) included
-* hs.js
-* tabber.js
-* widget.js
-* tablesort.js	
-* required CSS for the above js libraries is included in the
-  site.css by default
 * base templates included
 * django admin enabled (and authenticated with WIND for tlc)
 * restclient
@@ -70,6 +60,12 @@ What it provides for us that startproject doesn't:
 * a nice default template design with alternate base templates for multi-column layout.
 * flake8 (http://pypi.python.org/pypi/flake8) is installed by default
   for code linting
+* lettuce/selenium included for nice browser tests, including sample
+  index feature and helpful terrain.py functions
+* backbone.js
+* underscore.js
+* layout based on twitter bootstrap
+
 
 To use ccnmtldjango, you need python 2.6+, virtualenv, pip, and a recent 
 setuptools installed on your machine. 
@@ -137,6 +133,7 @@ then do:
 and it is all set to use it:
 
     $ ./manage.py syncdb
+    $ ./manage.py migrate
 
 will install the tables that django needs for it's common apps (sites,
 sessions, admin, flatpages, etc) and have you create an admin user.
@@ -150,8 +147,7 @@ Your application is ready to run now:
 
     $ ./manage.py runserver
 
-will start a server on `http://localhost:8000/`. Going there will give
-you a 404 since there's nothing in the application yet, but the admin
+will start a server on `http://localhost:8000/`. The admin
 app should be accessible (via the user account you created during
 syncdb, or via WIND to tlc users (or ones specified in the
 `WIND_SUPERUSER_MAPPER_GROUPS` list in `settings_shared.py`). So go ahead
@@ -159,6 +155,14 @@ and login to `http://localhost:8000/admin/`
 
 Even without any application specific code, flatpages is included so
 you can put content on the web right away.
+
+Lettuce and Selenium have also been set up, so (as long as you have
+firefox installed in a regular way), you should be able to do:
+
+    $ ./manage.py harvest
+
+And see a couple basic lettuce tests (defined in
+`main/features/index.feature`) run by and (hopefully) pass.
 
 From this point out, it's basic django development. You'll probably
 want to do a `./manage.py startapp` to create your own application
