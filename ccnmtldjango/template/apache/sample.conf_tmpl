@@ -28,8 +28,8 @@
     AddOutputFilterByType DEFLATE text/css application/x-javascript
   </Directory>
 
-  Alias /media/ /var/www/${package}/${package}/ve/lib/python2.6/site-packages/django/contrib/admin/media/
-  <Directory /var/www/${package}/${package}/ve/lib/python2.6/site-packages/django/contrib/admin/media/>
+  Alias /media/ /var/www/${package}/${package}/ve/lib/python2.6/site-packages/django/contrib/admin/static/
+  <Directory /var/www/${package}/${package}/ve/lib/python2.6/site-packages/django/contrib/admin/static/>
     Order deny,allow
     Allow from all
     FileETag None
