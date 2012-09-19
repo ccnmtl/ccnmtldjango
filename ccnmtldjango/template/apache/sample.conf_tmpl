@@ -1,4 +1,4 @@
-<VirtualHost *>
+<VirtualHost *:80>
   ServerName ${package}.ccnmtl.columbia.edu
   ServerAdmin ccnmtl-sysadmin@columbia.edu
   CustomLog /var/log/apache2/${package}/access.log combined
