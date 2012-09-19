@@ -1,7 +1,7 @@
 from settings_shared import *
 
 TEMPLATE_DIRS = (
-    "/var/www/${package}/${package}/templates",
+    "/var/www/${package}/${package}/${package}/templates",
 )
 
 MEDIA_ROOT = '/var/www/${package}/uploads/'
