@@ -1,9 +1,11 @@
-0.18.3 (2012-09-19)
-===================
+0.17.4 (2012-09-19)
 
 * production config fixes (python 2.6, paths, port in virtualhost,
   sentry, admin media paths)
 * 500 error page now displays cute sad owl picture
+* flake8 cleanup
+* include coverage reporting (and configure by default)
+* include requests library
 
 0.17.2 (2012-08-07)
 ===================

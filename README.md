@@ -37,6 +37,7 @@ What it provides for us that startproject doesn't:
 * South is included for database migrations
 * django-annoying is included (I like @render_to)
 * django-nose installed and set up as test runner (much nicer!)
+* coverage reports configured for django-nose
 * sqlite in-memory database used for unit tests
 * south tests automatically skipped on ./manage.py test (they break)
 * django_compressor added and set up to compress css on production
@@ -49,6 +50,7 @@ What it provides for us that startproject doesn't:
 * django admin enabled (and authenticated with WIND for tlc)
 * restclient
 * httplib2
+* requests
 * imageuploader
 * markdown is included and enabled
 * database defaulted to postgresql (cause MySQL is teh suck)
