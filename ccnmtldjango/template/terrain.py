@@ -2,18 +2,15 @@
 from lettuce.django import django_url
 from lettuce import before, after, world, step
 from django.test import client
-import sys
 
 import time
 try:
     from lxml import html
     from selenium import webdriver
     from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
-    from selenium.common.exceptions import NoSuchElementException
-    from selenium.webdriver.common.keys import Keys
-    import selenium
 except:
     pass
+
 
 @before.harvest
 def setup_browser(variables):
@@ -23,25 +20,31 @@ def setup_browser(variables):
     world.client = client.Client()
     world.using_selenium = False
 
+
 @after.harvest
 def teardown_browser(total):
     world.firefox.quit()
+
 
 @before.each_scenario
 def clear_data(_foo):
     pass
 
+
 @step(u'Using selenium')
 def using_selenium(step):
     world.using_selenium = True
+
 
 @step(u'Finished using selenium')
 def finished_selenium(step):
     world.using_selenium = False
 
+
 @before.each_scenario
 def clear_selenium(step):
     world.using_selenium = False
+
 
 @step(r'I access the url "(.*)"')
 def access_url(step, url):
@@ -51,6 +54,7 @@ def access_url(step, url):
         response = world.client.get(django_url(url))
         world.dom = html.fromstring(response.content)
 
+
 @step(u'I am not logged in')
 def i_am_not_logged_in(step):
     if world.using_selenium:
@@ -58,10 +62,11 @@ def i_am_not_logged_in(step):
     else:
         world.client.logout()
 
+
 @step(u'I am taken to a login screen')
 def i_am_taken_to_a_login_screen(step):
     assert len(world.response.redirect_chain) > 0
-    (url,status) = world.response.redirect_chain[0]
+    (url, status) = world.response.redirect_chain[0]
     assert status == 302, status
     assert "/login/" in url, "URL redirected to was %s" % url
 
@@ -74,6 +79,7 @@ def there_is_not_a_link(step, text):
             found = True
     assert not found
 
+
 @step(u'there is an? "([^"]*)" link')
 def there_is_a_link(step, text):
     found = False
@@ -81,6 +87,7 @@ def there_is_a_link(step, text):
         if a.text and a.text.strip() == text:
             found = True
     assert found
+
 
 @step(u'I click the "([^"]*)" link')
 def i_click_the_link(step, text):
@@ -108,39 +115,49 @@ def i_click_the_link(step, text):
                 world.firefox.get_screenshot_as_file("/tmp/selenium.png")
                 assert False, link.location
 
+
 @step(u'I fill in "([^"]*)" in the "([^"]*)" form field')
 def i_fill_in_the_form_field(step, value, field_name):
     # note: relies on input having id set, not just name
     if not world.using_selenium:
-        assert False, "this step needs to be implemented for the django test client"
+        assert False, ("this step needs to be implemented for the "
+                       "django test client")
 
     world.firefox.find_element_by_id(field_name).send_keys(value)
+
 
 @step(u'I submit the "([^"]*)" form')
 def i_submit_the_form(step, id):
     if not world.using_selenium:
-        assert False, "this step needs to be implemented for the django test client"
+        assert False, ("this step needs to be implemented for the "
+                       "django test client")
 
     world.firefox.find_element_by_id(id).submit()
+
 
 @step('I go back')
 def i_go_back(self):
     """ need to back out of games currently"""
     if not world.using_selenium:
-        assert False, "this step needs to be implemented for the django test client"
+        assert False, ("this step needs to be implemented for the "
+                       "django test client")
     world.firefox.back()
 
+
 @step(u'I wait for (\d+) seconds')
-def wait(step,seconds):
+def wait(step, seconds):
     time.sleep(int(seconds))
+
 
 @step(r'I see the header "(.*)"')
 def see_header(step, text):
     if world.using_selenium:
-        assert text.strip() == world.firefox.find_element_by_css_selector(".hero-unit>h1").text.strip()
+        assert text.strip() == world.firefox.find_element_by_css_selector(
+            ".hero-unit>h1").text.strip()
     else:
         header = world.dom.cssselect('.hero-unit>h1')[0]
         assert text.strip() == header.text_content().strip()
+
 
 @step(r'I see the page title "(.*)"')
 def see_title(step, text):
