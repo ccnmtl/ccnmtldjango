@@ -16,4 +16,3 @@ setup(name='ccnmtldjango',
       ccnmtldjango = ccnmtldjango:CcnmtlDjangoTemplate
       """
       )
-	

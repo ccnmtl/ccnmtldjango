@@ -1,3 +1,8 @@
+* flake8 cleanup
+* include coverage reporting (and configure by default)
+* include requests library
+* sad owl for 500 errors
+
 0.17.2 (2012-08-07)
 ===================
 
