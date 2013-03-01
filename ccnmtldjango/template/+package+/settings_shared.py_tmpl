@@ -40,6 +40,7 @@ NOSE_ARGS = [
     '--cover-package=${package}',
 ]
 
+ALLOWED_HOSTS = ['localhost', '.ccnmtl.columbia.edu']
 
 USE_TZ = True
 TIME_ZONE = 'America/New_York'
