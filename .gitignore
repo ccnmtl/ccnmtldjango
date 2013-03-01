@@ -3,3 +3,4 @@ ccnmtldjango.egg-info/*
 ccnmtldjango/template/ve/
 build/*
 dist/*
+temp/*

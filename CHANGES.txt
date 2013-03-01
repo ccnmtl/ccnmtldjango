@@ -1,3 +1,7 @@
+0.17.5 (2013-03-01)
+
+* test harness
+
 0.17.4 (2012-09-19)
 
 * production config fixes (python 2.6, paths, port in virtualhost,
