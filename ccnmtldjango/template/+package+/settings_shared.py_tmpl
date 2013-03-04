@@ -5,7 +5,7 @@ import sys
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = ( )
+ADMINS = ()
 
 MANAGERS = ADMINS
 
@@ -17,19 +17,19 @@ DATABASES = {
         'PORT': 5432,
         'USER': '',
         'PASSWORD': '',
-        }
+    }
 }
 
-if 'test' in sys.argv:
+if 'test' in sys.argv or 'jenkins' in sys.argv:
     DATABASES = {
-        'default' : {
-            'ENGINE' : 'django.db.backends.sqlite3',
-            'NAME' : ':memory:',
-            'HOST' : '',
-            'PORT' : '',
-            'USER' : '',
-            'PASSWORD' : '',
-            }
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': ':memory:',
+            'HOST': '',
+            'PORT': '',
+            'USER': '',
+            'PASSWORD': '',
+        }
     }
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
@@ -40,6 +40,18 @@ NOSE_ARGS = [
     '--cover-package=${package}',
 ]
 
+JENKINS_TASKS = (
+    'django_jenkins.tasks.run_pylint',
+    'django_jenkins.tasks.with_coverage',
+    'django_jenkins.tasks.django_tests',
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pyflakes',
+)
+PROJECT_APPS = [
+    '${package}.main',
+]
+
+ALLOWED_HOSTS = ['localhost', '.ccnmtl.columbia.edu']
 
 USE_TZ = True
 TIME_ZONE = 'America/New_York'
@@ -56,10 +68,10 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-		'django.contrib.auth.context_processors.auth',
+    'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.debug',
     'django.core.context_processors.request',
-    )
+)
 
 MIDDLEWARE_CLASSES = (
     'django_statsd.middleware.GraphiteRequestTimingMiddleware',
@@ -69,16 +81,18 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'django.middleware.transaction.TransactionMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'waffle.middleware.WaffleMiddleware',
 )
 
 ROOT_URLCONF = '${package}.urls'
 
 TEMPLATE_DIRS = (
     "/var/www/${package}/templates/",
-    os.path.join(os.path.dirname(__file__),"templates"),
+    os.path.join(os.path.dirname(__file__), "templates"),
 )
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -90,7 +104,6 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'tagging',
     'typogrify',
-    'raven.contrib.django',
     'munin',
     'south',
     'django_nose',
@@ -98,13 +111,30 @@ INSTALLED_APPS = (
     'django_statsd',
     'bootstrapform',
     'lettuce.django',
+    'debug_toolbar',
+    'waffle',
+    'django_jenkins',
+    'smoketest',
+    'django_extensions',
     '${package}.main',
-)
+]
 
 LETTUCE_APPS = (
     '${package}.main',
 )
 
+INTERNAL_IPS = ('127.0.0.1', )
+DEBUG_TOOLBAR_PANELS = (
+    'debug_toolbar.panels.version.VersionDebugPanel',
+    'debug_toolbar.panels.timer.TimerDebugPanel',
+    'debug_toolbar.panels.settings_vars.SettingsVarsDebugPanel',
+    'debug_toolbar.panels.headers.HeaderDebugPanel',
+    'debug_toolbar.panels.request_vars.RequestVarsDebugPanel',
+    'debug_toolbar.panels.template.TemplateDebugPanel',
+    'debug_toolbar.panels.sql.SQLDebugPanel',
+    'debug_toolbar.panels.signals.SignalDebugPanel',
+    'debug_toolbar.panels.logger.LoggingPanel',
+)
 
 STATSD_CLIENT = 'statsd.client'
 STATSD_PREFIX = '${package}'

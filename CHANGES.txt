@@ -1,8 +1,29 @@
+1.0.0 (2013-03-04)
+==================
+
+* Django 1.4.5
+* httplib -> 0.7.7
+* restclient -> 0.11.0
+* flake8 -> 1.7.0
+* versiontools -> 1.9.1
+* added django-debug-toolbar
+* added django-waffle
+* added django-jenkins
+* added django-smoketest (and a sample dummy smoketest all wired up)
+* generate staging config
+* lettuce -> 0.2.14
+  * build_lettuce_db.sh script to make sqlite db for lettuce
+  * terrain.py now supports LETTUCE_SKIP_SELENIUM env variable
+* added django-extensions
+  * includes six and ipython among others
+
 0.17.5 (2013-03-01)
+===================
 
 * test harness
 
 0.17.4 (2012-09-19)
+===================
 
 * production config fixes (python 2.6, paths, port in virtualhost,
   sentry, admin media paths)
