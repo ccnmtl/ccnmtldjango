@@ -115,6 +115,7 @@ INSTALLED_APPS = [
     'waffle',
     'django_jenkins',
     'smoketest',
+    'django_extensions',
     '${package}.main',
 ]
 
