@@ -17,3 +17,4 @@ requirements/src/django-statsd-mozilla-0.3.3.tar.gz
 requirements/src/raven-0.7.0.tar.gz
 requirements/src/django-bootstrap-form-2.0.3.tar.gz
 requirements/src/django-debug-toolbar-0.9.4.tar.gz
+requirements/src/django-waffle-0.9.0.tar.gz

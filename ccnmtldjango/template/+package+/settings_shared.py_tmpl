@@ -71,6 +71,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'django.middleware.transaction.TransactionMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware,'
+    'waffle.middleware.WaffleMiddleware',
 )
 
 ROOT_URLCONF = '${package}.urls'
@@ -101,6 +102,7 @@ INSTALLED_APPS = (
     'bootstrapform',
     'lettuce.django',
     'debug_toolbar',
+    'waffle',
     '${package}.main',
 )
 
