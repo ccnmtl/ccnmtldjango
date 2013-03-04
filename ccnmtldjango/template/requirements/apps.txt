@@ -16,3 +16,4 @@ requirements/src/django_compressor-1.1.1.tar.gz
 requirements/src/django-statsd-mozilla-0.3.3.tar.gz
 requirements/src/raven-0.7.0.tar.gz
 requirements/src/django-bootstrap-form-2.0.3.tar.gz
+requirements/src/django-debug-toolbar-0.9.4.tar.gz
