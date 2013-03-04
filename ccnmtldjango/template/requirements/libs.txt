@@ -23,7 +23,11 @@ requirements/src/pep8-1.4.tar.gz
 requirements/src/pyflakes-0.5.0.tar.gz
 requirements/src/flake8-1.7.0.tar.gz
 requirements/src/lxml-2.2.8.tar.gz
-requirements/src/lettuce-0.1.34.tar.gz
+requirements/src/fuzzywuzzy-0.1.tar.gz
+requirements/src/sure-1.1.7.tar.gz
+requirements/src/ipython-0.13.1.tar.gz
+requirements/src/ipdb-0.7.tar.gz
+requirements/src/lettuce-0.2.14.tar.gz
 requirements/src/rdflib-3.1.0.tar.gz
 requirements/src/selenium-2.20.0.tar.gz
 requirements/src/coverage-3.5.3.tar.gz
