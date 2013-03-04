@@ -17,4 +17,5 @@ chmod +x bootstrap.py manage.py
 
 # run our tests (finally!)
 ./manage.py test
+./manage.py jenkins
 ./ve/bin/flake8 testproject
