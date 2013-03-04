@@ -15,6 +15,7 @@ COMPRESS_ROOT = "/var/www/${package}/${package}/media/"
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
+STATSD_PREFIX = '${package}-staging'
 SENTRY_SITE = '${package}-staging'
 SENTRY_SERVERS = ['http://sentry.ccnmtl.columbia.edu/sentry/store/']
 
