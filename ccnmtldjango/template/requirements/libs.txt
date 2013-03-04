@@ -17,7 +17,7 @@ requirements/src/uuid-1.30.tar.gz
 requirements/src/psycopg2-2.4-no-mx.tar.gz
 requirements/src/Imaging-1.1.7.tar.gz
 requirements/src/nose-1.1.2.tar.gz
-requirements/src/versiontools-1.8.2.tar.gz
+requirements/src/versiontools-1.9.1.tar.gz
 requirements/src/statsd-0.5.1.tar.gz
 requirements/src/pep8-1.4.tar.gz
 requirements/src/pyflakes-0.5.0.tar.gz
