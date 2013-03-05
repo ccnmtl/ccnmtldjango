@@ -11,6 +11,17 @@ STATICMEDIA_MOUNTS = (
     ('/sitemedia', '/var/www/${package}/${package}/sitemedia'),
 )
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '${package}',
+        'HOST': '',
+        'PORT': 6432,
+        'USER': '',
+        'PASSWORD': '',
+    }
+}
+
 COMPRESS_ROOT = "/var/www/${package}/${package}/media/"
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
