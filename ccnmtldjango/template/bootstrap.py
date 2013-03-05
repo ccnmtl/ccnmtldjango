@@ -30,6 +30,13 @@ if sys.version.startswith('2.6'):
          os.path.join(pwd, "requirements/src/importlib-1.0.1.tar.gz")])
     if ret:
         exit(ret)
+    ret = subprocess.call(
+        [os.path.join(vedir, 'bin', 'pip'), "install",
+         "-E", vedir,
+         "--index-url=''",
+         os.path.join(pwd, "requirements/src/unittest2-0.5.1.tar.gz")])
+    if ret:
+        exit(ret)
 
 ret = subprocess.call(
     [os.path.join(vedir, 'bin', 'pip'), "install",
