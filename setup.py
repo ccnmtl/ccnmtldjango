@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='ccnmtldjango',
-      version="1.0.0",
+      version="1.0.1",
       author="Anders Pearson",
       description='Paste template for Django development at CCNMTL',
       long_description=open('README.md').read(),
