@@ -25,6 +25,7 @@ DATABASES = {
 COMPRESS_ROOT = "/var/www/${package}/${package}/media/"
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
+STAGING_ENV = True
 
 STATSD_PREFIX = '${package}-staging'
 SENTRY_SITE = '${package}-staging'
