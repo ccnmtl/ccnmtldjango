@@ -1,3 +1,9 @@
+1.0.3 (2013-03-07)
+==================
+
+* context processor to put up a message on staging site
+* staging.wsgi included
+
 1.0.2 (2013-03-05)
 ==================
 
