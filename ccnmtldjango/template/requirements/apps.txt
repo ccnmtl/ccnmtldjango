@@ -22,3 +22,4 @@ requirements/src/django-jenkins-0.14.0.tar.gz
 requirements/src/django-smoketest-0.1.3.tar.gz
 requirements/src/django-extensions-1.1.0.tar.gz
 requirements/src/django-stagingcontext-0.1.0.tar.gz
+requirements/src/django-impersonate-0.6.0.tar.gz

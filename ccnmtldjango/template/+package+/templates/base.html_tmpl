@@ -19,7 +19,7 @@
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
 	{% block feeds %}{% endblock %}
@@ -42,6 +42,9 @@
           <a href="/accounts/login/?next=/" class="btn btn-success">login</a>
           {% else %}
           logged in as {{request.user.first_name}} {{request.user.last_name}}
+{% if request.user.is_superuser %}
+          <a href="{% url impersonate-list %}">[impersonate]</a>
+{% endif %}
           <a href="/logout/" class="btn btn-inverse">logout</a>
           {% endif %}
 {% endblock %}
@@ -109,7 +112,7 @@
   </footer>
 {% endblock %}
 
-<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
 
 {% compress js %}
 <script src="/site_media/bootstrap/js/bootstrap.js"></script>
@@ -122,6 +125,13 @@
 <h4>Warning: Staging Site</h4>
 <p>You are viewing a staging version of this site, not the production site.</p>
 <p>This site was last updated on: <b>{{STAGING_DEPLOY_TIME}}</b></p>
+</div>
+{% endif %}
+
+{% if request.user.is_impersonate %}
+<div class="alert alert-error" style="position: fixed; left: 0px; top: 75px">
+You are impersonating.<br />
+<a class="btn" href="{% url impersonate-stop %}">stop</a>
 </div>
 {% endif %}
 </body>

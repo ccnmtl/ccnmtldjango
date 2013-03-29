@@ -17,7 +17,7 @@
 <div id="content-main">
 <form method="get" action="https://wind.columbia.edu/login">
 <input type="hidden" name="service" value="cnmtl_full_np" />
-<input type="hidden" name="destination" value="http://{{ request.get_host }}/accounts/windlogin/?next=/admin/&this_is_the_login_form=1" />
+<input type="hidden" name="destination" value="http{% if request.is_secure %}s{% endif %}://{{ request.get_host }}/accounts/windlogin/?next=/admin/&this_is_the_login_form=1" />
 <p>If you have a Columbia UNI, you already have an account and can
 login through WIND with it</p>
 <input type="submit" value="Here" />

@@ -5,7 +5,7 @@
 
 <form method="get" action="{{ wind_base }}login" class="well">
 <input type="hidden" name="service" value="{{ wind_service }}" />
-<input type="hidden" name="destination" value="http://{{ request.get_host }}/accounts/windlogin/?next={{ next }}" />
+<input type="hidden" name="destination" value="http{% if request.is_secure %}s{% endif %}://{{ request.get_host }}/accounts/windlogin/?next={{ next }}" />
 <p>If you have a Columbia University Network ID
         (UNI)... </p><input type="submit" value="LOG IN" class="btn btn-primary"/></p>
 </form>

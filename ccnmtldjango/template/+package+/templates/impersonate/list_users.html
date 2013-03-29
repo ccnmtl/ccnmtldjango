@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load url from future %}
+{% block pagetitle %}<h1>Django Impersonate User List</h1>{% endblock %}
+
+{% block content %}
+{% if page.object_list %}
+  <ul>
+    {% for user in page.object_list %}
+		{% if user.is_superuser %}
+      <li>{{ user.username }} - Superuser (can't impersonate)</li>
+		{% else %}
+      <li><a href="{% url 'impersonate-start' user.id %}{{redirect}}">{{ user.username }}</a> - Impersonate</li>
+			{% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% if page.has_previous %}
+<a href="?page={{ page.previous_page_number }}">Previous Page</a> &nbsp;
+{% endif %}
+
+{% if page.has_next %}
+<a href="?page={{ page.next_page_number }}">Next Page</a> &nbsp;
+{% endif %}
+
+{% endblock %}
