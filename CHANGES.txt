@@ -1,3 +1,11 @@
+1.0.4 (2013-03-29)
+==================
+
+* django-impersonate added
+* better support for running behind https
+** protocol independent urls for external js
+** detect X-Forwarded-Protocol headers
+
 1.0.3 (2013-03-07)
 ==================
 

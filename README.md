@@ -75,6 +75,7 @@ What it provides for us that startproject doesn't:
   included (https://github.com/ccnmtl/django-smoketest)
 * `django-extensions` included to do a variety of things like use
   IPython, Werkzeug debugger, kcachegrind profiling, etc. (https://github.com/django-extensions/django-extensions)
+* `django-impersonate` included and configured for easier debugging
 
 To use ccnmtldjango, you need python 2.6+, virtualenv, pip, and a recent
 setuptools installed on your machine.
