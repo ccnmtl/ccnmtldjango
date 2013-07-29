@@ -1,3 +1,10 @@
+1.1.0 (2013-07-29)
+==================
+
+* drop python 2.6 support
+* remove requirements/src/ tarballs in favor of local pypi mirror and
+  more standard requirements.txt
+
 1.0.4 (2013-03-29)
 ==================
 

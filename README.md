@@ -77,7 +77,7 @@ What it provides for us that startproject doesn't:
   IPython, Werkzeug debugger, kcachegrind profiling, etc. (https://github.com/django-extensions/django-extensions)
 * `django-impersonate` included and configured for easier debugging
 
-To use ccnmtldjango, you need python 2.6+, virtualenv, pip, and a recent
+To use ccnmtldjango, you need python 2.7+, virtualenv, pip, and a recent
 setuptools installed on your machine.
 
 First, if you don't already have ccnmtldjango installed, do
@@ -122,13 +122,11 @@ We use containment for django too, with virtualenv:
     $ ./bootstrap.py
 
 That will create a `ve` directory which contains a virtualenv and has
-had all the libraries in the `requirements/src` directory installed
-into it (this includes django itself). The `ve` directory should never
-be checked into svn since it's generated. If you need other libraries
-for your application, bundle them up as tarballs and drop them in the
-`requirements/src/` directory, add them to `requirements/libs.txt` or
-`requirements/apps.txt` (depending on whether they are regular python
-libraries or django apps) then re-run `./bootstrap.py`.
+had all the libraries specified in the `requirements.txt` file
+installed into it (this includes django itself). The `ve` directory
+should never be checked into svn since it's generated. If you need
+other libraries for your application, `requirements.txt` then re-run
+`./bootstrap.py`.
 
 Keep in mind that with virtualenv, there's no need to `activate` an
 environment. Instead, a ve has a `bin` directory which contains a
