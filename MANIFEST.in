@@ -1,2 +1,3 @@
+include ccnmtldjango/template/requirements.txt
 recursive-include ccnmtldjango/template/ *
 include *.md

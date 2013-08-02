@@ -1,3 +1,8 @@
+1.1.1 (2013-08-02)
+==================
+
+* force setuptools to include requirements.txt when building an egg
+
 1.1.0 (2013-07-29)
 ==================
 
