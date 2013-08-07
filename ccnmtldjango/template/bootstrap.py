@@ -22,7 +22,7 @@ if ret:
     exit(ret)
 
 ret = subprocess.call(
-    [os.path.join(vedir, 'bin', 'pip'), "install", "-E", vedir,
+    [os.path.join(vedir, 'bin', 'pip'), "install",
      "--index-url=http://pypi.ccnmtl.columbia.edu/",
      "--requirement", os.path.join(pwd, "requirements.txt")])
 
