@@ -1,3 +1,11 @@
+1.2.0 (2013-08-07)
+==================
+
+* use wheels wherever possible
+* added another developer account to the default superuser list
+* brute-force our way around bugs and inconsistencies with
+  recursive-include in MANIFEST.in file
+
 1.1.1 (2013-08-02)
 ==================
 

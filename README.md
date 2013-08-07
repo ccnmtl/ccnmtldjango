@@ -20,6 +20,7 @@ What it provides for us that startproject doesn't:
   bootstrappable, `manage.py`'s shebang set to use it. This
   basically fits it into our one-step automated deployment and
   containment approach.
+* use wheel packages wherever possible
 * sorl.thumbnail (a handy dandy image thumbnailing library) is included by default
 * flatpages enabled
 * settings split for dev/prod/staging
@@ -85,7 +86,9 @@ First, if you don't already have ccnmtldjango installed, do
     $ pip install ccnmtldjango
 
 It should automatically pull in the needed dependencies (just
-PasteScript, actually).
+PasteScript, actually). If that gives you problems, the most likely
+cause is that one or more of your setuptools, pip, or virtualenv
+libraries is old. So upgrade those first and try again.
 
 Running
 
