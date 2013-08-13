@@ -81,11 +81,19 @@ What it provides for us that startproject doesn't:
 To use ccnmtldjango, you need python 2.7+, virtualenv, pip, and a recent
 setuptools installed on your machine.
 
-First, if you don't already have ccnmtldjango installed, do
+First, if you don't already have ccnmtldjango installed:
 
+Set up a new virtual environment, e.g. 
+
+    $ virtualenv ve
+
+Activate your virtual environment, source ve/bin/activate, or previx all commands with 've/bin/'
+
+    $ pip install Paste
+    $ pip install PasteDeploy
     $ pip install ccnmtldjango
 
-It should automatically pull in the needed dependencies (just
+ccnmtldjango should automatically pull in the remaining needed dependencies (just
 PasteScript, actually). If that gives you problems, the most likely
 cause is that one or more of your setuptools, pip, or virtualenv
 libraries is old. So upgrade those first and try again.
