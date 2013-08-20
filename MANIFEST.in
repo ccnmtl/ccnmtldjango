@@ -62,4 +62,4 @@ include ccnmtldjango/template/apache/staging.wsgi_tmpl
 include ccnmtldjango/template/apache/sample.conf_tmpl
 include ccnmtldjango/template/test_data/__init__.py
 include ccnmtldjango/template/requirements/virtualenv_support/setuptools-0.9.7.tar.gz
-include ccnmtldjango/template/requirements/virtualenv_support/pip-1.4.tar.gz
+include ccnmtldjango/template/requirements/virtualenv_support/pip-1.4.1.tar.gz
