@@ -1,11 +1,4 @@
-Django==1.4.7
-resolver==0.2.1
-wsgiref==0.1.2
-selector==0.8.11
-Paste==1.7.5.1
-PasteDeploy==1.5.0
-PasteScript==1.7.5
-cdap==1.0
+Django==1.4.8
 httplib2==0.8
 restclient==0.11.0
 feedparser==5.1.3
@@ -14,7 +7,7 @@ simplejson==3.3.0
 smartypants==1.6.0.3
 uuid==1.30
 psycopg2==2.5.1
-Pillow==2.1.0
+Pillow==1.7.8
 nose==1.3.0
 versiontools==1.9.1
 statsd==2.0.2
