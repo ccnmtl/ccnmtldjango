@@ -15,7 +15,7 @@ DATABASES = {
     }
 
 if 'migrate' not in sys.argv:
-	 INSTALLED_APPS.append('lettuce.django')
+    INSTALLED_APPS.append('lettuce.django')
 
 BROWSER = 'Chrome'
 if os.environ.get('SELENIUM_BROWSER', False):
