@@ -11,3 +11,6 @@ DATABASES = {
         'PASSWORD': '',
         }
     }
+
+if 'migrate' not in sys.argv:
+	 INSTALLED_APPS.append('lettuce.django')
