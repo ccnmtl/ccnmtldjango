@@ -8,102 +8,91 @@
   <meta name="description" content="${package}">
   <meta name="author" content="CCNMTL">
 
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="../assets/js/html5shiv.js"></script>
+  <script src="../assets/js/respond.min.js"></script>
+<![endif]-->
+
 {% compress css %}
-    <link href="/site_media/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="/site_media/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/site_media/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/site_media/bootstrap/css/bootstrap-glyphicons.css" rel="stylesheet">
     <link href="/site_media/css/main.css" rel="stylesheet">
 {% endcompress %}
 	<link rel="shortcut icon" href="/site_media/img/favicon.ico" type="image/x-icon" />
 	{% block css %}{% endblock %}
   <script src="/site_media/js/jquery-1.7.2.min.js"></script>
 
-  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-  <!--[if lt IE 9]>
-    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
 	{% block feeds %}{% endblock %}
 </head>
 <body>
+<a class="sr-only" href="#content">Skip navigation</a>
 
 {% block topnavbar %}
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <ul class="nav">
-          <li><a class="brand" href="/">${package}</a></li>
-          {% block topnavbarleftitems %}{% endblock %}
-        </ul>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+		<a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span></a>
+  </div>
 
-        <p class="navbar-text pull-right">
-          {% block topnavbarrightitems %}{% endblock %}
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      {% block topnavbarleftitems %}{% endblock %}
+    </ul>
+
+<!-- 
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+-->
+
+    <ul class="nav navbar-nav navbar-right">
+      {% block topnavbarrightitems %}{% endblock %}
+        <p class="navbar-text">
+
 {% block usernav %}
           {% if request.user.is_anonymous %}
           <a href="/accounts/login/?next=/" class="btn btn-success">login</a>
           {% else %}
-          logged in as {{request.user.first_name}} {{request.user.last_name}}
+          logged in as 
+            {% if request.user.last_name %}
+              {{request.user.first_name}} {{request.user.last_name}}
+            {% else %}
+              <b>{{ request.user.username }}</b>
+            {% endif %}
 {% if request.user.is_superuser %}
-          <a href="{% url 'impersonate-list' %}">[impersonate]</a>
+          <a href="{% url 'impersonate-list' %}" class="btn btn-default">impersonate</a>
 {% endif %}
-          <a href="/logout/" class="btn btn-inverse">logout</a>
+          <a href="/accounts/logout/" class="btn btn-default">logout</a>
           {% endif %}
 {% endblock %}
        </p>
 
-       </div>
-     </div>
+    </ul>
   </div>
+  </div>
+</nav>
+
 {% endblock %}
 
   <div class="container" id="outer-container">
 {% block masthead %}
-    <header class="subhead hidden-phone" id="masthead">
-      <h1><a href="./" title="${package}">${package}</a></h1>
-      <h4 id="logo-ccnmtl">
-        <a href="http://ccnmtl.columbia.edu" target="_blank"
-          title="Columbia Center for New Media Teaching and Learning">
-          <span>Produced by the Columbia Center for New Media Teaching
-          and Learning</span>
-        </a>
-      </h4>
-    </header>
-
-{% block primarynav %}
-    <div class="navbar" id="primarynav">
-      <div class="navbar-inner">
-        <div class="container">
-          <ul class="nav">
-          {% block primarynavtabs %}
-            <li class="active"><a href="/one/">One</a></li>
-						<li><a href="/two/">Two</a></li>
-          {% endblock %}
-					{% block primarynavtabsextra %}{% endblock %}
-          </ul>
-
-          <ul class="nav pull-right">
-            {% block primarynavrightextra %}{% endblock %}
-						<li><a href="/three/">Three</a></li>
-						<li><a href="/four/">Four</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+  {% block primarynav %}{% endblock %}
 {% endblock %}
 
-{% endblock %}
-
-    <div class="container-fluid" id="content">
-      <div class="row-fluid">
-        <div class="span2" id="sidebar">
-{% block sidebar %}{% endblock %}
-        </div>
-        <div class="span10" id="right-content">
 {% block pagetitle %}{% endblock %}
 {% block content %}{% endblock %}
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 {% block footer %}
@@ -121,7 +110,8 @@
 {% block js %}{% endblock %}
 
 {% if STAGING_ENV %}
-<div class="alert alert-error" style="position: fixed; bottom: 0px;">
+<div class="alert alert-danger alert-dismissable" style="position: fixed; bottom: 0px;">
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 <h4>Warning: Staging Site</h4>
 <p>You are viewing a staging version of this site, not the production site.</p>
 <p>This site was last updated on: <b>{{STAGING_DEPLOY_TIME}}</b></p>
@@ -129,7 +119,8 @@
 {% endif %}
 
 {% if request.user.is_impersonate %}
-<div class="alert alert-error" style="position: fixed; left: 0px; top: 75px">
+<div class="alert alert-danger alert-dismissable" style="position: fixed; left: 0px; top: 75px">
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 You are impersonating.<br />
 <a class="btn" href="{% url 'impersonate-stop' %}">stop</a>
 </div>

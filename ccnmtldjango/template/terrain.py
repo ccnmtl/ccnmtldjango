@@ -171,10 +171,9 @@ def wait(step,seconds):
 @step(r'I see the header "(.*)"')
 def see_header(step, text):
     if world.using_selenium:
-        assert text.strip() == world.firefox.find_element_by_css_selector(".hero-unit>h1").text.strip()
+        assert text.strip() == world.firefox.find_element_by_css_selector(".jumbotron>h1").text.strip()
     else:
-        # header = world.dom.cssselect('h1')[0]
-        header = world.dom.cssselect('.hero-unit>h1')[0]
+        header = world.dom.cssselect('.jumbotron>h1')[0]
         assert text.strip() == header.text_content().strip()
 
 @step(r'I see the page title "(.*)"')
