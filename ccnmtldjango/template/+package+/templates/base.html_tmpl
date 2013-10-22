@@ -15,13 +15,13 @@
 <![endif]-->
 
 {% compress css %}
-    <link href="/site_media/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/site_media/bootstrap/css/bootstrap-glyphicons.css" rel="stylesheet">
-    <link href="/site_media/css/main.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/main.css" rel="stylesheet">
 {% endcompress %}
-	<link rel="shortcut icon" href="/site_media/img/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
 	{% block css %}{% endblock %}
-  <script src="/site_media/js/jquery-1.7.2.min.js"></script>
+  <script src="{{STATIC_URL}}js/jquery-1.7.2.min.js"></script>
 
 	{% block feeds %}{% endblock %}
 </head>
@@ -97,14 +97,14 @@
 
 {% block footer %}
   <footer class="footer navbar-fixed-bottom hidden-phone">
-    <img src="/site_media/img/logo_ccnmtl_sidebar.gif" class="printonly pull-right" />
+    <img src="{{STATIC_URL}}img/logo_ccnmtl_sidebar.gif" class="printonly pull-right" />
   </footer>
 {% endblock %}
 
 <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
 
 {% compress js %}
-<script src="/site_media/bootstrap/js/bootstrap.js"></script>
+<script src="{{STATIC_URL}}bootstrap/js/bootstrap.js"></script>
 {% endcompress %}
 
 {% block js %}{% endblock %}

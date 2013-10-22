@@ -16,20 +16,10 @@
     Allow from all
   </Directory>
 
-  Alias /site_media/ /var/www/${package}/${package}/media/
+  Alias /media/ /var/www/${package}/${package}/media/
   Alias /favicon.ico /var/www/${package}/${package}/media/favicon.ico
   Alias /robots.txt /var/www/${package}/${package}/media/robots.txt
   <Directory /var/www/${package}/${package}/media/>
-    Order deny,allow
-    Allow from all
-    FileETag None
-    ExpiresActive on
-    ExpiresDefault "access plus 10 years"
-    AddOutputFilterByType DEFLATE text/css application/x-javascript
-  </Directory>
-
-  Alias /media/ /var/www/${package}/${package}/ve/lib/python2.7/site-packages/django/contrib/admin/static/
-  <Directory /var/www/${package}/${package}/ve/lib/python2.7/site-packages/django/contrib/admin/static/>
     Order deny,allow
     Allow from all
     FileETag None
