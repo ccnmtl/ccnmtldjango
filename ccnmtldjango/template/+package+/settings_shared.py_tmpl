@@ -119,6 +119,7 @@ INSTALLED_APPS = [
     'smoketest',
     'django_extensions',
     'impersonate',
+    'registration',
     '${package}.main',
 ]
 
@@ -190,3 +191,5 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
 }
+
+ACCOUNT_ACTIVATION_DAYS = 7

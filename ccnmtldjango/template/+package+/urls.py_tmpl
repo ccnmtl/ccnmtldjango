@@ -24,6 +24,7 @@ urlpatterns = patterns(
     '',
     auth_urls,
     logout_page,
+    (r'^registration/', include('registration.backends.default.urls')),
     (r'^$$', '${package}.main.views.index'),
     (r'^admin/', include(admin.site.urls)),
     url(r'^_impersonate/', include('impersonate.urls')),

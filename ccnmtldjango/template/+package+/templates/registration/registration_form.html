@@ -1,0 +1,24 @@
+{% extends "registration/base_registration.html" %}
+{% load i18n bootstrap %}
+{% block title %}Sign up for an account{% endblock %}
+
+{% block registration_content %}
+    <h2 class="pagetitle signuptitle">Sign up for an account</h2>
+    
+    <div class="p">Use the following form to create a new account.</div>
+    
+    
+    <div class="p">
+    If you already have a username or password, but have forgotten either,
+        <a href="{% url 'auth_password_reset' %}">reset them here</a>.
+    </div>
+    
+    <form method="post" action="." class="register form">
+      {{ form|bootstrap }}
+      
+      <input class="btn btn-primary" type="submit" value="{% trans 'Sign up!' %}" />
+    </form>
+
+{% endblock %}
+
+

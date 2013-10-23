@@ -58,3 +58,4 @@ django-smoketest==0.1.3
 django-extensions==1.2.5
 django-stagingcontext==0.1.0
 django-impersonate==0.7.0
+django-registration==1.0
