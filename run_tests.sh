@@ -18,7 +18,7 @@ chmod +x bootstrap.py manage.py build_lettuce_db.sh
 # run our tests (finally!)
 ./manage.py test
 ./manage.py jenkins
-./manage.py collectstatic --no-input
+./manage.py collectstatic --noinput
 ./build_lettuce_db.sh
 LETTUCE_SKIP_SELENIUM=1 ./manage.py harvest --settings=testproject.settings_lettuce --verbosity=3; rm -f /tmp/lettuce-django.pid
 ./ve/bin/flake8 testproject
