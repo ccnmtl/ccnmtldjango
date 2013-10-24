@@ -63,7 +63,6 @@
 
 {% block usernav %}
           {% if request.user.is_anonymous %}
-          <a href="/accounts/login/?next=/" class="btn btn-success">login</a>
           {% else %}
           logged in as 
             {% if request.user.last_name %}
@@ -89,6 +88,62 @@
   <div class="container" id="outer-container">
 {% block masthead %}
   {% block primarynav %}{% endblock %}
+{% endblock %}
+
+{% block loginbox %}
+{% if request.user.is_anonymous %}
+<div class="loginbox-container columbia">
+    <div class="loginbox">
+        <h2>Choose a login option...</h2>
+        <div class="content">
+            {% if WIND_BASE %}
+                <form method="get" action="{{ WIND_BASE }}login">
+                    {% csrf_token %}
+                    <input type="hidden" name="service" value="{{ WIND_SERVICE }}" />
+                    <input type="hidden" name="destination" value="http://{{ request.get_host }}/accounts/windlogin/?next={{ next|urlencode }}" />
+                    <p>If you have a Columbia University Network ID (UNI)...</p>
+                    <input class="regbutton" type="submit" value="Columbia Log In" />
+                </form>
+            {% endif %}
+            
+            <p class="smalltxt"><a href="http://cuit.columbia.edu/cuit/manage-my-uni" title="Learn more about UNI" target="_blank">What is a UNI?</a></p>
+            <!-- End UNI LOG IN -->
+            
+            <hr class="seperator" />
+        
+        {% if login_form.errors %}
+            <p class="errornote">
+                <span>
+                    <b>ERROR:</b> Invalid username or password.
+                </span>
+                Please try again. Note that both username and password are case-sensitive.
+            </p>
+        {% endif %}
+        
+            <p>If you have a guest account...</p>
+            <form id="login-local" name="login_local" method="post" action="/accounts/login/">
+                {% csrf_token %}
+                <div class="login-local-form" {% if not login_form.errors %}style="display: none"{% endif %}>
+                    <div class="fieldwrapper">
+                        <label for="id_username">Username:</label>
+                        {{ login_form.username }}
+                    </div><!-- fieldwrapper -->
+                
+                    <div class="fieldwrapper">
+                        <label for="id_password">Password:</label>
+                        {{ login_form.password }}
+                    </div><!-- fieldwrapper -->
+                </div>      
+                <input class="regbutton" type="button" value="Guest Log In" {% if login_form.errors %}style="display: none"{% endif %}
+                    onclick="jQuery('.login-local-form').show(); jQuery(this).hide(); return false;"/>
+                <input class="regbutton login-local-form" type="submit" value="Log In" {% if not login_form.errors %}style="display: none;"{% endif %} />                        
+                <input type="hidden" name="next" value="{{ next|urlencode }}" />
+            </form>
+            <p class="smalltxt"><a href="/registration/register/" title="Create your new project account">Need a new account?</a></p>
+        </div>
+    </div>
+</div>
+{% endif %}
 {% endblock %}
 
 {% block pagetitle %}{% endblock %}
