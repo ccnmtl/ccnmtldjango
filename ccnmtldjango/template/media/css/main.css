@@ -147,7 +147,7 @@ body > .container {
 }
 
 .errornote {
-    background: url("/site_media/img/icon_alert.png") no-repeat 5px 5px #FFEBE8;
+    background: url("/media/img/icon_alert.png") no-repeat 5px 5px #FFEBE8;
     border: 1px solid #c00 !important;
     display: block;
     font-size: 11px !important;
