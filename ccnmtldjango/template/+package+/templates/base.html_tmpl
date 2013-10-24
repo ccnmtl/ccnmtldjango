@@ -100,7 +100,7 @@
                 <form method="get" action="{{ WIND_BASE }}login">
                     {% csrf_token %}
                     <input type="hidden" name="service" value="{{ WIND_SERVICE }}" />
-                    <input type="hidden" name="destination" value="http://{{ request.get_host }}/accounts/windlogin/?next={{ next|urlencode }}" />
+                    <input type="hidden" name="destination" value="http://{{ request.get_host }}/accounts/windlogin/?next={{ request.get_full_path|urlencode }}" />
                     <p>If you have a Columbia University Network ID (UNI)...</p>
                     <input class="regbutton" type="submit" value="Columbia Log In" />
                 </form>
@@ -137,7 +137,7 @@
                 <input class="regbutton" type="button" value="Guest Log In" {% if login_form.errors %}style="display: none"{% endif %}
                     onclick="jQuery('.login-local-form').show(); jQuery(this).hide(); return false;"/>
                 <input class="regbutton login-local-form" type="submit" value="Log In" {% if not login_form.errors %}style="display: none;"{% endif %} />                        
-                <input type="hidden" name="next" value="{{ next|urlencode }}" />
+                <input type="hidden" name="next" value="{{ request.get_full_path }}" />
             </form>
             <p class="smalltxt"><a href="/registration/register/" title="Create your new project account">Need a new account?</a></p>
         </div>
