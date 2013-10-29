@@ -36,7 +36,6 @@ What it provides for us that startproject doesn't:
   (https://github.com/dcramer/raven/) and configured for our sentry
   setup
 * raven configured to not run on south migrations
-* `django-munin` included (https://github.com/ccnmtl/django-munin)
 * `South` is included for database migrations
 * `django-annoying` is included (I like `@render_to`)
 * `django-nose` installed and set up as test runner (much nicer!)
@@ -60,8 +59,8 @@ What it provides for us that startproject doesn't:
 * transaction middleware enabled by default (cause data corruption is teh suck)
 * timezone set
 * I18n turned off (we are unfortunately monolingual. no sense in denying it)
-* PIL
-* `psycopg2` (stripped of its `mx.DateTime` dependency)
+* Pillow
+* `psycopg2`
 * a nice default template design with alternate base templates for multi-column layout.
 * `flake8` (http://pypi.python.org/pypi/flake8) is installed by default
   for code linting
@@ -69,7 +68,8 @@ What it provides for us that startproject doesn't:
   index feature and helpful terrain.py functions
 * backbone.js
 * underscore.js
-* layout based on twitter bootstrap
+* layout based on twitter bootstrap3
+* `python-ldap`
 * `django-waffle` included for feature flipping (https://github.com/jsocol/django-waffle)
 * `django-jenkins` included and set up for our Jenkins instance (https://github.com/kmmbvnr/django-jenkins)
 * `django-smoketest` included, wired up, and a sample `smoke.py`
@@ -77,6 +77,11 @@ What it provides for us that startproject doesn't:
 * `django-extensions` included to do a variety of things like use
   IPython, Werkzeug debugger, kcachegrind profiling, etc. (https://github.com/django-extensions/django-extensions)
 * `django-impersonate` included and configured for easier debugging
+* `collectstatic` configured
+* `django-pagetree` and its `django-pageblocks` and `django-quizblock`
+  installed and configured.
+* `django-registration` installed and configured
+* Google Analytics ready to go
 
 To use ccnmtldjango, you need python 2.7+, virtualenv, pip, and a recent
 setuptools installed on your machine.
@@ -154,9 +159,16 @@ and it is all set to use it:
 
     $ ./manage.py syncdb
     $ ./manage.py migrate
+    $ ./manage.py collectstatic --noinput
 
 will install the tables that django needs for it's common apps (sites,
-sessions, admin, flatpages, etc) and have you create an admin user.
+sessions, admin, flatpages, etc) and have you create an admin user (if
+you want. If you're using WIND auth, you probably don't need to
+bother). It will also gather up static elements from all of your
+installed apps and put them in the right place. It's really up to you
+whether you want to check those into version control and not have to
+deal with it on deployment or leave them out of VC and add a
+`collectstatic` step to your deployment process.
 
 The `./manage.py syncdb` automagically sets up an "example.com"
 site. This should be changed to your site domain (e.g. `localhost:8000`)
@@ -188,6 +200,7 @@ you can put content on the web right away.
 Lettuce and Selenium have also been set up, so (as long as you have
 firefox installed in a regular way), you should be able to do:
 
+    $ ./build_lettuce_db.sh
     $ LETTUCE_SKIP_SELENIUM=1 ./manage.py harvest --settings=yourapp.settings_lettuce
 
 And see a couple basic lettuce tests (defined in
@@ -195,7 +208,11 @@ And see a couple basic lettuce tests (defined in
 
 If you have your browser stuff setup properly (running on your local
 machine, etc), you can run that without `LETTUCE_SKIP_SELENIUM` and
-run full browser tests.
+run full browser tests. The `build_lettuce_db.sh` script is a helper
+to create the sqlite file for lettuce tests to run against (for
+whatever reason, lettuce doesn't work with sqlite's in-memory
+mode. sigh.). If you change your database schema, you'll want to
+re-run that.
 
 From this point out, it's basic django development. You'll probably
 want to do a `./manage.py startapp` to create your own application
