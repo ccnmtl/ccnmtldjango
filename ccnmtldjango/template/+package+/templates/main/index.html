@@ -4,5 +4,18 @@
 <div class="jumbotron">
 <h1>It works</h1>
 <p>Congratulations! Now start coding.</p>
+{% if not request.user.is_anonymous %}
+<p>This project includes Pagetree by default.</p>
+
+<p>The first thing you'll want to do is go to
+	the <a href="/pages/edit/">Edit page</a> for the root node and add
+	some modules, child sections and content.</p>
+
+<p> If you don't want to use
+	Pagetree, you should remove it from your requirements.txt and
+	INSTALLED_APPS and clear the views out of your main/views.py</p>
+
+
+{% endif %}
 </div>
 {% endblock %}
