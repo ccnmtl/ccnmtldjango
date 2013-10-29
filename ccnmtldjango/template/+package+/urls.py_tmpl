@@ -32,4 +32,12 @@ urlpatterns = patterns(
     (r'smoketest/', include('smoketest.urls')),
     (r'^uploads/(?P<path>.*)$$',
      'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+    (r'^pagetree/', include('pagetree.urls')),
+    (r'^quizblock/', include('quizblock.urls')),
+    (r'^pages/edit/(?P<path>.*)$$', '${package}.main.views.edit_page',
+     {}, 'edit-page'),
+    (r'^pages/instructor/(?P<path>.*)$$',
+     '${package}.main.views.instructor_page'),
+    (r'^pages/(?P<path>.*)$$', '${package}.main.views.page'),
+
 )

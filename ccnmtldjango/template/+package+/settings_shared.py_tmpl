@@ -123,8 +123,20 @@ INSTALLED_APPS = [
     'django_extensions',
     'impersonate',
     'registration',
+    'pagetree',
+    'pageblocks',
+    'quizblock',
     '${package}.main',
 ]
+
+PAGEBLOCKS = ['pageblocks.TextBlock',
+              'pageblocks.HTMLBlock',
+              'pageblocks.PullQuoteBlock',
+              'pageblocks.ImageBlock',
+              'pageblocks.ImagePullQuoteBlock',
+              'quizblock.Quiz',
+              ]
+
 
 LETTUCE_APPS = (
     '${package}.main',

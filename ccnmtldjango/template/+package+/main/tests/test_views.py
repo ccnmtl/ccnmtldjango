@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.test.client import Client
+from pagetree.helpers import get_hierarchy
 
 
 class BasicTest(TestCase):
@@ -14,3 +15,29 @@ class BasicTest(TestCase):
         response = self.c.get("/smoketest/")
         self.assertEquals(response.status_code, 200)
         assert "PASS" in response.content
+
+
+class PagetreeViewTestsLoggedOut(TestCase):
+    def setUp(self):
+        self.c = Client()
+        self.h = get_hierarchy("main", "/pages/")
+        self.root = self.h.get_root()
+        self.root.add_child_section_from_dict(
+            {
+                'label': 'Section 1',
+                'slug': 'section-1',
+                'pageblocks': [],
+                'children': [],
+            })
+
+    def test_page(self):
+        r = self.c.get("/pages/section-1/")
+        self.assertEqual(r.status_code, 200)
+
+    def test_edit_page(self):
+        r = self.c.get("/pages/edit/section-1/")
+        self.assertEqual(r.status_code, 302)
+
+    def test_instructor_page(self):
+        r = self.c.get("/pages/instructor/section-1/")
+        self.assertEqual(r.status_code, 302)
