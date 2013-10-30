@@ -104,7 +104,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.flatpages',
-    'django.contrib.markup',
+    'django_markwhat',
     'django.contrib.staticfiles',
     'django.contrib.messages',
     'sorl.thumbnail',
