@@ -1,3 +1,17 @@
+1.5.0 (2014-01-06)
+==================
+
+* removed a default superuser
+* pagetree 0.13.2
+* generic class based views from pagetree
+* new login UX
+* collectstatic
+* python-ldap
+* removed munin
+* bootstrap 3.0.0
+* factory_boy
+* Django 1.5.4
+
 1.3.0 (2013-10-07)
 ==================
 
