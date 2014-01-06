@@ -147,18 +147,6 @@
 {% endblock %}
 
 
-<div id="primarynav">
-    <div class="container">
-			<nav  class="navbar navbar-default">
-        <ul class="nav navbar-nav">
-{% block moduletabs %}{% endblock %}
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-{% block navrightextra %}{% endblock %}
-        </ul>
-       </nav>
-    </div>
-</div>
 <div class="row">
 <div class="col-md-2">
 {% block sidenav %}{% endblock %}

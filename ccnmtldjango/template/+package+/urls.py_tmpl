@@ -1,7 +1,10 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.views.generic import TemplateView
+from pagetree.generic.views import PageView, EditView, InstructorView
+from ${package}.main import views
 import os.path
 admin.autodiscover()
 
@@ -25,7 +28,7 @@ urlpatterns = patterns(
     auth_urls,
     logout_page,
     (r'^registration/', include('registration.backends.default.urls')),
-    (r'^$$', '${package}.main.views.index'),
+    (r'^$$', views.IndexView.as_view()),
     (r'^admin/', include(admin.site.urls)),
     url(r'^_impersonate/', include('impersonate.urls')),
     (r'^stats/$$', TemplateView.as_view(template_name="stats.html")),
@@ -34,10 +37,15 @@ urlpatterns = patterns(
      'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     (r'^pagetree/', include('pagetree.urls')),
     (r'^quizblock/', include('quizblock.urls')),
-    (r'^pages/edit/(?P<path>.*)$$', '${package}.main.views.edit_page',
+    (r'^pages/edit/(?P<path>.*)$$', login_required(EditView.as_view(
+        hierarchy_name="main",
+        hierarchy_base="/pages/")),
      {}, 'edit-page'),
     (r'^pages/instructor/(?P<path>.*)$$',
-     '${package}.main.views.instructor_page'),
-    (r'^pages/(?P<path>.*)$$', '${package}.main.views.page'),
-
+        login_required(InstructorView.as_view(
+            hierarchy_name="main",
+            hierarchy_base="/pages/"))),
+    (r'^pages/(?P<path>.*)$$', PageView.as_view(
+        hierarchy_name="main",
+        hierarchy_base="/pages/")),
 )
