@@ -30,8 +30,8 @@ def setup_ve():
     if os.path.exists(vedir):
         shutil.rmtree(vedir)
     subprocess.call(["virtualenv", vedir])
-    subprocess.call([os.path.join(vedir, "bin", "pip"), "install", "pip", "--upgrade"])
     subprocess.call([os.path.join(vedir, "bin", "pip"), "install", "setuptools", "--upgrade"])
+    subprocess.call([os.path.join(vedir, "bin", "pip"), "install", "pip", "--upgrade"])
     subprocess.call([os.path.join(vedir, "bin", "pip"), "install", "virtualenv", "--upgrade"])
     subprocess.call([os.path.join(vedir, "bin", "pip"), "install", "wheel", "--upgrade"])
 
