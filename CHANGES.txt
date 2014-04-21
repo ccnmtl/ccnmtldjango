@@ -1,3 +1,11 @@
+1.6.0 (2014-04-21)
+==================
+
+* pagetree 0.14.2
+* djangowind 0.12.1 (for Django 1.6 compat)
+* raven 4.0.3
+* config changes to work with new Sentry setup
+
 1.5.0 (2014-01-06)
 ==================
 
