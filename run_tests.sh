@@ -13,8 +13,7 @@ cd testproject
 chmod +x bootstrap.py manage.py
 
 # build it
-./bootstrap.py
-./manage.py collectstatic --noinput
+make collectstatic
 
 # run our tests (finally!)
 make
