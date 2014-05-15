@@ -1,13 +1,11 @@
 recursive-include ccnmtldjango/template/ *
 include *.md
-include ccnmtldjango/template/build_lettuce_db.sh_tmpl
+include ccnmtldjango/template/Makefile_tmpl
 include ccnmtldjango/template/virtualenv.py
 include ccnmtldjango/template/bootstrap.py
 include ccnmtldjango/template/requirements.txt
 include ccnmtldjango/template/manage.py_tmpl
-include ccnmtldjango/template/terrain.py
 include ccnmtldjango/template/+package+/settings_production.py_tmpl
-include ccnmtldjango/template/+package+/settings_lettuce.py_tmpl
 include ccnmtldjango/template/+package+/settings.py
 include ccnmtldjango/template/+package+/urls.py_tmpl
 include ccnmtldjango/template/+package+/__init__.py
@@ -40,7 +38,6 @@ include ccnmtldjango/template/+package+/main/smoke.py
 include ccnmtldjango/template/+package+/main/models.py
 include ccnmtldjango/template/+package+/main/__init__.py
 include ccnmtldjango/template/+package+/main/views.py
-include ccnmtldjango/template/+package+/main/features/index.feature
 include ccnmtldjango/template/+package+/main/tests/test_models.py
 include ccnmtldjango/template/+package+/main/tests/test_views.py
 include ccnmtldjango/template/+package+/main/tests/__init__.py
