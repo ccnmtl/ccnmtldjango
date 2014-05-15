@@ -1,3 +1,18 @@
+1.7.0 (2014-05-15)
+==================
+
+* Django 1.6.5
+* add Makefile for easier task management
+* remove Lettuce (broken with Django 1.5.5+)
+* South 0.8.4
+* django-statsd-mozilla 0.3.11
+* django-debug-toolbar 1.1
+* django-jenkins 0.15.0
+* django-smoketest 0.2.2
+* django-impersonate 0.8.0
+* django-quizblock 0.6.15
+* gunicorn 0.17.4
+
 1.6.0 (2014-04-21)
 ==================
 

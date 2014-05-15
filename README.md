@@ -20,6 +20,7 @@ What it provides for us that startproject doesn't:
   bootstrappable, `manage.py`'s shebang set to use it. This
   basically fits it into our one-step automated deployment and
   containment approach.
+* a nice Makefile for common build, test, and run tasks
 * use wheel packages wherever possible
 * sorl.thumbnail (a handy dandy image thumbnailing library) is included by default
 * flatpages enabled
@@ -64,8 +65,6 @@ What it provides for us that startproject doesn't:
 * a nice default template design with alternate base templates for multi-column layout.
 * `flake8` (http://pypi.python.org/pypi/flake8) is installed by default
   for code linting
-* lettuce/selenium included for nice browser tests, including sample
-  index feature and helpful terrain.py functions
 * backbone.js
 * underscore.js
 * layout based on twitter bootstrap3
@@ -121,7 +120,7 @@ paster still doesn't do anything with file permissions, so we still
 need to manually set a couple:
 
     $ cd myprojectname
-    $ chmod 755 manage.py bootstrap.py build_lettuce_db.sh
+    $ chmod 755 manage.py bootstrap.py
 
 I couldn't figure out a way to insert random strings into the code via
 Paste Template, so one thing that ccnmtldjango is missing compared to
@@ -135,7 +134,7 @@ This is probably a good point to check the project into version control.
 
 We use containment for django too, with virtualenv:
 
-    $ ./bootstrap.py
+    $ make
 
 That will create a `ve` directory which contains a virtualenv and has
 had all the libraries specified in the `requirements.txt` file
@@ -157,9 +156,9 @@ then do:
 
 and it is all set to use it:
 
-    $ ./manage.py syncdb
-    $ ./manage.py migrate
-    $ ./manage.py collectstatic --noinput
+    $ make syncdb
+    $ make migrate
+    $ make collectstatic
 
 will install the tables that django needs for it's common apps (sites,
 sessions, admin, flatpages, etc) and have you create an admin user (if
@@ -170,23 +169,23 @@ whether you want to check those into version control and not have to
 deal with it on deployment or leave them out of VC and add a
 `collectstatic` step to your deployment process.
 
-The `./manage.py syncdb` automagically sets up an "example.com"
+The `make syncdb` automagically sets up an "example.com"
 site. This should be changed to your site domain (e.g. `localhost:8000`)
 via the admin console. `http://localhost:8000/admin/sites/site/`. (if it
 matters for your application)
 
 Tests should pass out of the box:
 
-    $ ./manage.py test
+    $ make test
 
 They can be run via Jenkins as well and generate the right reports in
 a `reports` directory (which you will want to gitignore).
 
-    $ ./manage.py jenkins
+    $ make jenkins
 
 Your application is ready to run now:
 
-    $ ./manage.py runserver
+    $ make runserver
 
 will start a server on `http://localhost:8000/`. The admin
 app should be accessible (via the user account you created during
@@ -196,23 +195,6 @@ and login to `http://localhost:8000/admin/`
 
 Even without any application specific code, flatpages is included so
 you can put content on the web right away.
-
-Lettuce and Selenium have also been set up, so (as long as you have
-firefox installed in a regular way), you should be able to do:
-
-    $ ./build_lettuce_db.sh
-    $ LETTUCE_SKIP_SELENIUM=1 ./manage.py harvest --settings=yourapp.settings_lettuce
-
-And see a couple basic lettuce tests (defined in
-`main/features/index.feature`) run by and pass.
-
-If you have your browser stuff setup properly (running on your local
-machine, etc), you can run that without `LETTUCE_SKIP_SELENIUM` and
-run full browser tests. The `build_lettuce_db.sh` script is a helper
-to create the sqlite file for lettuce tests to run against (for
-whatever reason, lettuce doesn't work with sqlite's in-memory
-mode. sigh.). If you change your database schema, you'll want to
-re-run that.
 
 From this point out, it's basic django development. You'll probably
 want to do a `./manage.py startapp` to create your own application
@@ -224,8 +206,8 @@ Setting up a fresh checkout
 The first time you check out an existing ccnmtl-template project from
 svn/git:
 
-     $ ./bootstrap.py
-     $ ./manage.py runserver <IP Address>:<PORT>
+     $ make
+     $ make runserver <IP Address>:<PORT>
 
 
 ------------------------------------------

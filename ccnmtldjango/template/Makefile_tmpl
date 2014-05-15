@@ -47,6 +47,9 @@ rebase:
 	make migrate
 	make flake8
 
+syncdb: ./ve/bin/python
+	$$(MANAGE) syncdb
+
 collectstatic: ./ve/bin/python validate
 	$$(MANAGE) collectstatic --noinput --settings=$$(APP).settings_production
 
