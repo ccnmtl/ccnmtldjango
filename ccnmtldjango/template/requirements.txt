@@ -65,3 +65,5 @@ django-pageblocks==0.5.11
 django-quizblock==0.6.15
 django-markwhat==1.0
 gunicorn==0.17.4
+django-infranil==0.1.0
+django-flatblocks==0.9

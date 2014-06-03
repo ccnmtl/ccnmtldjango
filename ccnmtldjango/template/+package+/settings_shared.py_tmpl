@@ -119,6 +119,8 @@ INSTALLED_APPS = [
     'waffle',
     'django_jenkins',
     'smoketest',
+    'infranil',
+    'flatblocks',
     'django_extensions',
     'impersonate',
     'registration',

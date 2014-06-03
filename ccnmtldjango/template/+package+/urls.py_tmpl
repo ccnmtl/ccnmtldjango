@@ -33,6 +33,7 @@ urlpatterns = patterns(
     url(r'^_impersonate/', include('impersonate.urls')),
     (r'^stats/$$', TemplateView.as_view(template_name="stats.html")),
     (r'smoketest/', include('smoketest.urls')),
+    (r'infranil/', include('infranil.urls')),
     (r'^uploads/(?P<path>.*)$$',
      'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     (r'^pagetree/', include('pagetree.urls')),
