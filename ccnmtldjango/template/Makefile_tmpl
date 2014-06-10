@@ -5,6 +5,7 @@ FLAKE8=./ve/bin/flake8
 jenkins: ./ve/bin/python validate test flake8
 
 ./ve/bin/python: requirements.txt bootstrap.py virtualenv.py
+	chmod +x manage.py bootstrap.py
 	./bootstrap.py
 
 test: ./ve/bin/python

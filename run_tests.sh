@@ -10,7 +10,6 @@ virtualenv temp/outer-ve
 cd temp
 ./outer-ve/bin/paster create --template=ccnmtldjango testproject
 cd testproject
-chmod +x bootstrap.py manage.py
 
 # build it
 make collectstatic
