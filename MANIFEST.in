@@ -34,6 +34,7 @@ include ccnmtldjango/template/+package+/templates/registration/password_reset_do
 include ccnmtldjango/template/+package+/templates/registration/registration_complete.html
 include ccnmtldjango/template/+package+/templates/registration/login.html
 include ccnmtldjango/template/+package+/templates/registration/activation_complete.html
+include ccnmtldjango/template/+package+/templates/infranil/index.html
 include ccnmtldjango/template/+package+/main/smoke.py
 include ccnmtldjango/template/+package+/main/models.py
 include ccnmtldjango/template/+package+/main/__init__.py
