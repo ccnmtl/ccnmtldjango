@@ -1,3 +1,10 @@
+1.7.1 (2014-06-10)
+==================
+
+* remove simplejson
+* Makefile now sets bootstrap.py and manage.py permissions
+* explicitly configure debug toolbar. see issue #13
+
 1.7.0 (2014-05-15)
 ==================
 
