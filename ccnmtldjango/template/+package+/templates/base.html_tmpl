@@ -1,3 +1,4 @@
+{% load bootstrap3 %}
 {% load compress %}
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +15,8 @@
   <script src="../assets/js/respond.min.js"></script>
 <![endif]-->
 
+    <link href="{% bootstrap_css_url %}" rel="stylesheet">
 {% compress css %}
-    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{STATIC_URL}}bootstrap/css/bootstrap-glyphicons.css" rel="stylesheet">
     <link href="{{STATIC_URL}}css/main.css" rel="stylesheet">
 {% endcompress %}
 	<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
@@ -166,9 +166,7 @@
 
 <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
 
-{% compress js %}
-<script src="{{STATIC_URL}}bootstrap/js/bootstrap.js"></script>
-{% endcompress %}
+<script src="{% bootstrap_javascript_url %}"></script>
 
 {% block js %}{% endblock %}
 

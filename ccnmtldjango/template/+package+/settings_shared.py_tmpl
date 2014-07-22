@@ -114,6 +114,7 @@ INSTALLED_APPS = [
     'django_nose',
     'compressor',
     'django_statsd',
+    'bootstrap3',
     'bootstrapform',
     'debug_toolbar',
     'waffle',
