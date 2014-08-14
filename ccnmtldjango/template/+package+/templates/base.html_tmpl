@@ -96,11 +96,10 @@
     <div class="loginbox">
         <h2>Choose a login option...</h2>
         <div class="content">
-            {% if WIND_BASE %}
-                <form method="get" action="{{ WIND_BASE }}login">
+            {% if CAS_BASE %}
+                <form method="get" action="{{ CAS_BASE }}cas/login">
                     {% csrf_token %}
-                    <input type="hidden" name="service" value="{{ WIND_SERVICE }}" />
-                    <input type="hidden" name="destination" value="http://{{ request.get_host }}/accounts/windlogin/?next={{ request.get_full_path|urlencode }}" />
+                    <input type="hidden" name="destination" value="https://{{ request.get_host }}/accounts/caslogin/?next={{ request.get_full_path|urlencode }}" />
                     <p>If you have a Columbia University Network ID (UNI)...</p>
                     <input class="regbutton" type="submit" value="Columbia Log In" />
                 </form>
