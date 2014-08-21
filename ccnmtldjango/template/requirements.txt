@@ -34,7 +34,7 @@ factory_boy==2.1.1
 python-ldap==2.4.13
 sqlparse==0.1.11
 
-djangowind==0.12.1
+djangowind==0.13.1
 sorl==3.1
 tagging==0.3-pre
 typogrify==2.0.0
