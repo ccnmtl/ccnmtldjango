@@ -60,9 +60,9 @@ django-ga-context==0.1.0
 django-impersonate==0.8.0
 django-registration==1.0
 django-treebeard==2.0b2
-django-pagetree==0.14.2
-django-pageblocks==0.5.11
-django-quizblock==0.6.15
+django-pagetree==0.14.6
+django-pageblocks==0.5.13
+django-quizblock==0.9.4
 django-markwhat==1.0
 gunicorn==0.17.4
 django-infranil==0.1.0
