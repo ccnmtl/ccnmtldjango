@@ -1,2 +1,2 @@
-recursive-include ccnmtldjango/template
+recursive-include ccnmtldjango/template *
 include *.md
