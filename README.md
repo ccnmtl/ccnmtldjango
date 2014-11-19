@@ -48,7 +48,7 @@ What it provides for us that startproject doesn't:
 * `/stats/` page wired up to display basic traffic stats for the app
 * 'main' app with templated index view wired up and ready to go
 * `uuid.py`
-* jquery (1.7.2, minified) included
+* jQuery, Backbone and Underscore included
 * base templates included
 * django admin enabled (and authenticated with WIND for tlc)
 * `restclient`
@@ -65,8 +65,6 @@ What it provides for us that startproject doesn't:
 * a nice default template design with alternate base templates for multi-column layout.
 * `flake8` (http://pypi.python.org/pypi/flake8) is installed by default
   for code linting
-* backbone.js
-* underscore.js
 * layout based on twitter bootstrap3
 * `python-ldap`
 * `django-waffle` included for feature flipping (https://github.com/jsocol/django-waffle)
