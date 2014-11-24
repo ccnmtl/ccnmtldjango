@@ -47,7 +47,7 @@ django-appconf==0.6
 django_compressor==1.4
 django-statsd-mozilla==0.3.14
 raven==5.1.1
-django-bootstrap3==4.11.0
+django-bootstrap3==5.0.2
 django-bootstrap-form==3.1.0
 django-debug-toolbar==1.2.2
 django-waffle==0.10
