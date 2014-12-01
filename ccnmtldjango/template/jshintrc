@@ -1,0 +1,24 @@
+{
+    "indent": 4,
+    "white": true,
+    "trailing": true,
+    "undef": true,
+    "browser": true,
+    "predef": [
+        "$",
+        "define",
+        "jQuery",
+        "require",
+        "test",
+        "expect",
+        "ok",
+        "equal",
+        "sinon",
+        "confirm",
+        "alert",
+        "toggle",
+        "forEach",
+        "log",
+        "connect"
+    ]
+}
