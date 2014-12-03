@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ccnmtl/ccnmtldjango.svg?branch=master)](https://travis-ci.org/ccnmtl/ccnmtldjango)
+
 ccnmtldjango is a Paste Template that we use to replace
 the standard `django-admin.py startproject` command.
 
