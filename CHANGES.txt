@@ -1,3 +1,17 @@
+1.8.2 (2014-12-09)
+==================
+
+* CSRF middleware added
+* removed some unused CSS files
+* simplify 500 page to avoid compounded errors
+* Makefile tweaks
+** switch from validate to check
+** jshint
+** jscs
+** ignore migrations for flake8
+* Bootstrap 3.3.1
+* lots of library version updates
+
 1.8.0 (2014-09-10)
 ==================
 
