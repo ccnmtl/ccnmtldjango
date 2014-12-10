@@ -11,9 +11,6 @@ cd temp
 ./outer-ve/bin/paster create --template=ccnmtldjango testproject
 cd testproject
 
-# build it
-make collectstatic
-
 # run our tests (finally!)
 make
 
