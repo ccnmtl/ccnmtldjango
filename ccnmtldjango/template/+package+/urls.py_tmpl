@@ -6,7 +6,6 @@ from django.views.generic import TemplateView
 from pagetree.generic.views import PageView, EditView, InstructorView
 from ${package}.main import views
 import os.path
-admin.autodiscover()
 
 site_media_root = os.path.join(os.path.dirname(__file__), "../media")
 
