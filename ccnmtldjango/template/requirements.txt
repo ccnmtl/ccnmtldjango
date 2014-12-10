@@ -33,6 +33,7 @@ six==1.8.0
 factory_boy==2.4.1
 python-ldap==2.4.18
 sqlparse==0.1.13
+boto==2.34.0
 
 djangowind==0.13.2
 sorl==3.1
@@ -59,10 +60,11 @@ django-ga-context==0.1.0
 django-impersonate==0.9
 django-registration==1.1
 django-treebeard==2.0
-django-pagetree==1.0.0
+django-pagetree==1.0.2
 django-pageblocks==1.0.0
 django-quizblock==1.0.0
 django-markwhat==2014.9.20
 gunicorn==19.1.1
 django-infranil==0.1.0
 django-flatblocks==0.9
+django-storages==1.1.8
