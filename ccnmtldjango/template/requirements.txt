@@ -34,6 +34,7 @@ factory_boy==2.4.1
 python-ldap==2.4.18
 sqlparse==0.1.13
 boto==2.34.0
+python-dateutil==2.2
 
 djangowind==0.13.2
 sorl==3.1
