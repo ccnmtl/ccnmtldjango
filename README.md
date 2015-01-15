@@ -203,12 +203,6 @@ within the project and so on.
 
 #### Debugging Tests ####
 
-Nose captures the output of the tests and redirects it. When you insert a
-breakpoint with `import pdb; pdb.set_trace()`, the pdb shell won't be visible
-on your command line. Instead, use
-`from nose.tools import set_trace; set_trace()` when debugging tests in
-ccnmtldjango.
-
 When debugging tests, sometimes it's useful to run only the test you're
 working on. To do this, you can specify the test class and method along with
 the file like this:
