@@ -1,3 +1,13 @@
+1.9.0 (2014-03-26)
+==================
+
+* Django 1.7.7
+* latest pip and setuptools
+* misc library updates
+* admin login style fix
+* messages context processor
+* Pillow 2.7.0 (security update)
+
 1.8.2 (2014-12-09)
 ==================
 
