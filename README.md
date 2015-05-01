@@ -39,10 +39,7 @@ What it provides for us that startproject doesn't:
   (https://github.com/dcramer/raven/) and configured for our sentry
   setup
 * raven configured to not run on south migrations
-* `South` is included for database migrations
 * `django-annoying` is included (I like `@render_to`)
-* `django-nose` installed and set up as test runner (much nicer!)
-* coverage reports configured for `django-nose`
 * sqlite in-memory database used for unit tests
 * south tests automatically skipped on `./manage.py test` (they break)
 * `django_compressor` added and set up to compress css on production
@@ -205,9 +202,9 @@ within the project and so on.
 
 When debugging tests, sometimes it's useful to run only the test you're
 working on. To do this, you can specify the test class and method along with
-the file like this:
+the module like this:
 
-    ./manage.py test ./dmt/api/tests/test_views.py:NotifyTests.test_get
+    ./manage.py test dmt.api.tests.test_views.NotifyTests.test_get
 
 --------------------------
 Setting up a fresh checkout
