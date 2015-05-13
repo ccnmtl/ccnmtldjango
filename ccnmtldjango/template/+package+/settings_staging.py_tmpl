@@ -2,13 +2,13 @@
 from settings_shared import *
 
 TEMPLATE_DIRS = (
-    "/var/www/${package}/${package}/${package}/templates",
+    os.path.join(CURRENT_DIR, "templates"),
 )
 
-MEDIA_ROOT = '/var/www/${package}/uploads/'
+MEDIA_ROOT = os.path.join(WEB_DIR, 'uploads/')
 # put any static media here to override app served static media
 STATICMEDIA_MOUNTS = (
-    ('/sitemedia', '/var/www/${package}/${package}/sitemedia'),
+    ('/sitemedia', os.path.join(PROJECT_DIR, 'sitemedia')),
 )
 
 DATABASES = {
