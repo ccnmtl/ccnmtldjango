@@ -1,11 +1,6 @@
 # flake8: noqa
 from settings_shared import *
 
-TEMPLATE_DIRS = (
-    os.path.join(CURRENT_DIR, "templates"),
-)
-
-MEDIA_ROOT = os.path.join(WEB_DIR, 'uploads/')
 # put any static media here to override app served static media
 STATICMEDIA_MOUNTS = (
     ('/sitemedia', os.path.join(PROJECT_DIR, 'sitemedia')),
