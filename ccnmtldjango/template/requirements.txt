@@ -1,4 +1,4 @@
-Django==1.7.7
+Django==1.8.2
 pytz==2015.4
 httplib2==0.9.1
 feedparser==5.2.0
@@ -60,10 +60,10 @@ django-ga-context==0.1.0
 django-impersonate==0.9.1
 django-registration==1.1
 django-treebeard==3.0
-django-pagetree==1.1.0
-django-pageblocks==1.0.0
-django-quizblock==1.0.8
-django-markwhat==2014.9.20
+django-pagetree==1.1.5
+django-pageblocks==1.0.2
+django-quizblock==1.1.1
+django-markwhat==1.4
 gunicorn==19.3.0
 django-infranil==0.1.0
 django-flatblocks==0.9.1
