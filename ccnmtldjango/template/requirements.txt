@@ -58,7 +58,7 @@ django-extensions==1.5.5
 django-stagingcontext==0.1.0
 django-ga-context==0.1.0
 django-impersonate==0.9.1
-django-registration==1.1
+django-registration==1.2
 django-treebeard==3.0
 django-pagetree==1.1.5
 django-pageblocks==1.0.2
