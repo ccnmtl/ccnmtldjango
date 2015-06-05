@@ -1,3 +1,12 @@
+1.10.0 (2014-06-05)
+===================
+
+* Django 1.8.2
+* pip 7.0.3
+* better dynamic path construction for MEDIA/STATIC
+* switched from nose to django's test runner
+* ravenjs in base template
+
 1.9.0 (2014-03-26)
 ==================
 
