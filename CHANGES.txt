@@ -1,4 +1,4 @@
-1.10.0 (2014-06-05)
+1.10.0 (2015-06-05)
 ===================
 
 * Django 1.8.2
@@ -7,7 +7,7 @@
 * switched from nose to django's test runner
 * ravenjs in base template
 
-1.9.0 (2014-03-26)
+1.9.0 (2015-03-26)
 ==================
 
 * Django 1.7.7
