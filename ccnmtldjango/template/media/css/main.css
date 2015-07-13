@@ -1,20 +1,20 @@
 html {
-	height: 100%;
+    height: 100%;
 }
 
 body {
-  background-color: #eee;
-  height: 100%;
+    background-color: #eee;
+    height: 100%;
 }
 
 body > .container {
-  background-color: #fff;
-  min-height: 100%;
-  padding-top: 75px;
+    background-color: #fff;
+    min-height: 100%;
+    padding-top: 75px;
 }
 
 #content {
-  min-height: 100%;
+    min-height: 100%;
 }
 
 /* LOGIN PAGE */
@@ -38,8 +38,7 @@ body > .container {
 .loginbox-container.columbia {
     height: 300px;
 }
-.loginbox
-{
+.loginbox {
     display: block;
     width: 300px;
     margin: 0 30px 0 20px;
@@ -50,8 +49,7 @@ body > .container {
     -webkit-border-radius: 10px;
     font-size: 12px;
 }
-.loginbox h2
-{
+.loginbox h2 {
     margin: 0 !important;
     padding: 5px 10px !important;
     -moz-border-radius: 10px 10px 0 0;
@@ -61,15 +59,13 @@ body > .container {
     font-size: 14px !important;
     color: black;
 }
-.loginbox .content
-{
+.loginbox .content {
     margin: 0;
     padding: 10px 10px 0 10px;
     border: 0;
 }
 
-.loginbox .seperator
-{
+.loginbox .seperator {
     margin: 20px 0;
     padding: 0;
     border: 0;
@@ -77,14 +73,12 @@ body > .container {
     background-color: #fff;
 }
 
-.loginbox .fieldwrapper
-{
+.loginbox .fieldwrapper {
     margin: 0 0 10px 10px;
     padding: 0;
     border: 0;
 }
-.loginbox .fieldwrapper label
-{
+.loginbox .fieldwrapper label {
     display: block;
     font-weight: bold;
     color: #666;
@@ -101,8 +95,7 @@ body > .container {
     font: bold 12px arial, helvetica, verdana, sans-serif;
 }
 
-.loginbox .fieldwrapper input:focus
-{
+.loginbox .fieldwrapper input:focus {
     border: 1px solid #06f;
     background-color: #fff;
 }
@@ -128,21 +121,18 @@ body > .container {
     font: bold 14px arial, helvetica, verdana, sans-serif !important;
     text-transform: uppercase;
 }
-.loginbox .regbutton:hover
-{
+.loginbox .regbutton:hover {
     border: 1px solid #999;
     background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));
     background: -moz-linear-gradient(top, #fff, #ddd);
 }
-.loginbox .regbutton:active
-{
+.loginbox .regbutton:active {
     border: 1px solid #006666;
     background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#669999));
     background: -moz-linear-gradient(top, #fff, #669999);
 }
 
-.loginbox .smalltxt
-{
+.loginbox .smalltxt {
     font-size: 11px;
 }
 
