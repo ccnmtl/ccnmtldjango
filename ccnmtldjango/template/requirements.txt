@@ -60,7 +60,7 @@ django-ga-context==0.1.0
 django-impersonate==0.9.1
 django-registration-redux==1.2
 django-treebeard==3.0
-django-pagetree==1.1.5
+django-pagetree==1.1.7
 django-pageblocks==1.0.2
 django-quizblock==1.1.1
 django-markwhat==1.4
