@@ -5,7 +5,7 @@ feedparser==5.2.0
 Markdown==2.6.2
 smartypants==1.8.6
 uuid==1.30
-psycopg2==2.6
+psycopg2==2.6.1
 Pillow==2.8.1
 versiontools==1.9.1
 statsd==3.1
