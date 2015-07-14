@@ -186,6 +186,10 @@
     </script>
 {% endif %}
 
+<script
+     data-main="{{STATIC_URL}}js/src/main.js"
+     src="{{STATIC_URL}}js/lib/require/require.js"></script>
+
 {% block js %}{% endblock %}
 
 {% if STAGING_ENV %}
