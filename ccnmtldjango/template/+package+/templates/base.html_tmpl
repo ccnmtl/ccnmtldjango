@@ -21,7 +21,7 @@
 {% endcompress %}
 	<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
 	{% block css %}{% endblock %}
-  <script src="{{STATIC_URL}}js/lib/jquery-1.11.1.min.js"></script>
+  <script src="{{STATIC_URL}}js/lib/jquery-1.11.3.min.js"></script>
 
 	{% block feeds %}{% endblock %}
 </head>
