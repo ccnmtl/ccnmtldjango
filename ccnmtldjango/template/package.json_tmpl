@@ -1,0 +1,13 @@
+{
+  "name": "${package}",
+  "version": "0.1.0",
+  "description": "${package}",
+  "license": "GPL-2.0+",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "~2.2.5",
+    "requirejs": "~2.1.19"
+  }
+}
