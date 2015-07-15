@@ -24,6 +24,9 @@ ipdb==0.8.1
 rdflib==4.2.0
 selenium==2.46.0
 coverage==3.7.1
+pyasn1==0.1.8
+pyOpenSSL==0.15.1
+ndg-httpsclient==0.4.0
 requests==2.7.0
 logilab-common==0.63.2
 logilab-astng==0.24.3
