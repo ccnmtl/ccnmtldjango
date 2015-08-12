@@ -4,3 +4,4 @@ ccnmtldjango/template/ve/
 build/*
 dist/*
 temp/*
+docs/_build/
