@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ccnmtl/ccnmtldjango.svg?branch=master)](https://travis-ci.org/ccnmtl/ccnmtldjango)
+[![Build Status](https://travis-ci.org/ccnmtl/ccnmtldjango.svg?branch=master)](https://travis-ci.org/ccnmtl/ccnmtldjango) [![Documentation Status](https://readthedocs.org/projects/ccnmtldjango/badge/?version=latest)](https://readthedocs.org/projects/ccnmtldjango/?badge=latest)
 
 ccnmtldjango is a Paste Template that we use to replace
 the standard `django-admin.py startproject` command.
