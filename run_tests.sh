@@ -10,6 +10,7 @@ virtualenv temp/outer-ve
 cd temp
 ./outer-ve/bin/paster create --template=ccnmtldjango testproject
 cd testproject
+make init
 
 # run our tests (finally!)
 make
