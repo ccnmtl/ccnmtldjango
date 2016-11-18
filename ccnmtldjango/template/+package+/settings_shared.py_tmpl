@@ -20,7 +20,6 @@ MIDDLEWARE_CLASSES += [  # noqa
 
 INSTALLED_APPS += [  # noqa
     'sorl.thumbnail',
-    'typogrify',
     'bootstrap3',
     'bootstrapform',
     'infranil',
