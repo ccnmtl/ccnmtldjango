@@ -35,7 +35,7 @@ What it provides for us that startproject doesn't:
   server's `/etc/apache/sites-enabled/` directory and it's good to go)
 * media dirs for dev/prod/staging configured
 * `raven` included
-  (https://github.com/dcramer/raven/) and configured for our sentry
+  (https://github.com/getsentry/raven-python) and configured for our sentry
   setup
 * raven configured to not run on south migrations
 * `django-annoying` is included (I like `@render_to`)
@@ -49,10 +49,8 @@ What it provides for us that startproject doesn't:
 * jQuery, Backbone and Underscore included
 * base templates included
 * django admin enabled (and authenticated with WIND for tlc)
-* `restclient`
 * `httplib2`
 * `requests`
-* `imageuploader`
 * markdown is included and enabled
 * database defaulted to postgresql
 * transaction middleware enabled by default (cause data corruption is teh suck)
@@ -150,7 +148,6 @@ then do:
 
 and it is all set to use it:
 
-    $ make syncdb
     $ make migrate
     $ make collectstatic
 
@@ -162,11 +159,6 @@ installed apps and put them in the right place. It's really up to you
 whether you want to check those into version control and not have to
 deal with it on deployment or leave them out of VC and add a
 `collectstatic` step to your deployment process.
-
-The `make syncdb` automagically sets up an "example.com"
-site. This should be changed to your site domain (e.g. `localhost:8000`)
-via the admin console. `http://localhost:8000/admin/sites/site/`. (if it
-matters for your application)
 
 Tests should pass out of the box:
 
@@ -181,11 +173,11 @@ Your application is ready to run now:
 
     $ make runserver
 
-will start a server on `http://localhost:8000/`. The admin
-app should be accessible (via the user account you created during
-syncdb, or via WIND to tlc users (or ones specified in the
-`WIND_SUPERUSER_MAPPER_GROUPS` list in `settings_shared.py`). So go ahead
-and login to `http://localhost:8000/admin/`
+will start a server on `http://localhost:8000/`. The admin app should
+be accessible (via a user account created with 
+`manage.py createsuperuser`, or via WIND to tlc users (or ones specified 
+in the `WIND_SUPERUSER_MAPPER_GROUPS` list in `settings_shared.py`). 
+So go ahead and login to `http://localhost:8000/admin/`
 
 Even without any application specific code, flatpages is included so
 you can put content on the web right away.
