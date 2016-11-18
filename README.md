@@ -34,8 +34,6 @@ What it provides for us that startproject doesn't:
   symlink the generated apache config file into our production
   server's `/etc/apache/sites-enabled/` directory and it's good to go)
 * media dirs for dev/prod/staging configured
-* `django-typogrify` included (http://code.google.com/p/typogrify/)
-  along with `smartypants.py` (which it uses)
 * `raven` included
   (https://github.com/dcramer/raven/) and configured for our sentry
   setup
