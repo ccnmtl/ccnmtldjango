@@ -89,11 +89,9 @@ Set up a new virtual environment, e.g.
 
     $ virtualenv ve
 
-Activate your virtual environment, source ve/bin/activate, or previx all commands with 've/bin/'
+Activate your virtual environment, source ve/bin/activate, or prefix all commands with 've/bin/'
 
-    $ pip install Paste
-    $ pip install PasteDeploy
-    $ pip install ccnmtldjango
+    $ pip install Paste PasteDeploy ccnmtldjango
 
 ccnmtldjango should automatically pull in the remaining needed dependencies (just
 PasteScript, actually). If that gives you problems, the most likely
@@ -222,7 +220,7 @@ Differences from a standard Django install
 
 Obviously, a bunch of libraries and such have been added and there's
 the whole virtualenv thing. There are also some differences from a
-standard django project (ie, the result of `django-admin.py startproject`) that you should be awayre of.
+standard django project (ie, the result of `django-admin.py startproject`) that you should be aware of.
 
 First, the settings have been split up to make dev/staging/prod
 deployments easier to configure. A regular django install will have

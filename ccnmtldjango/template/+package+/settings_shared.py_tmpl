@@ -13,9 +13,13 @@ PROJECT_APPS = [
 
 USE_TZ = True
 
+MIDDLEWARE_CLASSES += [  # noqa
+    'wagtail.wagtailcore.middleware.SiteMiddleware',
+    'wagtail.wagtailredirects.middleware.RedirectMiddleware',
+]
+
 INSTALLED_APPS += [  # noqa
     'sorl.thumbnail',
-    'tagging',
     'typogrify',
     'bootstrap3',
     'bootstrapform',
@@ -25,6 +29,21 @@ INSTALLED_APPS += [  # noqa
     'pagetree',
     'pageblocks',
     'quizblock',
+
+    'wagtail.wagtailforms',
+    'wagtail.wagtailredirects',
+    'wagtail.wagtailembeds',
+    'wagtail.wagtailsites',
+    'wagtail.wagtailusers',
+    'wagtail.wagtailsnippets',
+    'wagtail.wagtaildocs',
+    'wagtail.wagtailimages',
+    'wagtail.wagtailsearch',
+    'wagtail.wagtailadmin',
+    'wagtail.wagtailcore',
+    'modelcluster',
+    'taggit',
+
     '${package}.main',
 ]
 
@@ -41,3 +60,5 @@ THUMBNAIL_SUBDIR = "thumbs"
 LOGIN_REDIRECT_URL = "/"
 
 ACCOUNT_ACTIVATION_DAYS = 7
+
+WAGTAIL_SITE_NAME = '${package}'
