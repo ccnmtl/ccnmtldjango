@@ -1,0 +1,21 @@
+db:
+  image: postgres
+elasticsearch:
+  image: elasticsearch:2
+rabbitmq:
+  image: rabbitmq
+web:
+  image: ccnmtl/${package}
+  environment:
+    - APP=plexus
+    - SECRET_KEY=dummy-secret-key
+    - SETTINGS=settings_compose
+  command: manage runserver 0.0.0.0:8000
+  volumes:
+    - .:/app/
+  ports:
+    - "8000:8000"
+  links:
+    - db
+    - elasticsearch
+    - rabbitmq
