@@ -25,7 +25,6 @@ What it provides for us that startproject doesn't:
   containment approach.
 * a nice Makefile for common build, test, and run tasks
 * use wheel packages wherever possible
-* sorl.thumbnail (a handy dandy image thumbnailing library) is included by default
 * flatpages enabled
 * settings split for dev/prod/staging
 * apache/django.wsgi configured
