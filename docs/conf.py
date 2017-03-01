@@ -110,13 +110,21 @@ todo_include_todos = False
 # a list of builtin themes.
 html_theme = 'alabaster'
 
+html_sidebars = {
+    '**': [
+        'about.html',
+        'navigation.html',
+        'relations.html',
+        'searchbox.html',
+    ]
+}
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
     'github_user': 'ccnmtl',
     'github_repo': 'ccnmtldjango',
-    'github_banner': 'true',
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
