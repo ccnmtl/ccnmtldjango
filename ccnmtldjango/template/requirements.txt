@@ -48,7 +48,7 @@ logilab-astng==0.24.3
 astroid==1.5.3
 pylint==1.7.2
 six==1.10.0
-factory_boy==2.7.0
+factory_boy==2.9.2
 python-ldap==2.4.28
 sqlparse==0.2.2
 boto==2.43.0
