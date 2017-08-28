@@ -34,7 +34,7 @@ backports.shutil_get_terminal_size==1.0.0  # ipython
 wcwidth==0.1.7  # ipython
 prompt_toolkit==1.0.15  # ipython
 pygments==2.2.0  # ipython
-ipython==5.1.0
+ipython==6.1.0
 ipdb==0.10.1
 rdflib==4.2.1
 selenium==3.0.1
