@@ -63,7 +63,7 @@ django-annoying==0.10.3
 django-appconf==1.0.2
 rcssmin==1.0.6  # django-compressor
 rjsmin==1.0.12  # django-compressor
-django-compressor==2.1
+django-compressor==2.2
 django-statsd-mozilla==0.3.16
 raven==5.32.0
 django-bootstrap3==7.1.0
