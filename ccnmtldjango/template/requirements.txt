@@ -52,7 +52,7 @@ factory_boy==2.9.2
 python-ldap==2.4.41
 sqlparse==0.2.3
 boto==2.48.0
-python-dateutil==2.6.0
+python-dateutil==2.6.1
 
 djangowind==0.16.0
 sorl==3.1
