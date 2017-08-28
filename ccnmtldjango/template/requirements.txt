@@ -36,7 +36,7 @@ prompt_toolkit==1.0.15  # ipython
 pygments==2.2.0  # ipython
 ipython==6.1.0
 ipdb==0.10.3
-rdflib==4.2.1
+rdflib==4.2.2
 selenium==3.0.1
 coverage==4.2
 pyasn1==0.1.9
