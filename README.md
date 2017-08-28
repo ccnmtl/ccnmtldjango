@@ -44,7 +44,6 @@ What it provides for us that startproject doesn't:
 * `django_statsd` for graphite integration
 * `/stats/` page wired up to display basic traffic stats for the app
 * 'main' app with templated index view wired up and ready to go
-* `uuid.py`
 * jQuery, Backbone and Underscore included
 * base templates included
 * django admin enabled (and authenticated with WIND for tlc)
