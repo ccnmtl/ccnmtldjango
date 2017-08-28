@@ -77,7 +77,7 @@ django-stagingcontext==0.1.0
 django-ga-context==0.1.0
 django-impersonate==1.1
 django-registration-redux==1.7
-django-treebeard==4.0.1
+django-treebeard==4.1.2
 django-quizblock==1.2.2
 django-pagetree==1.2.4
 django-pageblocks==1.1.0
