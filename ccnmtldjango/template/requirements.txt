@@ -51,7 +51,7 @@ six==1.10.0
 factory_boy==2.9.2
 python-ldap==2.4.41
 sqlparse==0.2.3
-boto==2.43.0
+boto==2.48.0
 python-dateutil==2.6.0
 
 djangowind==0.16.0
