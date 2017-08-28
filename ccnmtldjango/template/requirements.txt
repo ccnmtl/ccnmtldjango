@@ -66,7 +66,7 @@ rjsmin==1.0.12  # django-compressor
 django-compressor==2.2
 django-statsd-mozilla==0.3.16
 raven==6.1.0
-django-bootstrap3==7.1.0
+django-bootstrap3==9.0.0
 django-bootstrap-form==3.2.1
 django-debug-toolbar==1.6
 django-waffle==0.11.1
