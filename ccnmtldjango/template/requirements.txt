@@ -92,7 +92,7 @@ djangorestframework==3.6.4
 Willow==1.0
 django-modelcluster==3.1
 django-taggit==0.22.1
-Unidecode==0.04.19
+Unidecode==0.04.21
 html5lib==0.999999999
 
 ccnmtlsettings==1.2.0
