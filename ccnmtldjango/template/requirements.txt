@@ -84,7 +84,7 @@ django-pageblocks==1.2.0
 django-markwhat==1.5.1
 gunicorn==19.7.1
 django-infranil==1.1.0
-django-flatblocks==0.9.3
+django-flatblocks==0.9.4
 django-storages-redux==1.3.2
 
 wagtail==1.7
