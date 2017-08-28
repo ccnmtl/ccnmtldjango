@@ -54,7 +54,7 @@ sqlparse==0.2.3
 boto==2.48.0
 python-dateutil==2.6.1
 
-djangowind==0.16.0
+djangowind==1.0.0
 sorl==3.1
 django-indexer==0.3.0
 django-templatetag-sugar==1.0
