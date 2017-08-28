@@ -75,7 +75,7 @@ django-smoketest==1.1.0
 django-extensions==1.9.0
 django-stagingcontext==0.1.0
 django-ga-context==0.1.0
-django-impersonate==1.0.1
+django-impersonate==1.1
 django-registration-redux==1.4
 django-treebeard==4.0.1
 django-quizblock==1.2.2
