@@ -10,7 +10,7 @@ virtualenv temp/outer-ve
 cd temp
 ./outer-ve/bin/paster create --template=ccnmtldjango testproject
 cd testproject
-mv jscsrc .jscsrc
+mv eslintrc.js .eslintrc.js
 chmod +x manage.py
 
 # run our tests (finally!)

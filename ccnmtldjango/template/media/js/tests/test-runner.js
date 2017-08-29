@@ -1,4 +1,4 @@
-/* jshint node: true */
+/* eslint-env node */
 
 var requirejs = require('requirejs');
 requirejs.config({
