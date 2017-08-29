@@ -110,7 +110,7 @@ paster still doesn't do anything with file permissions, so we still
 need to manually set a couple:
 
     $ cd myprojectname
-    $ chmod 755 manage.py bootstrap.py
+    $ chmod +x manage.py
 
 I couldn't figure out a way to insert random strings into the code via
 Paste Template, so one thing that ccnmtldjango is missing compared to
