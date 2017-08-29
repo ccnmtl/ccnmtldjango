@@ -20,7 +20,6 @@ MIDDLEWARE_CLASSES += [  # noqa
 
 INSTALLED_APPS += [  # noqa
     'bootstrap3',
-    'bootstrapform',
     'infranil',
     'django_extensions',
     'registration',
