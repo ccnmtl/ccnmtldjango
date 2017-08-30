@@ -1,61 +1,62 @@
-Django==1.10.3
-pytz==2016.7
-httplib2==0.9.2
+Django==1.11.4
+pytz==2017.2
+httplib2==0.10.3
 feedparser==5.2.1
-Markdown==2.6.7
-uuid==1.30
-psycopg2==2.6.2
-Pillow==3.4.2
+Markdown==2.6.9
+psycopg2==2.7.3.1
+Pillow==4.2.1
 versiontools==1.9.1
 statsd==3.2.1
 pep8==1.7.0
-pyflakes==1.3.0
-mccabe==0.5.2
+pyflakes==1.6.0
+mccabe==0.6.1
 enum34==1.1.6
 configparser==3.5.0
-pycodestyle==2.2.0
-flake8==3.2.0
-tornado==4.4.2
-beautifulsoup4==4.5.1
-cssselect==1.0.0
-lxml==3.6.4
-fuzzywuzzy==0.14.0
-sure==1.4.0
-traitlets==4.3.1  # ipython
-ipython_genutils==0.1.0  # ipython
-decorator==4.0.10  # ipython
-ptyprocess==0.5.1  # ipython
+pycodestyle==2.3.1
+flake8==3.4.1
+tornado==4.5.2
+beautifulsoup4==4.6.0
+cssselect==1.0.1
+lxml==3.8.0
+fuzzywuzzy==0.15.1
+sure==1.4.6
+traitlets==4.3.2  # ipython
+ipython_genutils==0.2.0  # ipython
+decorator==4.1.2  # ipython
+ptyprocess==0.5.2  # ipython
 pexpect==4.2.1  # ipython
-pathlib2==2.1.0  # ipython
+pathlib2==2.3.0  # ipython
 pickleshare==0.7.4  # ipython
 simplegeneric==0.8.1  # ipython
-path.py==8.2.1  # ipython
+path.py==10.4  # ipython
 backports.shutil_get_terminal_size==1.0.0  # ipython
 wcwidth==0.1.7  # ipython
-prompt_toolkit==1.0.9  # ipython
-pygments==2.1.3  # ipython
-ipython==5.1.0
-ipdb==0.10.1
-rdflib==4.2.1
-selenium==3.0.1
-coverage==4.2
-pyasn1==0.1.9
-pyOpenSSL==16.2.0
+prompt_toolkit==1.0.15  # ipython
+pygments==2.2.0  # ipython
+ipython==5.4.1
+ipdb==0.10.3
+rdflib==4.2.2
+selenium==3.5.0
+coverage==4.4.1
+pyasn1==0.3.3
+pyOpenSSL==17.2.0
 ndg-httpsclient==0.4.2
-requests==2.12.1
-logilab-common==1.3.0
+requests==2.18.4
+logilab-common==1.4.1
 logilab-astng==0.24.3
-astroid==1.4.8
-pylint==1.6.4
+astroid==1.5.3
+pylint==1.7.2
 six==1.10.0
-factory_boy==2.7.0
-python-ldap==2.4.28
-sqlparse==0.2.2
-boto==2.43.0
-python-dateutil==2.6.0
+ipaddress==1.0.13  # faker
+faker==0.8.0  # factory_boy
+factory_boy==2.9.2
+python-ldap==2.4.41
+sqlparse==0.2.3
+boto==2.48.0
+python-dateutil==2.6.1
 
-djangowind==0.16.0
-sorl==3.1
+djangowind==1.0.0
+requirements/src/sorl-3.1.tar.gz
 django-indexer==0.3.0
 django-templatetag-sugar==1.0
 django-paging==0.2.5
@@ -63,36 +64,36 @@ django-annoying==0.10.3
 django-appconf==1.0.2
 rcssmin==1.0.6  # django-compressor
 rjsmin==1.0.12  # django-compressor
-django-compressor==2.1
+django-compressor==2.2
 django-statsd-mozilla==0.3.16
-raven==5.32.0
-django-bootstrap3==7.1.0
-django-bootstrap-form==3.2.1
-django-debug-toolbar==1.6
-django-waffle==0.11.1
+raven==6.1.0
+django-bootstrap3==9.0.0
+django-bootstrap-form==3.3
+django-debug-toolbar==1.8
+django-waffle==0.12.0
 django-jenkins==0.110.0
 django-smoketest==1.1.0
-django-extensions==1.7.4
+django-extensions==1.9.0
 django-stagingcontext==0.1.0
 django-ga-context==0.1.0
-django-impersonate==1.0.1
-django-registration-redux==1.4
-django-treebeard==4.0.1
+django-impersonate==1.1
+django-registration-redux==1.7
+django-treebeard==4.1.2
 django-quizblock==1.2.2
-django-pagetree==1.2.4
-django-pageblocks==1.1.0
-django-markwhat==1.5
-gunicorn==19.6.0
+django-pagetree==1.3.2
+django-pageblocks==1.2.0
+django-markwhat==1.5.1
+gunicorn==19.7.1
 django-infranil==1.1.0
-django-flatblocks==0.9.3
-django-storages-redux==1.3.2
+django-flatblocks==0.9.4
+django-storages-redux==1.3.3
 
-wagtail==1.7
-djangorestframework==3.5.3
-Willow==0.4
-django-modelcluster==2.0
-django-taggit==0.21.3
-Unidecode==0.04.19
+wagtail==1.12
+djangorestframework==3.6.4
+Willow==1.0
+django-modelcluster==3.1
+django-taggit==0.22.1
+Unidecode==0.04.21
 html5lib==0.999999999
 
-ccnmtlsettings==1.2.0
+ccnmtlsettings==1.3.0
