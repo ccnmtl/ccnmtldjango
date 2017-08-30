@@ -1,7 +1,7 @@
 1.11.0
 ===================
-
 * Use eslint instead of jshint/jscs
+* Now using ldap3 instead of python-ldap
 * Updated django-pageblocks to 2.0.0, removing sorl dependency.
 
 1.10.0 (2015-06-05)
