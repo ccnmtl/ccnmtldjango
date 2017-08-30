@@ -47,7 +47,7 @@ logilab-astng==0.24.3
 astroid==1.5.3
 pylint==1.7.2
 six==1.10.0
-ipaddress==1.0.13  # faker
+ipaddress==1.0.18  # faker
 faker==0.8.0  # factory_boy
 factory_boy==2.9.2
 python-ldap==2.4.41
