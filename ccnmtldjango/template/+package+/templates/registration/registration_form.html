@@ -1,5 +1,5 @@
 {% extends "registration/base_registration.html" %}
-{% load i18n bootstrap %}
+{% load i18n bootstrap3 %}
 {% block title %}Sign up for an account{% endblock %}
 
 {% block registration_content %}
@@ -14,7 +14,7 @@
     </div>
     
     <form method="post" action="." class="register form">
-      {{ form|bootstrap }}
+      {% bootstrap_form form %}
       <input class="btn btn-primary" type="submit" value="{% trans 'Sign up!' %}" />
     </form>
 
