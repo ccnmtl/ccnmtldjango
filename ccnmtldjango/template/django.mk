@@ -1,6 +1,7 @@
-# VERSION=1.4.0
+# VERSION=1.5.0
 
 # CHANGES:
+# 1.5.0 - 2017-08-24 - remove jshint/jscs in favor of eslint
 # 1.4.0 - 2017-06-06 - backout the switch to eslint. that's not really ready yet.
 # 1.3.0 - 2017-06-05 - pypi location is not needed anymore
 # 1.2.0 - 2016-12-15 - bump wheel version to 0.29
@@ -22,7 +23,7 @@ INTERFACE ?= localhost
 RUNSERVER_PORT ?= 8000
 PY_DIRS ?= $(APP)
 
-jenkins: check flake8 test jshint jscs
+jenkins: check flake8 test eslint
 
 $(PY_SENTINAL): $(REQUIREMENTS) $(VIRTUALENV) $(SUPPORT_DIR)*
 	rm -rf $(VE)
