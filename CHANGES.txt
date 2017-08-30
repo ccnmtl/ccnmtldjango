@@ -2,6 +2,7 @@
 ===================
 
 * Use eslint instead of jshint/jscs
+* Updated django-pageblocks to 2.0.0, removing sorl dependency.
 
 1.10.0 (2015-06-05)
 ===================
