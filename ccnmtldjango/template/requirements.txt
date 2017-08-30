@@ -56,7 +56,6 @@ boto==2.48.0
 python-dateutil==2.6.1
 
 djangowind==1.0.0
-requirements/src/sorl-3.1.tar.gz
 django-indexer==0.3.0
 django-templatetag-sugar==1.0
 django-paging==0.2.5
@@ -80,7 +79,7 @@ django-registration-redux==1.7
 django-treebeard==4.1.2
 django-quizblock==1.2.2
 django-pagetree==1.3.2
-django-pageblocks==1.2.0
+django-pageblocks==2.0.0
 django-markwhat==1.5.1
 gunicorn==19.7.1
 django-infranil==1.1.0
