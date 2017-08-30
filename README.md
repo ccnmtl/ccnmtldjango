@@ -60,7 +60,7 @@ What it provides for us that startproject doesn't:
 * `flake8` (http://pypi.python.org/pypi/flake8) is installed by default
   for code linting
 * layout based on twitter bootstrap3
-* `python-ldap`
+* `ldap3`
 * `django-waffle` included for feature flipping (https://github.com/jsocol/django-waffle)
 * `django-jenkins` included and set up for our Jenkins instance (https://github.com/kmmbvnr/django-jenkins)
 * `django-smoketest` included, wired up, and a sample `smoke.py`
