@@ -86,7 +86,7 @@ django-infranil==1.1.0
 django-flatblocks==0.9.4
 django-storages-redux==1.3.3
 
-wagtail==1.12
+wagtail==1.12.1
 djangorestframework==3.6.4
 Willow==1.0
 django-modelcluster==3.1
