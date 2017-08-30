@@ -3,7 +3,7 @@
 requirejs.config({
     baseUrl: '../../media/js/',
     paths: {
-        'jquery': 'lib/jquery-1.11.3.min',
+        'jquery': 'lib/jquery-3.2.1.min',
         'domReady': 'lib/require/domReady',
         'underscore': 'lib/underscore-min'
     },
