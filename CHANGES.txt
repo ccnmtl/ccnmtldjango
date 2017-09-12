@@ -1,4 +1,4 @@
-1.11.0
+1.11.0 (2017-09-12)
 ===================
 * Use eslint instead of jshint/jscs
 * Now using ldap3 instead of python-ldap
