@@ -1,7 +1,16 @@
 language: python
 sudo: false
 python:
-  - "2.7"
-  - "3.5"
+  - '2.7'
+  - '3.5'
 script:
-  - ./run_tests.sh
+  - "./run_tests.sh"
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: ctlpypi
+  password:
+    secure: QwJbixJSCscweLVJPiNHPH5C2SaPYcZi6rnePGY1mGBWNvx73SkDpSoEcoUwiy1SjCntuqdlLyJXin021Wo12Ec+mx++oWT8CgWnXaE7Cc3m2Y+r7Mj0974uWUD5Sq3YcEVC48cW/8cIWgFECxvJot2MCYMiYAmpolo5vTLPg90=
+  on:
+    tags: true
+    repo: ccnmtl/ccnmtldjango
