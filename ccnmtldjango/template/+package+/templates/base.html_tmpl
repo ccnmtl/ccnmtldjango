@@ -7,7 +7,7 @@
 	<title>${package}: {% block title %}{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="${package}">
-  <meta name="author" content="CCNMTL">
+  <meta name="author" content="Columbia University CTL">
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -161,8 +161,8 @@
 </div>
 
 {% block footer %}
-  <footer class="footer navbar-fixed-bottom hidden-phone">
-    <img src="{{STATIC_URL}}img/logo_ccnmtl_sidebar.gif" class="printonly pull-right" />
+  <footer class="footer text-center hidden-phone">
+    <img src="{{STATIC_URL}}img/logo-ctl-black.png" class="printonly" />
   </footer>
 {% endblock %}
 
