@@ -52,7 +52,7 @@ ipaddress==1.0.18  # faker
 faker==0.8.4  # factory_boy
 factory_boy==2.9.2
 ldap3==2.3
-sqlparse==0.2.3
+sqlparse==0.2.4
 boto==2.48.0
 python-dateutil==2.6.1
 
