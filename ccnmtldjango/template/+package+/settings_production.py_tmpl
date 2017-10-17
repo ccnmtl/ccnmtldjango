@@ -1,5 +1,5 @@
 # flake8: noqa
-from settings_shared import *
+from ${package}.settings_shared import *
 from ccnmtlsettings.production import common
 
 locals().update(
