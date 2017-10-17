@@ -2,6 +2,6 @@
 from ${package}.settings_shared import *
 
 try:
-    from local_settings import *
+    from ${package}.local_settings import *
 except ImportError:
     pass

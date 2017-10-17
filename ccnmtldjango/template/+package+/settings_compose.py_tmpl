@@ -11,6 +11,6 @@ locals().update(
     ))
 
 try:
-    from local_settings import *
+    from ${package}.local_settings import *
 except ImportError:
     pass
