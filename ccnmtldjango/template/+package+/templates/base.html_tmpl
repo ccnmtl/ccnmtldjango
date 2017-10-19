@@ -18,7 +18,7 @@
 
     <link href="{% bootstrap_css_url %}" rel="stylesheet">
 {% compress css %}
-    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/main.css" rel="stylesheet">
 {% endcompress %}
 	<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
 	{% block css %}{% endblock %}
