@@ -12,7 +12,7 @@
         <h2>Choose a login option...</h2>
         <div class="content">
             {% if CAS_BASE %}
-                <form method="get" action="{{ CAS_BASE }}login">
+                <form method="get" action="{{ CAS_BASE }}cas/login">
                     {% csrf_token %}
                     <input type="hidden" name="destination"
                            value="http://{{ request.get_host }}/accounts/caslogin/?next={{ next|urlencode }}" />
