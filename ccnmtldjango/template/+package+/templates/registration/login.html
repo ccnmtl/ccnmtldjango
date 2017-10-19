@@ -15,7 +15,7 @@
                 <form method="get" action="{{ CAS_BASE }}login">
                     {% csrf_token %}
                     <input type="hidden" name="destination"
-                           value="http://{{ request.get_host }}/accounts/caslogin/?next={{ next|urlencode }}" />
+                           value="https://{{ request.get_host }}/accounts/caslogin/?next={{ next|urlencode }}" />
                     <p>If you have a Columbia University Network ID (UNI)...</p>
                     <input class="regbutton" type="submit" value="Columbia Log In" />
                 </form>
