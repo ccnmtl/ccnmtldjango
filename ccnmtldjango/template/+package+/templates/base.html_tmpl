@@ -1,5 +1,6 @@
 {% load bootstrap3 %}
 {% load compress %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +18,11 @@
 
     <link href="{% bootstrap_css_url %}" rel="stylesheet">
 {% compress css %}
-    <link href="{{STATIC_URL}}css/main.css" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
 {% endcompress %}
-	<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
 	{% block css %}{% endblock %}
-  <script src="{{STATIC_URL}}js/lib/jquery-3.2.1.min.js"></script>
+  <script src="{% static 'js/lib/jquery-3.2.1.min.js' %}"></script>
 
 	{% block feeds %}{% endblock %}
 </head>
@@ -162,7 +163,7 @@
 
 {% block footer %}
   <footer class="footer text-center hidden-phone">
-    <img src="{{STATIC_URL}}img/logo-ctl-black.png" class="printonly" />
+    <img src="{% static 'img/logo-ctl-black.png' %}" class="printonly" />
   </footer>
 {% endblock %}
 
@@ -190,8 +191,8 @@
 {% endif %}
 
 <script
-     data-main="{{STATIC_URL}}js/src/main.js"
-     src="{{STATIC_URL}}js/lib/require/require.js"></script>
+     data-main="{% static 'js/src/main.js' %}"
+     src="{% static 'js/lib/require/require.js' %}"></script>
 
 {% block js %}{% endblock %}
 
