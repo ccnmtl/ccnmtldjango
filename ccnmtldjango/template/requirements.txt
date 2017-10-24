@@ -7,7 +7,7 @@ psycopg2==2.7.3.1
 Pillow==4.3.0
 versiontools==1.9.1
 statsd==3.2.1
-pep8==1.7.0
+pep8==1.7.1
 pyflakes==1.6.0
 mccabe==0.6.1
 enum34==1.1.6
