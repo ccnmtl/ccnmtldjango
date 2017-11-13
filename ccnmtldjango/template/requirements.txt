@@ -82,7 +82,7 @@ django-extensions==1.9.7
 typing==3.6.2 # needed for django-extensions
 django-stagingcontext==0.1.0
 django-ga-context==0.1.0
-django-impersonate==1.1
+django-impersonate==1.2.1
 django-registration-redux==1.8
 django-treebeard==4.1.2
 django-quizblock==1.2.3
