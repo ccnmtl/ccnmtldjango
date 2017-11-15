@@ -55,7 +55,7 @@ pylint==1.7.4
 six==1.11.0
 ipaddress==1.0.18  # faker
 text-unidecode==1.1  # for faker
-faker==0.8.6  # factory_boy
+faker==0.8.7  # factory_boy
 factory_boy==2.9.2
 ldap3==2.4
 sqlparse==0.2.4
