@@ -1,4 +1,4 @@
-Django==1.11.7 # pyup: <2.0
+Django==1.11.8 # pyup: <2.0
 pytz==2017.3
 httplib2==0.10.3
 feedparser==5.2.1
