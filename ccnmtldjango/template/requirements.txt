@@ -101,6 +101,6 @@ Willow==1.1
 django-modelcluster==3.1
 django-taggit==0.22.1
 Unidecode==0.04.21
-html5lib==0.999999999
+html5lib==1.0.1
 
 ccnmtlsettings==1.3.0
