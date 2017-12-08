@@ -162,7 +162,7 @@
 
 {% block footer %}
   <footer class="footer text-center hidden-phone">
-    <img src="{{STATIC_URL}}img/logo-ctl-black.png" class="printonly" />
+    <img src="{{STATIC_URL}}img/logo-ctl-black.png" alt="Columbia University's Center for Teaching and Learning" class="printonly" />
   </footer>
 {% endblock %}
 
