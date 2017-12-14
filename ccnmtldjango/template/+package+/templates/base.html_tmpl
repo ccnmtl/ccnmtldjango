@@ -1,174 +1,236 @@
-{% load bootstrap3 %}
 {% load compress %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
 	<title>${package}: {% block title %}{% endblock %}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="${package}">
-  <meta name="author" content="Columbia University CTL">
 
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-  <script src="../assets/js/html5shiv.js"></script>
-  <script src="../assets/js/respond.min.js"></script>
-<![endif]-->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 2 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <link href="{% bootstrap_css_url %}" rel="stylesheet">
-{% compress css %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css"
+        integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU"
+        crossorigin="anonymous">
+
+    <!-- Local CSS -->
+    {% compress css %}
     <link href="{{STATIC_URL}}css/main.css" rel="stylesheet">
-{% endcompress %}
-	<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
-	{% block css %}{% endblock %}
-  <script src="{{STATIC_URL}}js/lib/jquery-3.2.1.min.js"></script>
+    {% endcompress %}
+    {% block css %}{% endblock %}
+
+    <!-- Standard Meta Data -->
+    <meta name="description" content="${package}" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Columbia University CTL" />
+    <meta name="copyright" content="">
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.Title" content="${package}" />
+    <meta name="DC.Description" content="" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="${package}" />
+    <meta property="og:type" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="${package}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@ccnmtl" />
+    <meta name="twitter:title" content="CTL Portfolio: Title" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="{{STATIC_URL}}img/favicon.png" />
+
+    <!-- JSON Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "",
+        "name": "",
+        "about": "",
+        "keywords": ""
+    }
+    </script>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="{{STATIC_URL}}img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico">
+    <link rel="icon" href="{{STATIC_URL}}img/favicon.ico">
+    <link rel="icon" type="image/png" href="{{STATIC_URL}}img/favicon.png">
 
 	{% block feeds %}{% endblock %}
 </head>
-<body class="{% block bodyclass %}{% endblock %}" id="{% block bodyid %}{% endblock %}">
-<a class="sr-only" href="#content">Skip navigation</a>
+<body>
 
+<a id="skippy" class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+        <span class="skiplink-text">Skip to main content</span>
+    </div>
+</a>
+
+<header>
 {% block topnavbar %}
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="container">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">ProjectName</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
-		<a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span></a>
-  </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav">
-      {% block topnavbarleftitems %}{% endblock %}
-    </ul>
+    <div class="collapse navbar-collapse" id="topNavbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+        </ul>
+    </div>
 
-<!-- 
-    <form class="navbar-form navbar-left" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
--->
-
-    <ul class="nav navbar-nav navbar-right">
-      {% block topnavbarrightitems %}{% endblock %}
-        <p class="navbar-text">
-
-{% block usernav %}
-          {% if request.user.is_anonymous %}
-          {% else %}
-          logged in as 
-            {% if request.user.last_name %}
-              {{request.user.first_name}} {{request.user.last_name}}
+    {% block usernav %}
+    <ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+        <li class="nav-item"><span class="nav-link">
+            {% if request.user.is_anonymous %}
+            You're not logged in
             {% else %}
-              <b>{{ request.user.username }}</b>
+            Logged in as
+                {% if request.user.last_name %}
+                {{request.user.first_name}} {{request.user.last_name}}
+                {% else %}
+                {{ request.user.username }}
+                {% endif %}
+            (<a href="/accounts/logout/">logout</a>)
             {% endif %}
-{% if request.user.is_superuser %}
-          <a href="{% url 'impersonate-list' %}" class="btn btn-default">impersonate</a>
-{% endif %}
-          <a href="/accounts/logout/" class="btn btn-default">logout</a>
-          {% endif %}
-{% endblock %}
-       </p>
-
+            </span>
+        </li>
+        {% if request.user.is_superuser %}
+        <li class="nav-item">
+            <a href="{% url 'impersonate-list' %}" class="nav-link">impersonate</a>
+        </li>
+        {% endif %}
     </ul>
-  </div>
-  </div>
+    {% endblock %}
 </nav>
-
 {% endblock %}
+</header>
 
-  <div class="container" id="outer-container">
-{% block masthead %}
-  {% block primarynav %}{% endblock %}
-{% endblock %}
 
+
+<main role="main" class="pb-4">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Banner placeholder</h1>
+            <!-- Login modal -->
 {% block loginbox %}
 {% if request.user.is_anonymous %}
-<div class="loginbox-container columbia">
-    <div class="loginbox">
-        <h2>Choose a login option...</h2>
-        <div class="content">
-            {% if CAS_BASE %}
-                <form method="get" action="{{ CAS_BASE }}cas/login">
-                    {% csrf_token %}
-                    <input type="hidden" name="destination" value="https://{{ request.get_host }}/accounts/caslogin/?next={{ request.get_full_path|urlencode }}" />
-                    <p>If you have a Columbia University Network ID (UNI)...</p>
-                    <input class="regbutton" type="submit" value="Columbia Log In" />
-                </form>
-            {% endif %}
-            
-            <p class="smalltxt"><a href="http://cuit.columbia.edu/cuit/manage-my-uni" title="Learn more about UNI" target="_blank">What is a UNI?</a></p>
-            <!-- End UNI LOG IN -->
-            
-            <hr class="seperator" />
-        
-        {% if login_form.errors %}
-            <p class="errornote">
-                <span>
-                    <b>ERROR:</b> Invalid username or password.
-                </span>
-                Please try again. Note that both username and password are case-sensitive.
-            </p>
-        {% endif %}
-        
-            <p>If you have a guest account...</p>
-            <form id="login-local" name="login_local" method="post" action="/accounts/login/">
-                {% csrf_token %}
-                <div class="login-local-form" {% if not login_form.errors %}style="display: none"{% endif %}>
-                    <div class="fieldwrapper">
-                        <label for="id_username">Username:</label>
-                        {{ login_form.username }}
-                    </div><!-- fieldwrapper -->
+            <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#loginmodal">
+              Log in
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="LoginModalLabel">Choose a log in option</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    {% if CAS_BASE %}
+                        <form method="get" action="{{ CAS_BASE }}cas/login">
+                        {% csrf_token %}
+                        <input type="hidden" name="destination" value="https://{{ request.get_host }}/accounts/caslogin/?next={{ request.get_full_path|urlencode }}" />
+                        <h6>If you have a Columbia University Network ID (UNI)...</h6>
+                        <input class="btn btn-primary" type="submit" value="Columbia Log In" />
+                        </form>
+                    {% endif %}
+                    <p class="mt-2"><a href="http://cuit.columbia.edu/cuit/manage-my-uni" title="Learn more about UNI" target="_blank">What is a UNI?</a></p>
+                    <!-- End UNI LOG IN -->
+                    {% if login_form.errors %}
+                    <p class="text-danger">
+                        <span>
+                            <b>ERROR:</b> Invalid username or password.
+                        </span>
+                        Please try again. Note that both username and password are case-sensitive.
+                    </p>
+                    {% endif %}
+                    <hr />
+                    <h6>If you have a guest account...</h6>
+                    <form id="login-local" name="login_local" method="post" action="/accounts/login/">
+                        {% csrf_token %}
+                        <div class="login-local-form" {% if not login_form.errors %}style="display: none"{% endif %}>
+                            <div class="form-group">
+                                <label for="id_username">Username:</label>
+                                {{ login_form.username }}
+                            </div><!-- form-group -->
                 
-                    <div class="fieldwrapper">
-                        <label for="id_password">Password:</label>
-                        {{ login_form.password }}
-                    </div><!-- fieldwrapper -->
-                </div>      
-                <input class="regbutton" type="button" value="Guest Log In" {% if login_form.errors %}style="display: none"{% endif %}
-                    onclick="jQuery('.login-local-form').show(); jQuery(this).hide(); return false;"/>
-                <input class="regbutton login-local-form" type="submit" value="Log In" {% if not login_form.errors %}style="display: none;"{% endif %} />                        
-                <input type="hidden" name="next" value="{{ request.get_full_path }}" />
-            </form>
-            <p class="smalltxt"><a href="/registration/register/" title="Create your new project account">Need a new account?</a></p>
-        </div>
-    </div>
-</div>
+                            <div class="form-group">
+                                <label for="id_password">Password:</label>
+                                {{ login_form.password }}
+                            </div><!-- form-group -->
+                        </div>      
+                        <input class="btn btn-primary" type="button" value="Guest Log In" {% if login_form.errors %}style="display: none"{% endif %}
+                            onclick="jQuery('.login-local-form').show(); jQuery(this).hide(); return false;"/>
+                        <input class="btn btn-primary login-local-form" type="submit" value="Log In" {% if not login_form.errors %}style="display: none;"{% endif %} />                        
+                        <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+                    </form>
+                    <p class="mt-2"><a href="/registration/register/" title="Create your new project account">Need a new account?</a></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 {% endif %}
 {% endblock %}
 
+        </div>
+    </section>
 
-<div class="row">
+    <section id="content">
+        <div class="container">
+        {% block pagetitle %}{% endblock %}
+        {% block content %}{% endblock %}
+        </div>
+    </section>
 
-    {% bootstrap_messages %}
-    
-<div class="col-md-2">
-{% block sidenav %}{% endblock %}
-</div>
-<div class="col-md-10">
-{% block pagetitle %}{% endblock %}
-{% block content %}{% endblock %}
-</div>
-</div>
-</div>
+</main>
 
-{% block footer %}
-  <footer class="footer text-center hidden-phone">
-    <img src="{{STATIC_URL}}img/logo-ctl-black.png" alt="Columbia University's Center for Teaching and Learning" class="printonly" />
-  </footer>
-{% endblock %}
+<footer class="bg-light text-dark pt-2 pb-5">
+    <ul class="nav d-flex justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Help</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+        </li>
+    </ul>
 
+    <span itemscope itemtype="http://schema.org/EducationalOrganization"><a href="http://ctl.columbia.edu" target="_blank" itemprop="url"><img src="{{STATIC_URL}}img/logo-ctl-color.png" class="mx-auto d-block img-fluid mt-3" alt="" itemprop="logo" width="290" /><span class="sr-only" itemprop="name">Center for Teaching and Learning at Columbia University</span></a></span>
+
+</footer>
+
+<script src="{{STATIC_URL}}js/lib/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script
+     data-main="{{STATIC_URL}}js/src/main.js"
+     src="{{STATIC_URL}}js/lib/require/require.js"></script>
 <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-
-<script src="{% bootstrap_javascript_url %}"></script>
 
 {% if SENTRY_PUBLIC_DSN %}
     <script src="//cdn.ravenjs.com/1.1.18/jquery,native/raven.min.js"></script>
@@ -188,10 +250,6 @@
      {% endif %}
     </script>
 {% endif %}
-
-<script
-     data-main="{{STATIC_URL}}js/src/main.js"
-     src="{{STATIC_URL}}js/lib/require/require.js"></script>
 
 {% block js %}{% endblock %}
 
