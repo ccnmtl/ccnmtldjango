@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="jumbotron">
+<div class="alert alert-success">
 <h1>It works</h1>
 <p>Congratulations! Now start coding.</p>
 {% if not request.user.is_anonymous %}
@@ -18,4 +18,8 @@
 
 {% endif %}
 </div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non urna sed odio placerat condimentum. Morbi mauris magna, malesuada ut tellus nec, vulputate placerat neque. Donec quis lobortis est. Nunc quis massa nec augue pulvinar pretium a id dui. Proin nec ornare enim. In commodo pretium ex ac tempus. Phasellus tristique vel est nec mattis.</p>
+<p>Mauris et dolor vitae dolor ullamcorper elementum eu eget turpis. Integer cursus pharetra odio, eu rutrum velit facilisis sit amet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam sagittis fermentum justo ut fermentum. Aliquam eu tincidunt lacus. Nullam sit amet elit ac lectus volutpat efficitur. Maecenas dapibus mauris at felis cursus convallis.</p>
+
 {% endblock %}
