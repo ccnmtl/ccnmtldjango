@@ -6,7 +6,7 @@ Markdown==2.6.10
 psycopg2==2.7.3.2
 Pillow==4.3.0
 versiontools==1.9.1
-statsd==3.2.1
+statsd==3.2.2
 pep8==1.7.1
 pyflakes==1.6.0
 mccabe==0.6.1
