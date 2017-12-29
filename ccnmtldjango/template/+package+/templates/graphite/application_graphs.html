@@ -1,0 +1,32 @@
+{% with metric_base="stats.app.counters.nginx."|add:graphite_name %}
+<h3>Smoketests Failed</h3>
+{% with metric="keepLastValue(app.smoketest."|add:graphite_name|add:".failed)" %}
+{% include "graphite/graphite_graph.html" %}
+{% endwith %}
+
+<h3>Requests Per Minute</h3>
+{% with metric="sumSeries("|add:metric_base|add:".status.*.count)" %}
+{% include "graphite/graphite_graph.html" %}
+{% endwith %}
+
+<h3>Request Time</h3>
+{% with metric="stats.app.timers.nginx."|add:graphite_name|add:".request_time.mean&target=stats.app.timers.nginx."|add:graphite_name|add:".request_time.upper_90" %}
+{% include "graphite/graphite_graph.html" %}
+{% endwith %}
+
+<h3>% 5xxs</h3>
+{% with metric="divideSeries(sumSeries("|add:metric_base|add:".status.5*.count),sumSeries("|add:metric_base|add:".status.*.count))" %}
+{% include "graphite/graphite_graph.html" %}
+{% endwith %}
+
+<h3>500s per minute</h3>
+{% with metric=metric_base|add:".status.5*.count" %}
+{% include "graphite/graphite_graph.html" %}
+{% endwith %}
+
+<h3>404s</h3>
+{% with metric=metric_base|add:".status.404.count" %}
+{% include "graphite/graphite_graph.html" %}
+{% endwith %}
+
+{% endwith %}
