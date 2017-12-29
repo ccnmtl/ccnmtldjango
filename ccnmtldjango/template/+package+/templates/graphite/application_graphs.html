@@ -1,4 +1,5 @@
 {% with metric_base="stats.app.counters.nginx."|add:graphite_name %}
+<br />
 <h3>Smoketests Failed</h3>
 {% with metric="keepLastValue(app.smoketest."|add:graphite_name|add:".failed)" %}
 {% include "graphite/graphite_graph.html" %}
