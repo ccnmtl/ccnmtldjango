@@ -6,10 +6,10 @@
     {% with graphite_name="${package}" %}
         {% with width=900 height=200 %}
             <ul class="nav nav-tabs">
-                <li><a href="#daily" data-toggle="tab">Daily</a></li>
-                <li><a href="#weekly" data-toggle="tab">Weekly</a></li>
-                <li><a href="#monthly" data-toggle="tab">Monthly</a></li>
-                <li><a href="#yearly" data-toggle="tab">Yearly</a></li>
+                <li class="nav-item"><a class="nav-link" href="#daily" data-toggle="tab">Daily</a></li>
+                <li class="nav-item"><a class="nav-link" href="#weekly" data-toggle="tab">Weekly</a></li>
+                <li class="nav-item"><a class="nav-link" href="#monthly" data-toggle="tab">Monthly</a></li>
+                <li class="nav-item"><a class="nav-link" href="#yearly" data-toggle="tab">Yearly</a></li>
             </ul>
 
             <div class="tab-content">
