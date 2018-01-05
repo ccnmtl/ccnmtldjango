@@ -100,7 +100,7 @@ djangorestframework==3.7.7
 Willow==1.1
 django-modelcluster==4.0
 django-taggit==0.22.2
-Unidecode==0.04.21
+Unidecode==1.0.22
 html5lib==1.0.1
 typing==3.6.2 # needed for django-extensions
 webencodings==0.5.1 # needed for wagtail
