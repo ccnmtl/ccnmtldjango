@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %}Stats{% endblock %}
+
 {% block content %}
 
 <ul class="nav nav-tabs">
