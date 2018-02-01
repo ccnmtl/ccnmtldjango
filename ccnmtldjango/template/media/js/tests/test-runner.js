@@ -3,7 +3,7 @@
 var requirejs = require('requirejs');
 requirejs.config({
     paths: {
-        'jquery': '../lib/jquery-3.2.1.min',
+        'jquery': '../lib/jquery-3.3.1.min',
         'domReady': '../lib/require/domReady',
         'underscore': '../lib/underscore-min'
     },
