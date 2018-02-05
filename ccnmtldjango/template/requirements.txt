@@ -37,7 +37,7 @@ ipython==6.2.1
 ipdb==0.10.3
 rdflib==4.2.2
 selenium==3.8.1
-coverage==4.4.2
+coverage==4.5
 pyasn1==0.4.2
 cryptography==2.1.4  # for PyOpenSSL
 pyOpenSSL==17.5.0
