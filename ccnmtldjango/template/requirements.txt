@@ -1,6 +1,6 @@
 Django==1.11.11 # pyup: <2.0
 pytz==2018.3
-httplib2==0.11.0
+httplib2==0.11.1
 feedparser==5.2.1
 Markdown==2.6.11
 psycopg2==2.7.4
