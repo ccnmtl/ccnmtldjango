@@ -39,7 +39,7 @@ rdflib==4.2.2
 selenium==3.11.0
 coverage==4.5.1
 pyasn1==0.4.2
-cryptography==2.2.1  # for PyOpenSSL
+cryptography==2.2.2  # for PyOpenSSL
 pyOpenSSL==17.5.0
 ndg-httpsclient==0.4.4
 urllib3==1.22  # requests
