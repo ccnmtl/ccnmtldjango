@@ -50,7 +50,7 @@ requests==2.18.4
 logilab-common==1.4.1
 logilab-astng==0.24.3
 astroid==1.6.3
-pylint==1.8.3
+pylint==1.8.4
 six==1.11.0
 ipaddress==1.0.19  # faker
 text-unidecode==1.2  # for faker
@@ -95,7 +95,7 @@ django-storages-redux==1.3.3
 django-cacheds3storage==0.1.2
 
 wagtail==1.13.1 # pyup: <2.0
-djangorestframework==3.8.0
+djangorestframework==3.8.1
 Willow==1.1
 django-modelcluster==4.1
 django-taggit==0.22.2
