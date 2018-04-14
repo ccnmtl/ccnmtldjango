@@ -56,7 +56,7 @@ ipaddress==1.0.19  # faker
 text-unidecode==1.2  # for faker
 faker==0.8.13  # factory_boy
 factory_boy==2.10.0
-ldap3==2.4.1
+ldap3==2.5
 sqlparse==0.2.4
 boto==2.48.0
 python-dateutil==2.7.2
