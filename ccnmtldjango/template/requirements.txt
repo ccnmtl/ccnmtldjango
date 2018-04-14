@@ -52,7 +52,7 @@ logilab-astng==0.24.3
 astroid==1.6.3
 pylint==1.8.4
 six==1.11.0
-ipaddress==1.0.19  # faker
+ipaddress==1.0.21  # faker
 text-unidecode==1.2  # for faker
 faker==0.8.13  # factory_boy
 factory_boy==2.10.0
