@@ -105,3 +105,8 @@ typing==3.6.4 # needed for django-extensions
 webencodings==0.5.1 # needed for wagtail
 
 ccnmtlsettings==1.4.0
+
+pbr==4.0.2  # bandit
+PyYAML==3.12  # bandit
+stevedore==1.28.0  # bandit
+bandit==1.4.0

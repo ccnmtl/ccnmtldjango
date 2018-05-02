@@ -11,6 +11,7 @@ cd temp
 ./outer-ve/bin/paster create --template=ccnmtldjango testproject
 cd testproject
 mv eslintrc.js .eslintrc.js
+mv bandit .bandit
 chmod +x manage.py
 
 # run our tests (finally!)
