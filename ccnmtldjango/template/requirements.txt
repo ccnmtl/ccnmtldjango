@@ -33,7 +33,7 @@ wcwidth==0.1.7  # ipython
 prompt_toolkit==1.0.15  # ipython
 pygments==2.2.0  # ipython
 scandir==1.7  # ipython
-ipython==6.3.1
+ipython==6.4.0
 ipdb==0.11
 rdflib==4.2.2
 selenium==3.11.0
