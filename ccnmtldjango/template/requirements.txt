@@ -59,7 +59,7 @@ factory_boy==2.10.0
 ldap3==2.5
 sqlparse==0.2.4
 boto==2.48.0
-python-dateutil==2.7.2
+python-dateutil==2.7.3
 
 djangowind==1.1.0
 django-indexer==0.3.0
