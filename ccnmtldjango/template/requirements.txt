@@ -50,7 +50,7 @@ requests==2.18.4
 logilab-common==1.4.1
 logilab-astng==0.24.3
 astroid==1.6.4
-pylint==1.8.4
+pylint==1.9.1
 six==1.11.0
 ipaddress==1.0.21  # faker
 text-unidecode==1.2  # for faker
