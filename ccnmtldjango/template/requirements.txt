@@ -30,7 +30,7 @@ simplegeneric==0.8.1  # ipython
 path.py==11.0.1  # ipython
 backports.shutil_get_terminal_size==1.0.0  # ipython
 wcwidth==0.1.7  # ipython
-prompt_toolkit==1.0.15  # ipython
+prompt_toolkit==2.0.2  # ipython
 pygments==2.2.0  # ipython
 scandir==1.7  # ipython
 ipython==6.4.0
@@ -50,7 +50,7 @@ requests==2.18.4
 logilab-common==1.4.1
 logilab-astng==0.24.3
 astroid==1.6.5
-pylint==1.9.1
+pylint==1.9.2
 six==1.11.0
 ipaddress==1.0.21  # faker
 text-unidecode==1.2  # for faker
