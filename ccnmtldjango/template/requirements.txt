@@ -46,7 +46,7 @@ urllib3==1.22  # requests
 chardet==3.0.4  # requests
 idna==2.7  # requests
 certifi==2018.4.16  # requests
-requests==2.19.0
+requests==2.19.1
 logilab-common==1.4.1
 logilab-astng==0.24.3
 astroid==1.6.5
