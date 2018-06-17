@@ -3,7 +3,7 @@ pytz==2018.4
 httplib2==0.11.3
 feedparser==5.2.1
 Markdown==2.6.11
-psycopg2==2.7.4
+psycopg2==2.7.5
 Pillow==5.1.0
 versiontools==1.9.1
 statsd==3.2.2
