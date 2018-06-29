@@ -19,10 +19,6 @@ What it provides for us that startproject doesn't:
   automatically set up as superusers, and the group affil that
   CCNMTL staff all have gets automatically mapped to staff. These
   are generally useful defaults for us.
-* virtualenv and pip setup with source tarballs bundled and
-  bootstrappable, `manage.py`'s shebang set to use it. This
-  basically fits it into our one-step automated deployment and
-  containment approach.
 * a nice Makefile for common build, test, and run tasks
 * use wheel packages wherever possible
 * flatpages enabled
@@ -74,33 +70,30 @@ What it provides for us that startproject doesn't:
 * `django-registration` installed and configured
 * Google Analytics ready to go
 
-To use ccnmtldjango, you need python 2.7+, virtualenv, pip, and a recent
-setuptools installed on your machine.
+To use ccnmtldjango, you need python 3.4+.
 
 First, if you don't already have ccnmtldjango installed:
 
 Set up a new virtual environment, e.g. 
 
-    $ virtualenv ve
+    $ python3 -m venv ve
 
-Activate your virtual environment, source ve/bin/activate, or prefix all commands with 've/bin/'
+When working with a venv, prefix all commands with `./ve/bin/`:
 
-    $ pip install Paste PasteDeploy ccnmtldjango
+    $ ./ve/bin/pip install Paste PasteDeploy ccnmtldjango
 
 ccnmtldjango should automatically pull in the remaining needed dependencies (just
-PasteScript, actually). If that gives you problems, the most likely
-cause is that one or more of your setuptools, pip, or virtualenv
-libraries is old. So upgrade those first and try again.
+PasteScript, actually).
 
 Running
 
-    $ paster create --list-templates
+    $ ./ve/bin/paster create --list-templates
 
 should include ccnmtldjango
 
 Now, to quickstart a django project, do
 
-    $ paster create --template=ccnmtldjango myprojectname
+    $ ./ve/bin/paster create --template=ccnmtldjango myprojectname
 
 `myprojectname` should be a python module name (ie, lowercase,
 no punctuation, etc). It will create a directory called
@@ -122,21 +115,16 @@ that will be unique to your project. (Ideally, put that in a
 
 This is probably a good point to check the project into version control.
 
-We use containment for django too, with virtualenv:
+We use containment for django too, with [venv](https://docs.python.org/3/library/venv.html):
 
     $ make
 
-That will create a `ve` directory which contains a virtualenv and has
+That will create a `ve` directory which contains a venv and has
 had all the libraries specified in the `requirements.txt` file
 installed into it (this includes django itself). The `ve` directory
 should never be checked into svn since it's generated. If you need
-other libraries for your application, `requirements.txt` then re-run
-`./bootstrap.py`.
-
-Keep in mind that with virtualenv, there's no need to `activate` an
-environment. Instead, a ve has a `bin` directory which contains a
-python executable. If you use that instead of the system python
-executable, it uses the libraries in that virtualenv.
+other libraries for your application, update `requirements.txt` then re-run
+`make runserver` to install them.
 
 ccnmtldjango assumes that your project will use a postgresql database
 with the same name as your project. So, for our example, you would
@@ -206,8 +194,7 @@ svn/git:
 ------------------------------------------
 Differences from a standard Django install
 
-Obviously, a bunch of libraries and such have been added and there's
-the whole virtualenv thing. There are also some differences from a
+There are some differences from a
 standard django project (ie, the result of `django-admin.py startproject`) that you should be aware of.
 
 First, the settings have been split up to make dev/staging/prod
