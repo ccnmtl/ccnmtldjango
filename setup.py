@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
 setup(name='ccnmtldjango',
-      version="1.11.1",
+      version="2.0.0",
       author="Anders Pearson",
-      author_email='ccnmtl-dev@columbia.edu',
+      author_email='ctl-dev@columbia.edu',
       description='Paste template for Django development at CCNMTL',
       long_description=open('README.md').read(),
       url='https://github.com/ccnmtl/ccnmtldjango/',

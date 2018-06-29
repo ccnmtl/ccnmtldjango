@@ -1,7 +1,7 @@
-# VERSION=1.6.0
+# VERSION=1.7.0
 
 # CHANGES:
-# 1.7.0 - TBA        - Now using python 3 by default
+# 1.7.0 - 2018-05-31 - Now using python 3 by default
 #                    - Removed virtualenv.py in favor of python 3's
 #                      builtin venv capability.
 # 1.6.0 - 2017-09-05 - add bandit secure analysis configuration
@@ -18,7 +18,7 @@ REQUIREMENTS ?= requirements.txt
 SYS_PYTHON ?= python3
 PY_SENTINAL ?= $(VE)/sentinal
 WHEEL_VERSION ?= 0.31.0
-PIP_VERSION ?= 9.0.3
+PIP_VERSION ?= 10.0.1
 MAX_COMPLEXITY ?= 10
 INTERFACE ?= localhost
 RUNSERVER_PORT ?= 8000
