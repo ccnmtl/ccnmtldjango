@@ -30,7 +30,7 @@ simplegeneric==0.8.1  # ipython
 path.py==11.0.1  # ipython
 backports.shutil_get_terminal_size==1.0.0  # ipython
 wcwidth==0.1.7  # ipython
-prompt_toolkit==2.0.3  # ipython
+prompt_toolkit==2.0.4  # ipython
 pygments==2.2.0  # ipython
 scandir==1.7  # ipython
 ipython==6.4.0
