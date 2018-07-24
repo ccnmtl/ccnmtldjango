@@ -106,7 +106,7 @@ webencodings==0.5.1 # needed for wagtail
 
 ccnmtlsettings==1.4.0
 
-pbr==4.1.0  # bandit
+pbr==4.1.1  # bandit
 PyYAML==3.13  # bandit
 stevedore==1.28.0  # bandit
 bandit==1.4.0
