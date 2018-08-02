@@ -36,7 +36,7 @@ scandir==1.7  # ipython
 ipython==6.5.0
 ipdb==0.11
 rdflib==4.2.2
-selenium==3.13.0
+selenium==3.14.0
 coverage==4.5.1
 pyasn1==0.4.4
 cryptography==2.3  # for PyOpenSSL
