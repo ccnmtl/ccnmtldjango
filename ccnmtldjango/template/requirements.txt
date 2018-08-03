@@ -16,7 +16,7 @@ flake8==3.5.0
 tornado==5.1
 beautifulsoup4==4.6.1
 cssselect==1.0.3
-lxml==4.2.3
+lxml==4.2.4
 fuzzywuzzy==0.16.0
 sure==1.4.11
 traitlets==4.3.2  # ipython
