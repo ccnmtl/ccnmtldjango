@@ -32,7 +32,7 @@ backports.shutil_get_terminal_size==1.0.0  # ipython
 wcwidth==0.1.7  # ipython
 prompt_toolkit==2.0.4  # ipython
 pygments==2.2.0  # ipython
-scandir==1.8  # ipython
+scandir==1.9.0  # ipython
 ipython==6.5.0
 ipdb==0.11
 rdflib==4.2.2
