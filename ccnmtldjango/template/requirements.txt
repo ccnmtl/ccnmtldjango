@@ -14,7 +14,7 @@ configparser==3.5.0
 pycodestyle==2.3.1 # pyup: <2.4.0
 flake8==3.5.0
 tornado==5.1
-beautifulsoup4==4.6.1
+beautifulsoup4==4.6.3
 cssselect==1.0.3
 lxml==4.2.4
 fuzzywuzzy==0.16.0
@@ -32,7 +32,7 @@ backports.shutil_get_terminal_size==1.0.0  # ipython
 wcwidth==0.1.7  # ipython
 prompt_toolkit==2.0.4  # ipython
 pygments==2.2.0  # ipython
-scandir==1.8  # ipython
+scandir==1.9.0  # ipython
 ipython==6.5.0
 ipdb==0.11
 rdflib==4.2.2
@@ -49,7 +49,7 @@ certifi==2018.4.16  # requests
 requests==2.19.1
 logilab-common==1.4.2
 logilab-astng==0.24.3
-astroid==2.0.2
+astroid==2.0.4
 pylint==2.1.1
 six==1.11.0
 ipaddress==1.0.21  # faker
@@ -98,7 +98,7 @@ wagtail==1.13.2 # pyup: <2.0
 djangorestframework==3.8.2
 Willow==1.1
 django-modelcluster==4.2
-django-taggit==0.22.2
+django-taggit==0.23.0
 Unidecode==1.0.22
 html5lib==1.0.1
 typing==3.6.4 # needed for django-extensions
