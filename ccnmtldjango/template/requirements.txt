@@ -109,4 +109,4 @@ ccnmtlsettings==1.4.0
 pbr==4.2.0  # bandit
 PyYAML==3.13  # bandit
 stevedore==1.29.0  # bandit
-bandit==1.4.0
+bandit==1.5.0
