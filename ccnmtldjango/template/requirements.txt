@@ -77,7 +77,7 @@ django-debug-toolbar==1.9.1
 django-waffle==0.14.0
 django-jenkins==0.110.0
 django-smoketest==1.1.0
-django-extensions==2.1.0
+django-extensions==2.1.2
 typing==3.6.4 # needed for django-extensions
 django-stagingcontext==0.1.0
 django-ga-context==0.1.0
